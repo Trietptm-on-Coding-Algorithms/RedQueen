@@ -116,9 +116,11 @@ def limits():
 
 
 
-def Scoring(tweet):
+def Scoring(tweet,search):
 #	global apicall
 	Score = 0
+	print
+	print
         print "*************************************************************************************" 
 	print "============================Starting Scoring function================================"
 	print ""
@@ -463,6 +465,9 @@ def Scoring(tweet):
 				print "Adding to Retweet List"
 				print "Tweet Score : ",Score
 				print "Tweet ID :", tweet['id']
+				print "ApiCallCount :",apicall
+				print "Search Call left :",search
+				print "Tweet :", tweet['text']
 				print "######################################"
 				print ""
 
@@ -483,9 +488,7 @@ def Scoring(tweet):
 
 	print
 	print
-	print "================================Scoring function stopped==========================================="
-	print
-        print "***************************************************************************************************"
+
 
 
 
@@ -538,7 +541,7 @@ def searchTst(word):
 	
 	        for item in searchresults["statuses"]:
 	
-			Scoring(item)
+			Scoring(item,search)
 	else:
                 print
                 print "****************************************"
