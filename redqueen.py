@@ -19,6 +19,8 @@ Friends = ['pondeboard1', 'ceb0t', 'theStump3r', 'uncl3dumby', 'gr3yr0n1n', 'poa
 
 apicall = 0
 
+allok = 0
+
 retweetlist = []
 
 QueueList = []
@@ -28,8 +30,37 @@ QueueList = []
 
 def Retweet():
 
-	for item in QueueList:
+
+        if allok == 1:
+                print "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+                print "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+                print "!                RETWEETING               !"
+                print "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+                print "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+
+
+		for item in QueueList:
+
+				limits()
+
+				FinalItem = item.split("-")[1]
+
+				print "Retweeting : ",item
+		                try:
+		                        twitter.retweet(id = FinalItem)
+			                print "Done !"
+					print
+					
+					apicall = apicall +1
+					print
 		
+                                except :
+                                        print
+                                        print "Error Sorry im trying the next one "
+                                        print
+
+				time.sleep(2)
+
 
 def tweetlist(point,id):
 
@@ -39,20 +70,14 @@ def tweetlist(point,id):
 	tri = sorted(retweetlist,key=lambda line: int(line.split("-")[0]),reverse=True)
 
 	QueueList = tri
+	print
+	print "=="
+	print "Loaded into Queue"
+	print "=="
+	print
 
-	for item in tri:
 
-		ammo2 = item.split("-")[1]
 
-		print "=="
-		print
-		print item
-		print
-		print "ID :",ammo2
-		print "=="
-		print
-
-	time.sleep(2)
 
 def limits():
 	global apicall
@@ -80,6 +105,8 @@ def limits():
                 print
 		
 		apicall = 0
+
+		
 		return apicall
 
 #def Ban(
@@ -538,4 +565,13 @@ print "Calling Search function"
 for key in Keywords:
 	searchTst(key)
 
+print
+print " Done "
+print
+print "Now Calling Retweet function"
+print
+
+allok = 1
+
+Retweet()
 #################################################TheEnd#############################################################
