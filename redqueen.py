@@ -30,6 +30,7 @@ QueueList = []
 
 def Retweet():
 
+ 	global apicall
 
         if allok == 1:
                 print "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
@@ -38,6 +39,9 @@ def Retweet():
                 print "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
                 print "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 
+	        tri = sorted(retweetlist,key=lambda line: int(line.split("-")[0]),reverse=True)
+
+        	QueueList = tri
 
 		for item in QueueList:
 
@@ -45,21 +49,21 @@ def Retweet():
 
 				FinalItem = item.split("-")[1]
 
-				print "Retweeting : ",item
+				print "Retweeting : ",FinalItem
 		                try:
 		                        twitter.retweet(id = FinalItem)
 			                print "Done !"
 					print
-					
+					time.sleep(1)
 					apicall = apicall +1
 					print
 		
-                                except :
+               			except :
                                         print
                                         print "Error Sorry im trying the next one "
                                         print
+				limits()
 
-				time.sleep(2)
 
 
 def tweetlist(point,id):
@@ -67,10 +71,6 @@ def tweetlist(point,id):
         ammo = str(point) + "-" + str(id)
         retweetlist.append(ammo)
 
-	tri = sorted(retweetlist,key=lambda line: int(line.split("-")[0]),reverse=True)
-
-	QueueList = tri
-	print
 	print "=="
 	print "Loaded into Queue"
 	print "=="
@@ -81,7 +81,6 @@ def tweetlist(point,id):
 
 def limits():
 	global apicall
-	rate = twitter.get_application_rate_limit_status()
 	 
 	print
 	print "Apicall = ",apicall
@@ -94,19 +93,24 @@ def limits():
 		print
 		print "API RATE LIMITS ALMOST REACHED "
 		print ""
-		print "WAITING 15 MINUTES"
-		time.sleep(900)
+		print "WAITING 900 seconds"
+
+		for i in xrange(900,0,-1):
+    			time.sleep(1)
+			print "Time Left :",i
 		print "Waking up.."
 		print ""
-
                 print
                 print "****************************************"
                 print "****************************************"
-                print
-		
+                print "=="
+		print "Reseting apicall"
 		apicall = 0
-
-		
+		try:
+			print "Search Calls left :",twitter.get_application_rate_limit_status()
+		except:
+			print "Error mostly timeout"
+		print 
 		return apicall
 
 #def Ban(
@@ -140,115 +144,115 @@ def Scoring(tweet,search):
                                 
 
                         if tweet['retweet_count'] > 20 and tweet['retweet_count'] < 30:
-                                Score  = Score + 5
-                                
-
-                        if tweet['retweet_count'] > 30 and tweet['retweet_count'] < 40:
                                 Score  = Score + 6
                                 
 
-                        if tweet['retweet_count'] > 40 and tweet['retweet_count'] < 50:
-                                Score  = Score + 7
-                                
-
-                        if tweet['retweet_count'] > 50 and tweet['retweet_count'] < 60:
+                        if tweet['retweet_count'] > 30 and tweet['retweet_count'] < 40:
                                 Score  = Score + 8
                                 
 
-                        if tweet['retweet_count'] > 60 and tweet['retweet_count'] < 70:
-                                Score  = Score + 9
-                                
-
-                        if tweet['retweet_count'] > 70 and tweet['retweet_count'] < 80:
+                        if tweet['retweet_count'] > 40 and tweet['retweet_count'] < 50:
                                 Score  = Score + 10
                                 
 
-                        if tweet['retweet_count'] > 80 and tweet['retweet_count'] < 90:
+                        if tweet['retweet_count'] > 50 and tweet['retweet_count'] < 60:
                                 Score  = Score + 11
                                 
 
-                        if tweet['retweet_count'] > 90 and tweet['retweet_count'] < 100:
+                        if tweet['retweet_count'] > 60 and tweet['retweet_count'] < 70:
                                 Score  = Score + 12
                                 
 
-                        if tweet['retweet_count'] > 100 and tweet['retweet_count'] < 150:
+                        if tweet['retweet_count'] > 70 and tweet['retweet_count'] < 80:
                                 Score  = Score + 13
                                 
 
-                        if tweet['retweet_count'] > 150 and tweet['retweet_count'] < 200:
+                        if tweet['retweet_count'] > 80 and tweet['retweet_count'] < 90:
                                 Score  = Score + 14
                                 
 
-                        if tweet['retweet_count'] > 200 and tweet['retweet_count'] < 250:
+                        if tweet['retweet_count'] > 90 and tweet['retweet_count'] < 100:
                                 Score  = Score + 15
                                 
 
-                        if tweet['retweet_count'] > 250 and tweet['retweet_count'] < 300:
+                        if tweet['retweet_count'] > 100 and tweet['retweet_count'] < 150:
                                 Score  = Score + 16
                                 
 
-                        if tweet['retweet_count'] > 300 and tweet['retweet_count'] < 350:
+                        if tweet['retweet_count'] > 150 and tweet['retweet_count'] < 200:
                                 Score  = Score + 17
                                 
 
-                        if tweet['retweet_count'] > 350 and tweet['retweet_count'] < 400:
+                        if tweet['retweet_count'] > 200 and tweet['retweet_count'] < 250:
                                 Score  = Score + 18
                                 
 
-                        if tweet['retweet_count'] > 300 and tweet['retweet_count'] < 350:
+                        if tweet['retweet_count'] > 250 and tweet['retweet_count'] < 300:
                                 Score  = Score + 19
                                 
 
-                        if tweet['retweet_count'] > 350 and tweet['retweet_count'] < 400:
+                        if tweet['retweet_count'] > 300 and tweet['retweet_count'] < 350:
                                 Score  = Score + 20
                                 
 
-                        if tweet['retweet_count'] > 400 and tweet['retweet_count'] < 450:
+                        if tweet['retweet_count'] > 350 and tweet['retweet_count'] < 400:
                                 Score  = Score + 21
                                 
 
-                        if tweet['retweet_count'] > 450 and tweet['retweet_count'] < 500:
+                        if tweet['retweet_count'] > 300 and tweet['retweet_count'] < 350:
                                 Score  = Score + 22
                                 
 
-                        if tweet['retweet_count'] > 500 and tweet['retweet_count'] < 550:
+                        if tweet['retweet_count'] > 350 and tweet['retweet_count'] < 400:
                                 Score  = Score + 23
                                 
 
-                        if tweet['retweet_count'] > 600 and tweet['retweet_count'] < 650:
+                        if tweet['retweet_count'] > 400 and tweet['retweet_count'] < 450:
                                 Score  = Score + 24
                                 
 
-                        if tweet['retweet_count'] > 700 and tweet['retweet_count'] < 750:
+                        if tweet['retweet_count'] > 450 and tweet['retweet_count'] < 500:
                                 Score  = Score + 25
                                 
 
-                        if tweet['retweet_count'] > 750 and tweet['retweet_count'] < 800:
+                        if tweet['retweet_count'] > 500 and tweet['retweet_count'] < 550:
                                 Score  = Score + 26
                                 
 
-                        if tweet['retweet_count'] > 850 and tweet['retweet_count'] < 900:
+                        if tweet['retweet_count'] > 600 and tweet['retweet_count'] < 650:
                                 Score  = Score + 27
                                 
 
-                        if tweet['retweet_count'] > 900 and tweet['retweet_count'] < 950:
+                        if tweet['retweet_count'] > 700 and tweet['retweet_count'] < 750:
                                 Score  = Score + 28
                                 
 
-                        if tweet['retweet_count'] > 950 and tweet['retweet_count'] < 1000:
+                        if tweet['retweet_count'] > 750 and tweet['retweet_count'] < 800:
                                 Score  = Score + 29
                                 
 
-                        if tweet['retweet_count'] > 1000 and tweet['retweet_count'] < 1500:
+                        if tweet['retweet_count'] > 850 and tweet['retweet_count'] < 900:
                                 Score  = Score + 30
                                 
 
-                        if tweet['retweet_count'] > 1500 and tweet['retweet_count'] < 2000:
+                        if tweet['retweet_count'] > 900 and tweet['retweet_count'] < 950:
                                 Score  = Score + 31
                                 
 
-                        if tweet['retweet_count'] > 2000 :
+                        if tweet['retweet_count'] > 950 and tweet['retweet_count'] < 1000:
                                 Score  = Score + 32
+                                
+
+                        if tweet['retweet_count'] > 1000 and tweet['retweet_count'] < 1500:
+                                Score  = Score + 33
+                                
+
+                        if tweet['retweet_count'] > 1500 and tweet['retweet_count'] < 2000:
+                                Score  = Score + 34
+                                
+
+                        if tweet['retweet_count'] > 2000 :
+                                Score  = Score + 35
                                 
 
 
@@ -460,9 +464,11 @@ def Scoring(tweet,search):
 
 	if tweet['lang'] == "en" or tweet['lang'] == "fr" or tweet['lang'] == "en-gb":
 
-			if Score > 3:
+			if Score > 5 :
 				print "######################################"
 				print "Adding to Retweet List"
+				print
+				print "Nbr of tweets in queue :",len(retweetlist)
 				print "Tweet Score : ",Score
 				print "Tweet ID :", tweet['id']
 				print "ApiCallCount :",apicall
@@ -477,18 +483,18 @@ def Scoring(tweet,search):
 				print "This tweet does not match the requirement needed score to be retweeted. (Score)"
 				print ""
 
-			time.sleep(2)
+#			time.sleep(1)
 	else:
                                 print ""
                                 print "This tweet does not match the requirement needed to be retweeted. (Language)"
                                 print ""
 
-        time.sleep(2)
+#        time.sleep(2)
 
 
 	print
 	print
-
+	limits()
 
 
 
@@ -496,15 +502,28 @@ def Scoring(tweet,search):
 
 def searchTst(word):
 	global apicall
+	try:
+        	rate = twitter.get_application_rate_limit_status()
+        	search = rate['resources']['search']['/search/tweets']['remaining']
+	except :
+                                        print
+                                        print "Error Sorry Retrying "
+                                        print
+					try:
+						                rate = twitter.get_application_rate_limit_status()
+						                search = rate['resources']['search']['/search/tweets']['remaining']
+					except:
+			                                print
+                        		                print "Error Sorry trying next one "
+                                  		        print
 
-        rate = twitter.get_application_rate_limit_status()
-        search = rate['resources']['search']['/search/tweets']['remaining']
 
 	if search != ["1"]:
 
 		print
 		print "##########################################"
 	        print "Starting search function"
+		limits()
 		try:
 	        	searchresults = twitter.search(q=word, count = 10)
 			print "##########################################"
@@ -515,8 +534,21 @@ def searchTst(word):
 	
 	        except :
 					print
-	                                print "Error Sorry im trying the next one "
+	                                print "Error Sorry im Retrying "
 					print
+					try :
+			                        searchresults = twitter.search(q=word, count = 10)
+                        			print "##########################################"
+                        			print "Results found "
+                        			print ""
+                        			apicall = apicall + 1
+
+					except :
+						print
+						print "Error sorry trying next one "
+						print
+
+
 	
 		try:
 			print ""
@@ -531,8 +563,24 @@ def searchTst(word):
 
 		except:
                                         print
-                                        print "Error Sorry im trying the next one "
+                                        print "Error Sorry im retrying "
                                         print
+					try:
+			                        print ""
+                			        print "Je viens de d'envoyer la liste de tweets pour " ,word
+                			        twitter.send_direct_message(user_id="292453904", text="Je viens d'envoyer la liste de tweets pour " + str(word))
+                			        print ""
+                			        print "Done"
+
+                			        apicall = apicall +1
+
+                        			print ""
+					except:
+	                                        print
+        	                                print "Error Sorry im trying the next one "
+        	                                print
+
+
 
 	
 		print "Search function terminated"
@@ -549,16 +597,26 @@ def searchTst(word):
                 print
                 print "API RATE LIMITS ALMOST REACHED "
                 print ""
-		print "Search call left : ",search
-                print "WAITING 15 MINUTES"
-                time.sleep(900)
+                print "WAITING 900 seconds"
+
+                for i in xrange(900,0,-1):
+                        time.sleep(1)
+                        print "Time Left: ",i
                 print "Waking up.."
                 print ""
+                print
+                print "****************************************"
+                print "****************************************"
+                print "=="
+                print "Reseting apicall"
+                apicall = 0
+                try:
+                        print "Search Calls left :",twitter.get_application_rate_limit_status()
+                except:
+                        print "Error mostly timeout"
+                print 
 
-                print
-                print "****************************************"
-                print "****************************************"
-                print
+
 
 
 #Some Code
