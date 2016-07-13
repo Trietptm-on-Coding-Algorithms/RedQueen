@@ -505,18 +505,12 @@ def searchTst(word):
 	try:
         	rate = twitter.get_application_rate_limit_status()
         	search = rate['resources']['search']['/search/tweets']['remaining']
-	except :
-                                        print
-                                        print "Error Sorry Retrying "
-                                        print
-					try:
-						                rate = twitter.get_application_rate_limit_status()
-						                search = rate['resources']['search']['/search/tweets']['remaining']
-					except:
-			                                print
-                        		                print "Error Sorry trying next one "
-                                  		        print
-
+	except:
+		print
+		print "Error but keeping going"
+		print
+        rate = twitter.get_application_rate_limit_status()
+        search = rate['resources']['search']['/search/tweets']['remaining']
 
 	if search != ["1"]:
 
