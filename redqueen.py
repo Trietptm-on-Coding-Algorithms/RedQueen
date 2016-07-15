@@ -2,16 +2,23 @@
 import time
 import random
 import sys
+import os
+import datetime
 from twython import Twython, TwythonError
 from TwitterApiKeys import app_key, app_secret, oauth_token, oauth_token_secret
 from operator import itemgetter
+
 
 #Some Vars
 
 twitter = Twython(app_key, app_secret, oauth_token, oauth_token_secret)
 
-#Keywords = ["zombie host","Zeroize","worm","wlan","Wireless Local Area Network","Wireless Application Protocol","Wireless Access Point","wep","Wired Equivalent Privacy","Wi-Fi Protected Access 2","Web Bug","Vulnerability Analysis","virtual private network","Virtual Machine","Unsigned data","Unauthorized access","Unauthorized Disclosure","Tunneling","revoked certificate","untrusted Certificate","Trusted Certificate","Trojan Horse","Transport Layer Security","Triple DES","Traffic Flow Security","traffic padding","Traffic Encryption Key","security traffic Analysis","Tracking Cookie","tampered data","Tampering","Tailored Security","System Integrity","System Administrator","Symmetric Key","Surrogate Access","supply chain attack","Striped Core","Steganography","Spyware","Spam Filtering","spam","Smart Card","Skimming","single Hop Problem","signed Data","Signature Certificate","data Sensitivity","Security Testing","Security Mechanism","security kernel","security Fault Analysis","reverse Engineering","Security Engineering","Security Banner","ssl","Secure Socket Layer","sha","Secure Hash Algorithm","SECDNS","Scatternet","Scanning","SCADA","Sandboxing","Rootkit","Root Certification","Root access","rogue device","robust security network","risk monitoring","risk mitigation","Rijndael","restricted data","reserve keying","repository","replay attacks","write access","Read Access","Random bit Generator","Random Number Generator","RFID vulnerability","RFID flaw","Radio Frequency Identification","public key","private key","pseudorandom","Proxy Agent","tor","vpn open source","free vpn","proxy list","proxychain","Proxy","Protocol Entity","Protected Distribution System","promiscuous mode","probing","privilege management","api key","private key","Privacy System","port scanning","bluetooth vulnerability","bluetooth flaw","piconet","personal identification number","Payload","password list","password cracking","passive wiretapping","passive security testing","passive attack","packet filter","wifi flaw","open source","online attack","network weaving","penetration technique","sniffing","network address translation ","network access control","multi hop","byod","minimalist cryptography","mimicking","MIME","multipurpose internet mail extensions","message digest","Cryptosystem","Mandatory Access Control","MitM","malicious logic","malicious code","malicious applets","magnetic remanence","data intercept","probability of Detection","logic bomb","local access","link encryption","keystroke monitoring","key production key","key logger","key escrow","Kerberos","jamming","security architecture","ipsec","intrusion detection systems","system intrusion","ipv6","ipv4","internet protocol","integrity check","incident handling","imitative communications deception","ip spoofing","identity binding","artificial intelligence","ai","ia","handshaking","handshaking procedures","guessing entropy","gray box testing","disk encryption","frequency hopping","forward cipher","Flooding","Firmware","firewall","file encryption","false positive","extranet","exploit code","error detection code","ephemeral key","risk management","end to end security","end to end encryption","encryption","encrypted network","encrypt","infosec","encode","encipher","embedded crypto","electronic signature","egress filtering","eavesdropping","dual use certificate","dmz","demilitarized zone","decrypt","decipher","rot13","data security","data integrity","data flow control","data encryption standard","data encryption algorithm","data aggregation","defcon","cyber attack","cyber incident","cryptology","hash function","cryptographic","cryptanalysis","cross certificate","critical security","credential","cover coding","authentication code","key generation","network exploitation","network attack","computer incident response","COMSEC","CVS","common vulnerabilities","internet of things","misonfiguration ","collision hash","code book","cloud computing","clear text","Xor","checksum","bulk encryption","brute force","block cipher","data leak","users data","black box testing","bit error","biometric","debugger","banner grabbing","backtracking","backdoor","hexadecimal","security monitoring","authentication token","authentication protocol","audit","attack signature","magic number","asymmetric","antispyware","anti spoof","anti jam","anonymous","advanced persistent threats","advanced key processor","advanced encryption standard","admin account","add-on security","ad hoc network","activation data","access point","bypass login","cryptography","phishing","honeypot","hacking","ddos","malware","rfid","hash","SocialEngineering","0day","cross site scripting","cyber security","security vulnerability","forensic","blind sql injection","local file inclusion","privilege escalation","fork bomb","request forgery","metasploit","password","sql injection","privilege elevation","vulnerability","xss","penetration testing","header injection","pentest","man in the middle","man in the browser","remote access","java security","buffer overflow","keylog","session fixation","security flaw","remote exploit","wpa2","ransomware","trojan","botnet","snowden","nsa","blackhat","whitehat","hacktivist","Access Authority"]
-Keywords = ["web vulnerability","flaw flash player","hacktivist"]
+Keywords = ["zombie host","Zeroize","worm","wlan","Wireless Local Area Network","Wireless Application Protocol","Wireless Access Point","wep","Wired Equivalent Privacy","Wi-Fi Protected Access 2","Web Bug","Vulnerability Analysis","virtual private network","Virtual Machine","Unsigned data","Unauthorized access","Unauthorized Disclosure","Tunneling","revoked certificate","untrusted Certificate","Trusted Certificate","Trojan Horse","Transport Layer Security","Triple DES","Traffic Flow Security","traffic padding","Traffic Encryption Key","security traffic Analysis","Tracking Cookie","tampered data","Tampering","Tailored Security","System Integrity","System Administrator","Symmetric Key","Surrogate Access","supply chain attack","Striped Core","Steganography","Spyware","Spam Filtering","spam","Smart Card","Skimming","single Hop Problem","signed Data","Signature Certificate","data Sensitivity","Security Testing","Security Mechanism","security kernel","security Fault Analysis","reverse Engineering","Security Engineering","Security Banner","ssl","Secure Socket Layer","sha","Secure Hash Algorithm","SECDNS","Scatternet","Scanning","SCADA","Sandboxing","Rootkit","Root Certification","Root access","rogue device","robust security network","risk monitoring","risk mitigation","Rijndael","restricted data","reserve keying","repository","replay attacks","write access","Read Access","Random bit Generator","Random Number Generator","RFID vulnerability","RFID flaw","Radio Frequency Identification","public key","private key","pseudorandom","Proxy Agent","tor","vpn open source","free vpn","proxy list","proxychain","Proxy","Protocol Entity","Protected Distribution System","promiscuous mode","probing","privilege management","api key","private key","Privacy System","port scanning","bluetooth vulnerability","bluetooth flaw","piconet","personal identification number","Payload","password list","password cracking","passive wiretapping","passive security testing","passive attack","packet filter","wifi flaw","open source","online attack","network weaving","penetration technique","sniffing","network address translation ","network access control","multi hop","byod","minimalist cryptography","mimicking","MIME","multipurpose internet mail extensions","message digest","Cryptosystem","Mandatory Access Control","MitM","malicious logic","malicious code","malicious applets","magnetic remanence","data intercept","probability of Detection","logic bomb","local access","link encryption","keystroke monitoring","key production key","key logger","key escrow","Kerberos","jamming","security architecture","ipsec","intrusion detection systems","system intrusion","ipv6","ipv4","internet protocol","integrity check","incident handling","imitative communications deception","ip spoofing","identity binding","artificial intelligence","ai","ia","handshaking","handshaking procedures","guessing entropy","gray box testing","disk encryption","frequency hopping","forward cipher","Flooding","Firmware","firewall","file encryption","false positive","extranet","exploit code","error detection code","ephemeral key","risk management","end to end security","end to end encryption","encryption","encrypted network","encrypt","infosec","encode","encipher","embedded crypto","electronic signature","egress filtering","eavesdropping","dual use certificate","dmz","demilitarized zone","decrypt","decipher","rot13","data security","data integrity","data flow control","data encryption standard","data encryption algorithm","data aggregation","defcon","cyber attack","cyber incident","cryptology","hash function","cryptographic","cryptanalysis","cross certificate","critical security","credential","cover coding","authentication code","key generation","network exploitation","network attack","computer incident response","COMSEC","CVS","common vulnerabilities","internet of things","misonfiguration ","collision hash","code book","cloud computing","clear text","Xor","checksum","bulk encryption","brute force","block cipher","data leak","users data","black box testing","bit error","biometric","debugger","banner grabbing","backtracking","backdoor","hexadecimal","security monitoring","authentication token","authentication protocol","audit","attack signature","magic number","asymmetric","antispyware","anti spoof","anti jam","anonymous","advanced persistent threats","advanced key processor","advanced encryption standard","admin account","add-on security","ad hoc network","activation data","access point","bypass login","cryptography","phishing","honeypot","hacking","ddos","malware","rfid","hash","SocialEngineering","0day","cross site scripting","cyber security","security vulnerability","forensic","blind sql injection","local file inclusion","privilege escalation","fork bomb","request forgery","metasploit","password","sql injection","privilege elevation","vulnerability","xss","penetration testing","header injection","pentest","man in the middle","man in the browser","remote access","java security","buffer overflow","keylog","session fixation","security flaw","remote exploit","wpa2","ransomware","trojan","botnet","snowden","nsa","blackhat","whitehat","hacktivist","Access Authority"]
+#Keywords = ["mafiaboy","th3 j3st3r","darkweb"]
+day = datetime.date.today()
+path = "./Tmp/"
+TmpDay = str(path) + "total-" + str(day)
+TmpDay2 = str(path) + "update-" + str(day)
 
 random.shuffle(Keywords)
 
@@ -32,6 +39,62 @@ retweetlist = []
 QueueList = []
 
 #Some Defs
+
+def SaveTotalCall(call,update):
+
+		global totalcall
+		global updatecall
+		try:
+			file = open(TmpDay,"r+w")
+			file.close()
+		except:
+			print "=="
+			print "File does not exist (Total)"
+			print "Creating tmp file"
+			print "=="
+			file = open(TmpDay,"w")
+			file.write("0")
+			file.close()
+
+		file = open(TmpDay,"r+w")
+		lines = file.read().splitlines()
+		lenfile = len(lines)
+		lastitem = lines[lenfile -1]
+		print "=="
+		print "Last Total saved : ",lastitem
+		newitem = int(lastitem) + int(call)
+		totalcall = newitem
+		finalitem = str(newitem) + "\n"
+		print "Saving new Total : ",finalitem
+		print "=="
+		file.write(finalitem)
+		file.close()
+
+                try:
+                        file = open(TmpDay2,"r+w")
+                        file.close()
+                except:
+			print "=="
+                        print "File does not exist (Update)"
+                        print "Creating tmp file"
+			print "=="
+                        file = open(TmpDay2,"w")
+                        file.write("0")
+                        file.close()
+
+                file = open(TmpDay2,"r+w")
+                lines = file.read().splitlines()
+                lenfile = len(lines)
+                lastitem = lines[lenfile -1]
+		print "=="
+                print "Last Update Total saved : ",lastitem
+                newitem = int(lastitem) + int(update)
+                totalcall = newitem
+                finalitem = str(newitem) + "\n"
+                print "Saving new Update Total : ",finalitem
+		print "=="
+                file.write(finalitem)
+                file.close()
 
 
 def Retweet():
@@ -87,6 +150,7 @@ def Retweet():
 							print e
 							if "Twitter API returned a 403 (Forbidden), User is over daily status update limit." in e:
 									print "Oups ..too many requests for today"
+									SaveTotalCall(apicall,updatecall)
 									sys.exit()
 							if "Twitter API returned a 429 (Too Many Requests), Rate limit exceeded" in e:
 									apicall = 180
@@ -132,12 +196,11 @@ def limits():
 		print "API RATE LIMITS ALMOST REACHED "
 		print ""
 		print "Login out"
-		twitter.disconnect()
 		print "WAITING 900 seconds"
 		
 		for i in xrange(900,0,-1):
     			time.sleep(1)
-			sys.stdout.write("Time Left : " + i + " Seconds" + "\r")
+			sys.stdout.write("Time Left : " + str(i) + " Seconds" + "\r")
 			sys.stdout.flush()
 
 		print "Waking up.."
@@ -147,15 +210,10 @@ def limits():
                 print "****************************************"
                 print "****************************************"
                 print "=="
+		print "Saving Total Calls to file"
+		SaveTotalCall(apicall,updatecall)
 		print "Reseting apicall"
-		totalcall = totalcall + apicall
 		apicall = 0
-		try:
-			print "Search Calls left :",twitter.get_application_rate_limit_status()
-			apicall = apicall + 1
-		except:
-			print "Error mostly timeout"
-			apicall = apicall +1
 		print 
 		return apicall
 
