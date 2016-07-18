@@ -205,6 +205,7 @@ def limits():
 
 	global apicall
 	global updatecall
+	global totalupdatecall
 	global totalcall
 	global twitter
 
@@ -236,7 +237,7 @@ def limits():
                 print "Saving Total Calls to file"
                 SaveTotalCall(apicall,updatecall)
                 print "Reseting current apicalls"
-		uploadcall = 0
+		updatecall = 0
                 apicall = 0
 
 		print "Login out"
