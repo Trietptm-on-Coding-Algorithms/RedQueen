@@ -141,7 +141,7 @@ def Retweet():
 		print "=="
 		print "I Think i m able to retweet %d items in list ." %nbrRtwt
 		print
-		time.seep(1)
+		time.sleep(1)
 
 		if nbrRtwt == 0:
 			print "Cant retweet anything update limit has been reached .."
