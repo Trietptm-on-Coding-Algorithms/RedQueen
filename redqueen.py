@@ -102,8 +102,8 @@ def SaveTotalCall(call,update):
                 finalitem2 = str(newitem2) + "\n"
                 print "Saving new Update Total : ",finalitem2
 		print "=="
-                file.write(finalitem2)
-                file.close()
+                file2.write(finalitem2)
+                file2.close()
                 print "===================Done Saving Calls==================="
                 print
                 print
