@@ -53,6 +53,8 @@ def SaveTotalCall(call,update):
 
 		global totalcall
 		global updatecall
+		global totalupdatecall
+
 		try:
 			file = open(TmpDay,"r+w")
 			file.close()
