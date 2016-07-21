@@ -13,12 +13,13 @@ from operator import itemgetter
 
 twitter = Twython(app_key, app_secret, oauth_token, oauth_token_secret)
 
-Keywords = ["darkweb",".onion","wikileaks","wlan","Wireless Local Area Network","wardriving","Wireless Access Point","wep","cyber security","Wpa2","blackhat","Shellcode","vpn","Virtual Machine","sandboxing","crypto currency","Full Disclosure","Tunneling","Gps spoofing","untrusted Certificate","ransomware","Trojan Horse","Transport Layer Security","Triple DES","Assembly language","Remote desktop protocole","Traffic Encryption Key","security traffic Analysis","Tracking Cookie","tampered data","bluetooth flaw","data breach","script kiddie","brute force","Symmetric Key","Surrogate Access","Raspberry pi","Arduino","Steganography","Spyware","mail bombing","jailbreak","YesCard","Skimming","Phreaking","cracking","malloc","data Sensitivity","Python exploit","Ruby Exploit","security kernel","C++ exploit","reverse Engineering","Security Engineering","Perl Exploit","ssl","hacking tool","php vulnerability","Secure Hash Algorithm","DNS","Scatternet","Cult of the dead cow","javascript exploit","Sandboxing","Rootkit","Bash script","windbg","rogue device","ollydbg","winsdam","ip spoofing","Rijndael","apache vulnerability","darkdao","repository","shodan","scammers","critical vulnerability","code injection","Icedbg","RFID vulnerability","RFID flaw","Radio Frequency Identification","Gbd ida","private key","pseudorandom","Proxy Agent","tor network","vpn open source","memory corruption","proxy list","proxychain","data execution prevention","heap exploitation","bypass stack cookies","Fuzzing","integer overflow","hackathon","api key","1337","Social-Engeneering Toolkit","port scanner","bluetooth vulnerability","bluetooth flaw","nmap","mass port scanning","Payload","Framework","port knocking","wireless attack","log files","router vulnerability","packet sniffer","phpmyadmin vulnerability","open source","phbb vulnerability","password attack","penetration technique","browser exploit","warberrypi ","wordpress exploit","binary memory","byod","router exploit","mimicking","Windows stack overflow","shell exploit","message digest","Cryptosystem","reverse shell","MitM","hardware backdoor","malicious code","lfi exploit","magnetic remanence","data intercept","ip cam flaw","meterpreter","system level exploration","pastejacking","network takeover","Sphearphishing","key logger","key escrow","Kerberos","flood attack","injection fuzzer","ipsec","evading ids","system intrusion","ipv6","ipv4","Fake update","packet injection","bruteforcer xss","android vulnerability","linux vulnerability","ios vulnerability","artificial intelligence","windows vulnerability","magstripe spoofer","handshake protocole","audit tool","armitage","grey box testing","disk encryption","frequency hopping","forward cipher","subdomain enumeration","Firefox vulnerability","bypass firewall","file encryption","ssl tls interception","extranet","domaine name permutation","ftp vulnerability","fingerprint tool","rssi","visual analysis tool","end to end encryption","robots.txt","encrypted network","tinfoleak","infosec","encoding","voip vulnerability","embedded crypto","electronic signature","egress filtering","eavesdropping","dual use certificate","dmz","wireless scanner","decrypt","decipher","wireless audit","data security","data integrity","network mapper","data encryption standard","data encryption algorithm","incident response tool","defcon","cyber attack","web spider","cryptology","hash function","cryptographic","cryptanalysis","command injection","compression side-channel","credential","cover coding","xss spider","key generation","network exploitation","network attack","local pentest","COMSEC","CVS","common vulnerabilities","internet of things","misconfiguration","collision hash","internet of shit","cloud computing","clear text","Xor","checksum","bulk encryption","joomla vulnerability","sqli","data leak","users passwords","blackbox pentest","quantic computer","Critical patch","playstation jailbreak","banner grabbing","xbox jailbreak","backdoor infosec","hexadecimal","privacy windows","authentication token","authentication protocol","audit framework","open source security tool","magic number signature","BSides","antispyware","ip spoofing detection","QR code infosec","anonymous","advanced persistent threats","pirate bay","advanced encryption standard","admin account","add-on security","ad hoc network","hacked site","defaced","bypass login","cryptography","phishing infosec","honeypot","hacking","ddos","malware","rfid","patch flaw","SocialEngineering","0day","cross site scripting","cyber security","install backdoor","forensic","blind sql injection","local file inclusion","privilege escalation","hacker attack","request forgery","metasploit","password","sql injection","privilege elevation","drupal vulnerability","chinese hacker","penetration testing","header injection","pentest","man in the middle","man in the browser","remote access","java security","buffer overflow","keylog","nuke script","russian hacker","remote exploit","israel hack","ransomware","trojan","botnet","snowden","nsa","blackhat","whitehat","hacktivist","printer exploit"]
+Keywords = ["kevin mitnick","csrf exploit","session splicing","darkweb",".onion","wikileaks","wlan","Wireless Local Area Network","wardriving","Wireless Access Point","wep","cyber security","Wpa2","blackhat","Shellcode","vpn","Virtual Machine","sandboxing","crypto currency","Full Disclosure","Tunneling","Gps spoofing","untrusted Certificate","ransomware","Trojan Horse","Transport Layer Security","Triple DES","Assembly language","Remote desktop protocole","Traffic Encryption Key","security traffic Analysis","Tracking Cookie","tampered data","bluetooth flaw","data breach","script kiddie","brute force","Symmetric Key","Surrogate Access","Raspberry pi","Arduino","Steganography","Spyware","mail bombing","jailbreak","YesCard","Skimming","Phreaking","cracking","malloc","data Sensitivity","Python exploit","Ruby Exploit","security kernel","C++ exploit","reverse Engineering","Security Engineering","Perl Exploit","ssl","hacking tool","php vulnerability","Secure Hash Algorithm","DNS","Scatternet","Cult of the dead cow","javascript exploit","Sandboxing","Rootkit","Bash script","windbg","rogue device","ollydbg","winsdam","ip spoofing","Rijndael","apache vulnerability","darkdao","repository","shodan","scammers","critical vulnerability","code injection","Icedbg","RFID vulnerability","RFID flaw","Radio Frequency Identification","Gbd ida","private key","pseudorandom","Proxy Agent","tor network","vpn open source","memory corruption","proxy list","proxychain","data execution prevention","heap exploitation","bypass stack cookies","Fuzzing","integer overflow","hackathon","api key","1337","Social-Engeneering Toolkit","port scanner","bluetooth vulnerability","bluetooth flaw","nmap","mass port scanning","Payload","Framework","port knocking","wireless attack","log files","router vulnerability","packet sniffer","phpmyadmin vulnerability","open source","phbb vulnerability","password attack","penetration technique","browser exploit","warberrypi ","wordpress exploit","binary memory","byod","router exploit","mimicking","Windows stack overflow","shell exploit","message digest","Cryptosystem","reverse shell","MitM","hardware backdoor","malicious code","lfi exploit","magnetic remanence","data intercept","ip cam flaw","meterpreter","system level exploration","pastejacking","network takeover","Sphearphishing","key logger","key escrow","Kerberos","flood attack","injection fuzzer","ipsec","evading ids","system intrusion","ipv6","ipv4","Fake update","packet injection","bruteforcer xss","android vulnerability","linux vulnerability","ios vulnerability","artificial intelligence","windows vulnerability","magstripe spoofer","handshake protocole","audit tool","armitage","grey box testing","disk encryption","frequency hopping","forward cipher","subdomain enumeration","Firefox vulnerability","bypass firewall","file encryption","ssl tls interception","extranet","domaine name permutation","ftp vulnerability","fingerprint tool","rssi","visual analysis tool","end to end encryption","robots.txt","encrypted network","tinfoleak","infosec","encoding","voip vulnerability","embedded crypto","electronic signature","egress filtering","eavesdropping","dual use certificate","dmz","wireless scanner","decrypt","decipher","wireless audit","data security","data integrity","network mapper","data encryption standard","data encryption algorithm","incident response tool","defcon","cyber attack","web spider","cryptology","hash function","cryptographic","cryptanalysis","command injection","compression side-channel","credential","cover coding","xss spider","key generation","network exploitation","network attack","local pentest","COMSEC","CVS","common vulnerabilities","internet of things","misconfiguration","collision hash","internet of shit","cloud computing","clear text","Xor","checksum","bulk encryption","joomla vulnerability","sqli","data leak","users passwords","blackbox pentest","quantic computer","Critical patch","playstation jailbreak","banner grabbing","xbox jailbreak","backdoor infosec","hexadecimal","privacy windows","authentication token","authentication protocol","audit framework","open source security tool","magic number signature","BSides","antispyware","ip spoofing detection","QR code infosec","anonymous","advanced persistent threats","pirate bay","advanced encryption standard","admin account","add-on security","ad hoc network","hacked site","defaced","bypass login","cryptography","phishing infosec","honeypot","hacking","ddos","malware","rfid","patch flaw","SocialEngineering","0day","cross site scripting","cyber security","install backdoor","forensic","blind sql injection","local file inclusion","privilege escalation","hacker attack","request forgery","metasploit","password","sql injection","privilege elevation","drupal vulnerability","chinese hacker","penetration testing","header injection","pentest","man in the middle","man in the browser","remote access","java security","buffer overflow","keylog","nuke script","russian hacker","remote exploit","israel hack","ransomware","trojan","botnet","snowden","nsa","blackhat","whitehat","hacktivist","printer exploit"]
 #Keywords = ["mafiaboy","th3 j3st3r","darkweb"]
 day = datetime.date.today()
 path = "./Tmp/"
 TmpDay = str(path) + "total-" + str(day)
 TmpDay2 = str(path) + "update-" + str(day)
+TmpMeal = str(path) + "meal-" + str(day)
 
 random.shuffle(Keywords)
 
@@ -36,11 +37,60 @@ totalupdatecall = 0
 
 allok = 0
 
+checkM = 0
+
 retweetlist = []
+
+newkeywords = []
 
 QueueList = []
 
 #Some Defs
+
+def checkmenu(wordlist):
+
+
+	try:
+		global newkeywords
+		global checkM
+
+		file = open(TmpMeal,"r")
+                lines = file.read().splitlines()
+		newkeywords = list(set(wordlist) - set(lines))
+		file.close()
+		print
+		print "=="
+		print "Search terms already used removed successfully"
+		print "=="
+		checkM = 1
+	except:
+		print "=="
+		print "No previous searchs found for today"
+		print "=="
+
+
+def lastmeal(lastsearch):
+
+
+                try:
+                        file = open(TmpMeal,"r+w")
+                        file.close()
+                except:
+                        print "=="
+                        print "File does not exist (Last Search Terms)"
+                        print "Creating tmp file"
+                        print "=="
+                        file = open(TmpMeal,"w")
+                        file.write("")
+                        file.close()
+
+                file = open(TmpMeal,"r+w")
+		for words in lastsearch:
+			file.write(words + "/n")
+			print "Saving " + words + " as already processed . "
+		file.close()
+
+
 
 def SaveTotalCall(call,update):
                 print
@@ -144,9 +194,9 @@ def Retweet():
 		time.sleep(1)
 
 		if nbrRtwt == 0:
-			print "Cant retweet anything update limit has been reached .."
-			print "See you next time"
-			sys.exit()
+			print "Cant retweet all of them .."
+			print "Expecting Rate limit error from twitter ."
+#			sys.exit()
 
 		if nbrRtwt > len(QueueList):
 			nbrRtwt = len(QueueList)
@@ -232,7 +282,7 @@ def limits():
 		print "****************************************"
 		print "****************************************"
 		print
-		print "API RATE LIMITS ALMOST REACHED "
+		print "CURRENT API RATE LIMITS ALMOST REACHED "
 		print ""
                 print "Saving Total Calls to file"
                 SaveTotalCall(apicall,updatecall)
@@ -313,7 +363,13 @@ def limits():
 
 def Scoring(tweet,search):
 
+	global apicall
+	global totalcall
+	global updatecall
+	global totalupdatecall
+
 	Score = 0
+
 	print
         print "*************************************************************************************" 
 	print "============================Starting Scoring function================================"
@@ -323,160 +379,91 @@ def Scoring(tweet,search):
 		
 			print "This tweet has been retweeted %i times " % tweet['retweet_count']
 			Score = Score + 1
-			
-			
 			if tweet['retweet_count'] > 4 and tweet['retweet_count'] < 10:
 				Score  = Score + 3
-                        	
-
                         if tweet['retweet_count'] > 10 and tweet['retweet_count'] < 20:
                                 Score  = Score + 4
-                                
-
                         if tweet['retweet_count'] > 20 and tweet['retweet_count'] < 30:
                                 Score  = Score + 6
-                                
-
                         if tweet['retweet_count'] > 30 and tweet['retweet_count'] < 40:
                                 Score  = Score + 8
-                                
-
                         if tweet['retweet_count'] > 40 and tweet['retweet_count'] < 50:
                                 Score  = Score + 10
-                                
-
                         if tweet['retweet_count'] > 50 and tweet['retweet_count'] < 60:
                                 Score  = Score + 11
-                                
-
                         if tweet['retweet_count'] > 60 and tweet['retweet_count'] < 70:
                                 Score  = Score + 12
-                                
-
                         if tweet['retweet_count'] > 70 and tweet['retweet_count'] < 80:
                                 Score  = Score + 13
-                                
-
                         if tweet['retweet_count'] > 80 and tweet['retweet_count'] < 90:
                                 Score  = Score + 14
-                                
-
                         if tweet['retweet_count'] > 90 and tweet['retweet_count'] < 100:
                                 Score  = Score + 15
-                                
-
                         if tweet['retweet_count'] > 100 and tweet['retweet_count'] < 150:
                                 Score  = Score + 16
-                                
-
                         if tweet['retweet_count'] > 150 and tweet['retweet_count'] < 200:
                                 Score  = Score + 17
-                                
-
                         if tweet['retweet_count'] > 200 and tweet['retweet_count'] < 250:
                                 Score  = Score + 18
-                                
-
                         if tweet['retweet_count'] > 250 and tweet['retweet_count'] < 300:
                                 Score  = Score + 19
-                                
-
                         if tweet['retweet_count'] > 300 and tweet['retweet_count'] < 350:
                                 Score  = Score + 20
-                                
-
                         if tweet['retweet_count'] > 350 and tweet['retweet_count'] < 400:
                                 Score  = Score + 21
-                                
-
                         if tweet['retweet_count'] > 300 and tweet['retweet_count'] < 350:
                                 Score  = Score + 22
-                                
-
                         if tweet['retweet_count'] > 350 and tweet['retweet_count'] < 400:
                                 Score  = Score + 23
-                                
-
                         if tweet['retweet_count'] > 400 and tweet['retweet_count'] < 450:
                                 Score  = Score + 24
-                                
-
                         if tweet['retweet_count'] > 450 and tweet['retweet_count'] < 500:
                                 Score  = Score + 25
-                                
-
                         if tweet['retweet_count'] > 500 and tweet['retweet_count'] < 550:
                                 Score  = Score + 26
-                                
-
                         if tweet['retweet_count'] > 600 and tweet['retweet_count'] < 650:
                                 Score  = Score + 27
-                                
-
                         if tweet['retweet_count'] > 700 and tweet['retweet_count'] < 750:
                                 Score  = Score + 28
-                                
-
                         if tweet['retweet_count'] > 750 and tweet['retweet_count'] < 800:
                                 Score  = Score + 29
-                                
-
                         if tweet['retweet_count'] > 850 and tweet['retweet_count'] < 900:
                                 Score  = Score + 30
-                                
-
                         if tweet['retweet_count'] > 900 and tweet['retweet_count'] < 950:
                                 Score  = Score + 31
-                                
-
                         if tweet['retweet_count'] > 950 and tweet['retweet_count'] < 1000:
                                 Score  = Score + 32
-                                
-
                         if tweet['retweet_count'] > 1000 and tweet['retweet_count'] < 1500:
                                 Score  = Score + 33
-                                
-
                         if tweet['retweet_count'] > 1500 and tweet['retweet_count'] < 2000:
                                 Score  = Score + 34
-                                
-
                         if tweet['retweet_count'] > 2000 :
-                                Score  = Score + 35
-                                
+                                Score  = Score + 35 
 
 
 
 
 
         if 'entities' in tweet:
-			
 		print
 
 
 		if 'urls' in tweet['entities'] and len(tweet['entities']['urls']) > 0:
 			print "This tweet contains a link : ",tweet['entities']['urls'][-1]['expanded_url']
 			Score = Score + 1
-                        
-
-
                 if 'hashtags' in tweet['entities'] and len(tweet['entities']['hashtags']) > 0:
                         print "This tweet contains Hashtag : ",tweet['entities']['hashtags'][-1]['text']
                         Score = Score + 1
-                        
 
 
                 if 'media' in tweet['entities'] and len(tweet['entities']['media']) > 0:
                         print "This tweet contains Media : ",tweet['entities']['media'][-1]['media_url']
                         Score = Score + 1
-                        
 
                 if tweet['favorite_count'] > 0:
 
                         print "This tweet has been fav : ",tweet['favorite_count']
 			Score = Score + 1
-			
-
 			fav = tweet['favorite_count']
 			if fav > 10 and fav < 20:
                         	Score = Score + 1
@@ -528,8 +515,6 @@ def Scoring(tweet,search):
 
 
 
-                        
-
 
 
                 if 'followers_count' in tweet['user'] and tweet['user']['followers_count'] > 0:
@@ -537,93 +522,50 @@ def Scoring(tweet,search):
 
                         if tweet['user']['followers_count'] > 100 and tweet['user']['followers_count'] < 200:
                                 Score  = Score + 1
-                                
-
                         if tweet['user']['followers_count'] > 200 and tweet['user']['followers_count'] < 300:
                                 Score  = Score + 2
-                                
-
                         if tweet['user']['followers_count'] > 300 and tweet['user']['followers_count'] < 400:
                                 Score  = Score + 3
-                                
-
                         if tweet['user']['followers_count'] > 400  and tweet['user']['followers_count'] < 500:
                                 Score  = Score + 4
-                                
-
                         if tweet['user']['followers_count'] > 500 and tweet['user']['followers_count'] < 600:
                                 Score  = Score + 5
-                                
-
                         if tweet['user']['followers_count'] > 600 and tweet['user']['followers_count'] < 700:
                                 Score  = Score + 6
-                                
                         if tweet['user']['followers_count'] > 700 and tweet['user']['followers_count'] < 800:
                                 Score  = Score + 7
-                                
-
                         if tweet['user']['followers_count'] > 800 and tweet['user']['followers_count'] < 900:
                                 Score  = Score + 8
-                                
-
                         if tweet['user']['followers_count'] > 900 and tweet['user']['followers_count'] < 1000:
                                 Score  = Score + 9
-                                
-
                         if tweet['user']['followers_count'] > 1000 and tweet['user']['followers_count'] < 1500:
                                 Score  = Score + 10
-                                
-
                         if tweet['user']['followers_count'] > 1500 and tweet['user']['followers_count'] < 2000:
                                 Score  = Score + 11
-                                
-
                         if tweet['user']['followers_count'] > 2000 and tweet['user']['followers_count'] < 2500:
                                 Score  = Score + 12
-                                
-
                         if tweet['user']['followers_count'] > 2500 and tweet['user']['followers_count'] < 3000:
                                 Score  = Score + 13
-                                
                         if tweet['user']['followers_count'] > 3000 and tweet['user']['followers_count'] < 3500:
                                 Score  = Score + 14
-                                
-
                         if tweet['user']['followers_count'] > 3500 and tweet['user']['followers_count'] < 4000:
                                 Score  = Score + 15
-                                
-
                         if tweet['user']['followers_count'] > 4000 and tweet['user']['followers_count'] < 4500:
                                 Score  = Score + 16
-                                
-
                         if tweet['user']['followers_count'] > 4500 and tweet['user']['followers_count'] < 5000:
                                 Score  = Score + 17
-                                
-
                         if tweet['user']['followers_count'] > 5000 and tweet['user']['followers_count'] < 6000:
                                 Score  = Score + 18
-                                
-
                         if tweet['user']['followers_count'] > 6000 and tweet['user']['followers_count'] < 7000:
                                 Score  = Score + 19
-                                
-
                         if tweet['user']['followers_count'] > 7000 and tweet['user']['followers_count'] < 8000:
                                 Score  = Score + 20
-                                
-
                         if tweet['user']['followers_count'] > 8000 and tweet['user']['followers_count'] < 9000:
                                 Score  = Score + 21
-                                
-
                         if tweet['user']['followers_count'] > 9000 and tweet['user']['followers_count'] < 10000:
                                 Score  = Score + 22
-                                
-
                         if tweet['user']['followers_count'] > 10000:
                                 Score  = Score + 23
-                                
 
 
 
@@ -631,7 +573,6 @@ def Scoring(tweet,search):
                 if 'verified' in tweet['entities'] and len(tweet['entities']['verified']) == "True":
                         print "This tweet has been sent by a verified user : ",tweet['entities']['verified']
                         Score = Score + 15
-                        
 
 
                 if 'screen_name' in tweet['user'] :
@@ -643,17 +584,14 @@ def Scoring(tweet,search):
 
 	                        print "This tweet is from a known user : ",tweet['user']['screen_name']
         	                Score = Score + 15
-                	        
 
 			if coop in Friends:
-			
+
 				print "This tweet is from a friend : ",tweet['user']['screen_name']
 				Score = Score + 15
-                                
-
 	if tweet['lang'] == "en" or tweet['lang'] == "fr" or tweet['lang'] == "en-gb":
 
-			if Score > 5 :
+			if Score > 10 :
 				print "######################################"
 				print "Adding to Retweet List"
 				print
@@ -715,7 +653,7 @@ def searchTst(word):
 	        print "Starting search function"
 		limits()
 		try:
-	        	searchresults = twitter.search(q=word, count = 10)
+	        	searchresults = twitter.search(q=word, count = 20)
 			print "##########################################"
 			print "Results found "
 			print ""
@@ -730,8 +668,8 @@ def searchTst(word):
 	
 		try:
 			print ""
-			print "Je viens de d'envoyer la liste de tweets pour " ,word
-			twitter.send_direct_message(user_id="292453904", text="Je viens d'envoyer la liste de tweets pour " + str(word))
+			print "Chargement des tweets pour " ,word
+			twitter.send_direct_message(user_id="292453904", text="Je viens de charger les tweets pour " + str(word))
 			print ""
 			print "Done"
 			time.sleep(1)
@@ -760,9 +698,19 @@ def searchTst(word):
 	        print
 	        print
 
-	        for item in searchresults["statuses"]:
+		if len(searchresults["statuses"]) > 1 :
+
+		        for item in searchresults["statuses"]:
 	
-			Scoring(item,search)
+				Scoring(item,search)
+		else:
+			print
+			print
+			print
+			print "Sorry not enough results for : ",word
+			print
+			print
+			print
 	else:
                 print
 		apicall = 180
@@ -774,8 +722,34 @@ def searchTst(word):
 
 print "Calling Search function"
 
-for key in Keywords:
+Minwords = len(Keywords)/10
+Maxwords = len(Keywords)/5
+rndwords = random.randint(Minwords,Maxwords)
+
+print
+print "**"
+print "Today's Menu :"
+print
+print Keywords[:rndwords]
+print
+print "Total search terms : ",rndwords
+print
+print "**"
+print
+
+time.sleep(5)
+print
+print "=Check menu function started="
+
+checkmenu(Keywords)
+
+if checkM == 1:
+	Keywords = newkeywords
+	print "=Substitution done="
+
+for key in Keywords[:rndwords]:
 	searchTst(key)
+	
 
 print
 print " Done "
@@ -793,4 +767,30 @@ print
 allok = 1
 
 Retweet()
+print 
+print
+print
+print
+print
+print
+print
+print
+print
+print "Retweet function stopped"
+print
+print "Saving calls count"
+print
+SaveTotalCall(apicall,updatecall)
+print 
+print
+print
+print
+print
+print
+print
+print
+print "Saving Today's menu "
+lastmeal(Keywords[:rndwords])
+print
+print "#################################################TheEnd#############################################################"
 #################################################TheEnd#############################################################
