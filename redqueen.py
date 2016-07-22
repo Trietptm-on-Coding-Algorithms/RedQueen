@@ -244,6 +244,7 @@ def Retweet():
 							if "Twitter API returned a 403 (Forbidden), User is over daily status update limit." in e:
 									print "Oups ..too many requests for today (From Retweet function)"
 									SaveTotalCall(apicall,updatecall)
+									lastmeal(Keywords[:rndwords])
 									sys.exit()
 							if "Twitter API returned a 429 (Too Many Requests), Rate limit exceeded" in e:
 									apicall = 180
@@ -387,6 +388,7 @@ def limits():
                 print
 
                 SaveTotalCall(apicall,updatecall)
+		lastmeal(Keywords[:rndwords])
 		sys.exit()
 
 	if totalupdatecall > 2223:
@@ -407,7 +409,7 @@ def limits():
                 print
                 print
                 SaveTotalCall(apicall,updatecall)
-
+		lastmeal(Keywords[:rndwords])
  		sys.exit()
 
 #def Ban(
