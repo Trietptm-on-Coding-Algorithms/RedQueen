@@ -756,7 +756,7 @@ def searchTst(word):
 
 		limits()
 		try:
-	        	searchresults = twitter.search(q=word, count = 20)
+	        	searchresults = twitter.search(q=word, count = 200)
 			print "##########################################"
 			print "Results found "
 			print ""
@@ -875,7 +875,6 @@ if checkM == 1:
 	print "**"
 	print
 	print "=="
-	print "=Old Searchs Removed="
 	print "=New Menu for today !="
 	print "=="
 	print
