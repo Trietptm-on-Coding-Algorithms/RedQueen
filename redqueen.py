@@ -13,8 +13,7 @@ from operator import itemgetter
 
 twitter = Twython(app_key, app_secret, oauth_token, oauth_token_secret)
 
-Keywords = ["kevin mitnick","csrf exploit","session splicing","darkweb",".onion","wikileaks","wlan","Wireless Local Area Network","wardriving","Wireless Access Point","wep","cyber security","Wpa2","blackhat","Shellcode","vpn","Virtual Machine","sandboxing","crypto currency","Full Disclosure","Tunneling","Gps spoofing","untrusted Certificate","ransomware","Trojan Horse","Transport Layer Security","Triple DES","Assembly language","Remote desktop protocole","Traffic Encryption Key","security traffic Analysis","Tracking Cookie","tampered data","bluetooth flaw","data breach","script kiddie","brute force","Symmetric Key","Surrogate Access","Raspberry pi","Arduino","Steganography","Spyware","mail bombing","jailbreak","YesCard","Skimming","Phreaking","cracking","malloc","data Sensitivity","Python exploit","Ruby Exploit","security kernel","C++ exploit","reverse Engineering","Security Engineering","Perl Exploit","ssl","hacking tool","php vulnerability","Secure Hash Algorithm","DNS","Scatternet","Cult of the dead cow","javascript exploit","Sandboxing","Rootkit","Bash script","windbg","rogue device","ollydbg","winsdam","ip spoofing","Rijndael","apache vulnerability","darkdao","repository","shodan","scammers","critical vulnerability","code injection","Icedbg","RFID vulnerability","RFID flaw","Radio Frequency Identification","Gbd ida","private key","pseudorandom","Proxy Agent","tor network","vpn open source","memory corruption","proxy list","proxychain","data execution prevention","heap exploitation","bypass stack cookies","Fuzzing","integer overflow","hackathon","api key","1337","Social-Engeneering Toolkit","port scanner","bluetooth vulnerability","bluetooth flaw","nmap","mass port scanning","Payload","Framework","port knocking","wireless attack","log files","router vulnerability","packet sniffer","phpmyadmin vulnerability","open source","phbb vulnerability","password attack","penetration technique","browser exploit","warberrypi ","wordpress exploit","binary memory","byod","router exploit","mimicking","Windows stack overflow","shell exploit","message digest","Cryptosystem","reverse shell","MitM","hardware backdoor","malicious code","lfi exploit","magnetic remanence","data intercept","ip cam flaw","meterpreter","system level exploration","pastejacking","network takeover","Sphearphishing","key logger","key escrow","Kerberos","flood attack","injection fuzzer","ipsec","evading ids","system intrusion","ipv6","ipv4","Fake update","packet injection","bruteforcer xss","android vulnerability","linux vulnerability","ios vulnerability","artificial intelligence","windows vulnerability","magstripe spoofer","handshake protocole","audit tool","armitage","grey box testing","disk encryption","frequency hopping","forward cipher","subdomain enumeration","Firefox vulnerability","bypass firewall","file encryption","ssl tls interception","extranet","domaine name permutation","ftp vulnerability","fingerprint tool","rssi","visual analysis tool","end to end encryption","robots.txt","encrypted network","tinfoleak","infosec","encoding","voip vulnerability","embedded crypto","electronic signature","egress filtering","eavesdropping","dual use certificate","dmz","wireless scanner","decrypt","decipher","wireless audit","data security","data integrity","network mapper","data encryption standard","data encryption algorithm","incident response tool","defcon","cyber attack","web spider","cryptology","hash function","cryptographic","cryptanalysis","command injection","compression side-channel","credential","cover coding","xss spider","key generation","network exploitation","network attack","local pentest","COMSEC","CVS","common vulnerabilities","internet of things","misconfiguration","collision hash","internet of shit","cloud computing","clear text","Xor","checksum","bulk encryption","joomla vulnerability","sqli","data leak","users passwords","blackbox pentest","quantic computer","Critical patch","playstation jailbreak","banner grabbing","xbox jailbreak","backdoor infosec","hexadecimal","privacy windows","authentication token","authentication protocol","audit framework","open source security tool","magic number signature","BSides","antispyware","ip spoofing detection","QR code infosec","anonymous","advanced persistent threats","pirate bay","advanced encryption standard","admin account","add-on security","ad hoc network","hacked site","defaced","bypass login","cryptography","phishing infosec","honeypot","hacking","ddos","malware","rfid","patch flaw","SocialEngineering","0day","cross site scripting","cyber security","install backdoor","forensic","blind sql injection","local file inclusion","privilege escalation","hacker attack","request forgery","metasploit","password","sql injection","privilege elevation","drupal vulnerability","chinese hacker","penetration testing","header injection","pentest","man in the middle","man in the browser","remote access","java security","buffer overflow","keylog","nuke script","russian hacker","remote exploit","israel hack","ransomware","trojan","botnet","snowden","nsa","blackhat","whitehat","hacktivist","printer exploit"]
-#Keywords = ["mafiaboy","th3 j3st3r","darkweb"]
+Keywords = ["kevin mitnick","csrf exploit","session splicing","darkweb",".onion","wikileaks","wlan","Wireless Local Area Network","wardriving","Wireless Access Point","wep","cyber security","Wpa2","blackhat","Shellcode","vpn","Virtual Machine","sandboxing","crypto currency","Full Disclosure","Tunneling","Gps spoofing","untrusted Certificate","ransomware","Trojan Horse","Transport Layer Security","Triple DES","Assembly language","Remote desktop protocole","Traffic Encryption Key","security traffic Analysis","Tracking Cookie","tampered data","bluetooth flaw","data breach","script kiddie","brute force","Symmetric Key","Surrogate Access","Raspberry pi","Arduino","Steganography","Spyware","mail bombing","jailbreak","YesCard","Skimming","Phreaking","cracking","malloc","data Sensitivity","Python exploit","Ruby Exploit","security kernel","C++ exploit","reverse Engineering","Security Engineering","Perl Exploit","ssl","hacking tool","php vulnerability","Secure Hash Algorithm","DNS","Scatternet","Cult of the dead cow","javascript exploit","Sandboxing","Rootkit","Bash script","windbg","rogue device","ollydbg","winsdam","ip spoofing","Rijndael","apache vulnerability","darkdao","repository","shodan","scammers","critical vulnerability","code injection","Icedbg","RFID vulnerability","RFID flaw","Radio Frequency Identification","Gbd ida","private key","pseudorandom","Proxy Agent","tor network","vpn open source","memory corruption","proxy list","proxychain","data execution prevention","heap exploitation","bypass stack cookies","Fuzzing","integer overflow","hackathon","api key","1337","Social-Engeneering Toolkit","port scanner","bluetooth vulnerability","bluetooth flaw","nmap","mass port scanning","Payload","Framework","port knocking","wireless attack","log files","router vulnerability","packet sniffer","phpmyadmin vulnerability","open source","phbb vulnerability","password attack","penetration technique","browser exploit","warberrypi ","wordpress exploit","binary memory","byod","router exploit","mimicking","Windows stack overflow","shell exploit","message digest","Cryptosystem","reverse shell","MitM","hardware backdoor","malicious code","lfi exploit","magnetic remanence","data intercept","ip cam flaw","meterpreter","system level exploration","pastejacking","network takeover","Sphearphishing","key logger","key escrow","Kerberos","flood attack","injection fuzzer","ipsec","evading ids","system intrusion","ipv6","ipv4","Fake update","packet injection","bruteforcer xss","android vulnerability","linux vulnerability","ios vulnerability","artificial intelligence","windows vulnerability","magstripe spoofer","handshake protocole","audit tool","armitage","grey box testing","disk encryption","frequency hopping","forward cipher","subdomain enumeration","Firefox vulnerability","bypass firewall","file encryption","ssl tls interception","extranet","domaine name permutation","ftp vulnerability","fingerprint tool","rssi","visual analysis tool","end to end encryption","robots.txt","encrypted network","tinfoleak","infosec","encoding","voip vulnerability","embedded crypto","electronic signature","egress filtering","eavesdropping","dual use certificate","dmz","wireless scanner","decrypt","decipher","wireless audit","data security","data integrity","network mapper","data encryption standard","data encryption algorithm","incident response tool","defcon","cyber attack","web spider","cryptology","hash function","cryptographic","cryptanalysis","command injection","compression side-channel","credential","cover coding","xss spider","key generation","network exploitation","network attack","local pentest","COMSEC","CVS","common vulnerabilities","internet of things","misconfiguration","collision hash","internet of shit","cloud computing","clear text","Xor","checksum","bulk encryption","joomla vulnerability","sqli","data leak","users passwords","blackbox pentest","quantic computer","Critical patch","playstation jailbreak","banner grabbing","xbox jailbreak","backdoor infosec","hexadecimal","privacy windows","authentication token","authentication protocol","audit framework","open source security tool","magic number signature","BSides","antispyware","ip spoofing detection","QR code infosec","anonymous","advanced persistent threats","pirate bay","advanced encryption standard","admin account","add-on security","ad hoc network","hacked site","defaced","bypass login","cryptography","phishing infosec","honeypot","hacking","ddos","malware","rfid","patch flaw","SocialEngineering","0day","cross site scripting","cyber security","install backdoor","forensic","blind sql injection","local file inclusion","privilege escalation","hacker attack","request forgery","metasploit","password","sql injection","privilege elevation","drupal vulnerability","chinese hacker","penetration testing","header injection","pentest","man in the middle","man in the browser","remote access","java security","buffer overflow","keylog","nuke script","darknet","russian hacker","remote exploit","israel hack","ransomware","trojan","botnet","snowden","nsa","blackhat","whitehat","hacktivist","printer exploit"]
 day = datetime.date.today()
 path = "./Tmp/"
 TmpDay = str(path) + "total-" + str(day)
@@ -38,6 +37,8 @@ totalupdatecall = 0
 allok = 0
 
 checkM = 0
+
+searchlimit = 0
 
 retweetlist = []
 
@@ -87,7 +88,7 @@ def lastmeal(lastsearch):
                 file = open(TmpMeal,"r+w")
 		for words in lastsearch:
 			file.write(words + "/n")
-			print "Saving " + words + " as already processed . "
+			print "Marking " + words + " as old . "
 		file.close()
 
 
@@ -186,7 +187,7 @@ def Retweet():
 	
         	QueueList = tri
 
-		nbrRtwt = 999 - totalupdatecall
+		nbrRtwt =  2223 - int(totalupdatecall)
 		print
 		print "=="
 		print "I Think i m able to retweet %d items in list ." %nbrRtwt
@@ -195,7 +196,19 @@ def Retweet():
 
 		if nbrRtwt == 0:
 			print "Cant retweet all of them .."
-			print "Expecting Rate limit error from twitter ."
+			print "Trying to guess of many tweets can still be send ."
+			tmpcall = int(totalupdatecall)
+			mx = 2223
+			res = 0
+			guess = 0
+			while res != 1:
+				tmpcall = tmpcall - 1
+				guess = guess + 1
+				res = mx - tmpcall
+			else:
+				print "I think im able to retweet " + guess + "tweets at least ."
+				nbrRtwt = guess
+				
 #			sys.exit()
 
 		if nbrRtwt > len(QueueList):
@@ -258,6 +271,7 @@ def limits():
 	global totalupdatecall
 	global totalcall
 	global twitter
+	global searchlimit
 
 	print
 	print "==================="
@@ -270,6 +284,48 @@ def limits():
 
 	
 	print
+
+	if searchlimit == 1:
+                print
+                print
+                print
+                print
+                print
+                print
+
+                print "****************************************"
+                print "****************************************"
+                print
+                print "CURRENT SEARCH RATE LIMITS ALMOST REACHED "
+                print ""
+                print "Saving Total Calls to file"
+                SaveTotalCall(apicall,updatecall)
+                print "Reseting current apicalls"
+                updatecall = 0
+                apicall = 0
+		searchlimit = 0
+
+                print "Login out"
+                print "WAITING 900 seconds"
+
+                for i in xrange(900,0,-1):
+                        time.sleep(1)
+                        sys.stdout.write("Time Left : " + str(i) + " Seconds" + "\r")
+                        sys.stdout.flush()
+
+                print "Waking up.."
+                print ""
+                twitter = Twython(app_key, app_secret, oauth_token, oauth_token_secret)
+                print
+                print "****************************************"
+                print "****************************************"
+                print
+                print
+                print
+                print
+                print
+                print
+
 
 	if apicall >= 165:
 		print
@@ -312,7 +368,7 @@ def limits():
                 print
 
 
-	if totalcall > 2666:
+	if totalcall > 6666:
                 print
                 print
                 print
@@ -321,7 +377,7 @@ def limits():
 
                 print "****************************************"
                 print
-                print "API RATE LIMIT ALMOST REACHED FOR TODAY (Total 2666)"
+                print "API RATE LIMIT ALMOST REACHED FOR TODAY (Total 6666)"
 		print
                 print "****************************************"
                 print
@@ -333,7 +389,7 @@ def limits():
                 SaveTotalCall(apicall,updatecall)
 		sys.exit()
 
-	if totalupdatecall > 999:
+	if totalupdatecall > 2223:
 
                 print
                 print
@@ -342,7 +398,7 @@ def limits():
                 print
                 print "****************************************"
                 print
-                print "API RATE LIMIT ALMOST REACHED FOR TODAY (Update 999)"
+                print "API RATE LIMIT ALMOST REACHED FOR TODAY (Update 2223)"
                 print
                 print "****************************************"
                 print
@@ -369,15 +425,23 @@ def Scoring(tweet,search):
 	global totalupdatecall
 
 	Score = 0
-
+	print
+	print
+	print
+	print
+	print
+	print
 	print
         print "*************************************************************************************" 
 	print "============================Starting Scoring function================================"
 	print ""
 
 	if 'retweet_count' in tweet and tweet['retweet_count'] != 0:
-		
+
+			print "##"
 			print "This tweet has been retweeted %i times " % tweet['retweet_count']
+			print "##"
+
 			Score = Score + 1
 			if tweet['retweet_count'] > 4 and tweet['retweet_count'] < 10:
 				Score  = Score + 3
@@ -449,20 +513,28 @@ def Scoring(tweet,search):
 
 
 		if 'urls' in tweet['entities'] and len(tweet['entities']['urls']) > 0:
+			print "##"
 			print "This tweet contains a link : ",tweet['entities']['urls'][-1]['expanded_url']
+			print "##"
 			Score = Score + 1
                 if 'hashtags' in tweet['entities'] and len(tweet['entities']['hashtags']) > 0:
+			print "##"
                         print "This tweet contains Hashtag : ",tweet['entities']['hashtags'][-1]['text']
+			print "##"
                         Score = Score + 1
 
 
                 if 'media' in tweet['entities'] and len(tweet['entities']['media']) > 0:
+			print "##"
                         print "This tweet contains Media : ",tweet['entities']['media'][-1]['media_url']
+			print "##"
                         Score = Score + 1
 
                 if tweet['favorite_count'] > 0:
 
+			print "##"
                         print "This tweet has been fav : ",tweet['favorite_count']
+			print "##"
 			Score = Score + 1
 			fav = tweet['favorite_count']
 			if fav > 10 and fav < 20:
@@ -518,8 +590,9 @@ def Scoring(tweet,search):
 
 
                 if 'followers_count' in tweet['user'] and tweet['user']['followers_count'] > 0:
+			print "##"
                         print "Source followers count  : ",tweet['user']['followers_count']
-
+			print "##"
                         if tweet['user']['followers_count'] > 100 and tweet['user']['followers_count'] < 200:
                                 Score  = Score + 1
                         if tweet['user']['followers_count'] > 200 and tweet['user']['followers_count'] < 300:
@@ -567,28 +640,43 @@ def Scoring(tweet,search):
                         if tweet['user']['followers_count'] > 10000:
                                 Score  = Score + 23
 
+                if 'user_mentions' in tweet['entities'] and len(tweet['entities']['user_mentions']) > 0:
+                        print "##"
+                        print "This tweet is mentioning someone : ",tweet['entities']['user_mentions'][-1]['screen_name']
+                        print "##"
+                        Score = Score + 1
 
 
+
+			print 
 
                 if 'verified' in tweet['entities'] and len(tweet['entities']['verified']) == "True":
+			print "##"
                         print "This tweet has been sent by a verified user : ",tweet['entities']['verified']
+			print "##"
                         Score = Score + 15
 
 
                 if 'screen_name' in tweet['user'] :
 			coop = tweet['user']['screen_name']
 			print
+			print "##"
 			print "This tweet is from ",coop
+			print "##"
 			print
-			if coop in Following:
 
+			if coop in Following:
+				print "##"
 	                        print "This tweet is from a known user : ",tweet['user']['screen_name']
-        	                Score = Score + 15
+				print "##"
+        	                Score = Score + 23
 
 			if coop in Friends:
-
+				print "##"
 				print "This tweet is from a friend : ",tweet['user']['screen_name']
-				Score = Score + 15
+				print "##"
+
+				Score = Score + 23
 	if tweet['lang'] == "en" or tweet['lang'] == "fr" or tweet['lang'] == "en-gb":
 
 			if Score > 10 :
@@ -610,13 +698,17 @@ def Scoring(tweet,search):
 				tweetlist(Score,tweet['id'])
 			else:
 				print ""
+				print ":( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :("
 				print "This tweet does not match the requirement needed score to be retweeted. (Score)"
+				print ":( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :("
 				print ""
 
 				time.sleep(1)
 	else:
                                 print ""
+				print ":( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :("
                                 print "This tweet does not match the requirement needed to be retweeted. (Language)"
+				print ":( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :("
                                 print ""
 				time.sleep(1)
 
@@ -650,7 +742,16 @@ def searchTst(word):
 
 		print
 		print "##########################################"
+		print "**"
 	        print "Starting search function"
+		print "**"
+                print "##########################################"
+
+		print
+		print "=/\/\/\/\/\/\/\/\/\/\/\="
+		print "=Calling Limit function="
+		print "=/\/\/\/\/\/\/\/\/\/\/\="
+
 		limits()
 		try:
 	        	searchresults = twitter.search(q=word, count = 20)
@@ -663,15 +764,20 @@ def searchTst(word):
 	        except :
 					apicall = apicall + 1
 					print
+					print "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 	                                print "Error Sorry im trying next one"
+					print "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 					print
 	
 		try:
-			print ""
-			print "Chargement des tweets pour " ,word
-			twitter.send_direct_message(user_id="292453904", text="Je viens de charger les tweets pour " + str(word))
+			print
+			print "=="
+			print "Chargement des tweets pour " + word
+			twitter.send_direct_message(user_id="292453904", text="Chargement des tweets pour " + str(word))
 			print ""
 			print "Done"
+			print "=="
+			print ""
 			time.sleep(1)
 			
 			apicall = apicall +1
@@ -681,13 +787,17 @@ def searchTst(word):
 		except:
 					apicall = apicall + 1
                                         print
+					print "!!!!!!!!!!!!!!!!!!!!!!!!!!!"
                                         print "Error Sorry trying next one"
+					print "!!!!!!!!!!!!!!!!!!!!!!!!!!!"
                                         print
 					time.sleep(1)
-
-	
+		print
+		print
+                print "##########################################"
+		print "**"
 		print "Search function terminated"
-		print ""
+		print "**"
 		print "##########################################"
 	
 	        print
@@ -707,20 +817,25 @@ def searchTst(word):
 			print
 			print
 			print
+			print "????????????????????????????"
 			print "Sorry not enough results for : ",word
+			print "Maybe you should consider changing it "
+			print "????????????????????????????"
 			print
 			print
 			print
 	else:
                 print
-		apicall = 180
+		searchlimit = 1
 		limits()
 
 
 
 #Some Code
 
-print "Calling Search function"
+print "=/\/\/\/\/\/\/\/\/\/\/\/\="
+print "=Calling Search function="
+print "=/\/\/\/\/\/\/\/\/\/\/\/\="
 
 Minwords = len(Keywords)/10
 Maxwords = len(Keywords)/5
@@ -739,22 +854,49 @@ print
 
 time.sleep(5)
 print
-print "=Check menu function started="
+print
+print
+print
+print "=/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\="
+print "=Check Last Searched hashtag function started="
+print "=/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\="
+print
+print
+print
 
 checkmenu(Keywords)
 
 if checkM == 1:
 	Keywords = newkeywords
-	print "=Substitution done="
+	print
+	print
+	print "**"
+	print
+	print "=="
+	print "=Old Searchs Removed="
+	print "=New Menu for today !="
+	print "=="
+	print
+	print
+	print Keywords[:rndwords]
+	print
+	print "Total search terms : ",rndwords
+	print
+	print
+	print "**"
+	print
+	time.sleep(5)
 
 for key in Keywords[:rndwords]:
 	searchTst(key)
 	
 
 print
-print " Done "
 print
-print "Now Calling Retweet function"
+print
+print "=/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\="
+print "= All Done Now Calling Retweet function="
+print "=/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\="
 print
 print
 print
@@ -776,9 +918,13 @@ print
 print
 print
 print
-print "Retweet function stopped"
+print "=/\/\/\/\/\/\/\/\/\/\/\/\="
+print "=Retweet function stopped="
+print "=/\/\/\/\/\/\/\/\/\/\/\/\="
 print
-print "Saving calls count"
+print "=/\/\/\/\/\/\/\/\/\="
+print "=Saving calls count="
+print "=/\/\/\/\/\/\/\/\/\="
 print
 SaveTotalCall(apicall,updatecall)
 print 
@@ -789,7 +935,14 @@ print
 print
 print
 print
-print "Saving Today's menu "
+print "=/\/\/\/\/\/\/\/\/\/="
+print "=Saving Today's menu="
+print "=/\/\/\/\/\/\/\/\/\/="
+print 
+print
+print
+print
+
 lastmeal(Keywords[:rndwords])
 print
 print "#################################################TheEnd#############################################################"
