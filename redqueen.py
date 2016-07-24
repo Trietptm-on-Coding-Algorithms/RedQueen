@@ -15,11 +15,12 @@ twitter = Twython(app_key, app_secret, oauth_token, oauth_token_secret)
 
 Keywords = ["kevin mitnick","csrf exploit","session splicing","darkweb",".onion","wikileaks","wlan","Wireless Local Area Network","wardriving","Wireless Access Point","wep","cyber security","Wpa2","blackhat","Shellcode","vpn","Virtual Machine","sandboxing","crypto currency","Full Disclosure","Tunneling","Gps spoofing","untrusted Certificate","ransomware","Trojan Horse","Transport Layer Security","Triple DES","Assembly language","Remote desktop protocole","Traffic Encryption Key","security traffic Analysis","Tracking Cookie","tampered data","bluetooth flaw","data breach","script kiddie","brute force","Symmetric Key","Surrogate Access","Raspberry pi","Arduino","Steganography","Spyware","mail bombing","jailbreak","YesCard","Skimming","Phreaking","cracking","malloc","data Sensitivity","Python exploit","Ruby Exploit","security kernel","C++ exploit","reverse Engineering","Security Engineering","Perl Exploit","ssl","hacking tool","php vulnerability","Secure Hash Algorithm","DNS","Scatternet","Cult of the dead cow","javascript exploit","Sandboxing","Rootkit","Bash script","windbg","rogue device","ollydbg","winsdam","ip spoofing","Rijndael","apache vulnerability","darkdao","repository","shodan","scammers","critical vulnerability","code injection","Icedbg","RFID vulnerability","RFID flaw","Radio Frequency Identification","Gbd ida","private key","pseudorandom","Proxy Agent","tor network","vpn open source","memory corruption","proxy list","proxychain","data execution prevention","heap exploitation","bypass stack cookies","Fuzzing","integer overflow","hackathon","api key","1337","Social-Engeneering Toolkit","port scanner","bluetooth vulnerability","bluetooth flaw","nmap","mass port scanning","Payload","Framework","port knocking","wireless attack","log files","router vulnerability","packet sniffer","phpmyadmin vulnerability","open source","phbb vulnerability","password attack","penetration technique","browser exploit","warberrypi ","wordpress exploit","binary memory","byod","router exploit","mimicking","Windows stack overflow","shell exploit","message digest","Cryptosystem","reverse shell","MitM","hardware backdoor","malicious code","lfi exploit","magnetic remanence","data intercept","ip cam flaw","meterpreter","system level exploration","pastejacking","network takeover","Sphearphishing","key logger","key escrow","Kerberos","flood attack","injection fuzzer","ipsec","evading ids","system intrusion","ipv6","ipv4","Fake update","packet injection","bruteforcer xss","android vulnerability","linux vulnerability","ios vulnerability","artificial intelligence","windows vulnerability","magstripe spoofer","handshake protocole","audit tool","armitage","grey box testing","disk encryption","frequency hopping","forward cipher","subdomain enumeration","Firefox vulnerability","bypass firewall","file encryption","ssl tls interception","extranet","domaine name permutation","ftp vulnerability","fingerprint tool","rssi","visual analysis tool","end to end encryption","robots.txt","encrypted network","tinfoleak","infosec","encoding","voip vulnerability","embedded crypto","electronic signature","egress filtering","eavesdropping","dual use certificate","dmz","wireless scanner","decrypt","decipher","wireless audit","data security","data integrity","network mapper","data encryption standard","data encryption algorithm","incident response tool","defcon","cyber attack","web spider","cryptology","hash function","cryptographic","cryptanalysis","command injection","compression side-channel","credential","cover coding","xss spider","key generation","network exploitation","network attack","local pentest","COMSEC","CVS","common vulnerabilities","internet of things","misconfiguration","collision hash","internet of shit","cloud computing","clear text","Xor","checksum","bulk encryption","joomla vulnerability","sqli","data leak","users passwords","blackbox pentest","quantic computer","Critical patch","playstation jailbreak","banner grabbing","xbox jailbreak","backdoor infosec","hexadecimal","privacy windows","authentication token","authentication protocol","audit framework","open source security tool","magic number signature","BSides","antispyware","ip spoofing detection","QR code infosec","anonymous","advanced persistent threats","pirate bay","advanced encryption standard","admin account","add-on security","ad hoc network","hacked site","defaced","bypass login","cryptography","phishing infosec","honeypot","hacking","ddos","malware","rfid","patch flaw","SocialEngineering","0day","cross site scripting","cyber security","install backdoor","forensic","blind sql injection","local file inclusion","privilege escalation","hacker attack","request forgery","metasploit","password","sql injection","privilege elevation","drupal vulnerability","chinese hacker","penetration testing","header injection","pentest","man in the middle","man in the browser","remote access","java security","buffer overflow","keylog","nuke script","darknet","russian hacker","remote exploit","israel hack","ransomware","trojan","botnet","snowden","nsa","blackhat","whitehat","hacktivist","printer exploit"]
 day = datetime.date.today()
+
 path = "./Tmp/"
 TmpDay = str(path) + "total-" + str(day)
 TmpDay2 = str(path) + "update-" + str(day)
 TmpMeal = str(path) + "meal-" + str(day)
-
+noresult = str(path) + "no.result"
 random.shuffle(Keywords)
 
 Following = ['CUSecTech', 'InfoSecHotSpot', 'IndieRadioPlay', 'TopMaths', 'ergn_yldrm', 'MegalopolisToys', 'ISC2_Las_Vegas', 'jeffreycady', 'XenDesktop', 'BugBountyZone', 'sciendus', 'Dambermont', 'ghwizuuy', 'hackmiami', 'smirnovvahtang', 'uncl3dumby', 'theStump3r', 'SecureAuth', 'StagesInfograph', '9gnews365', 'secmo0on', 'alexheid', 'XenApp', 'vleescha1', 'CMDSP', 'abouham92597469', 'NetNeutralityTp', 'puja_mano', 'AliSniffer', 'DrupalTopNews', 'ChromeExtenNews', 'sebastien_i', 'Techworm_in', 'argevise', 'windows10apps4r', 'primeroinfotek', 'HAKTUTS', 'ciderpunx', 'kfalconspb', 'whitehatsec', 'furiousinfosec', 'Trencube_GD', 'CtrlSec', 'hacking_report', 'n0psl', 'CryptoKeeUK', '0xDUDE', 'crowd42', '_HarmO_', 'CNNum', 'OxHaK', 'Paddy2Paris', 'RevueduDigital', 'androidapps4rea', 'cryptoland', 'CombustibleAsso', 'geeknik', 'HansAmeel', 'cryptoishard', 'YoouKube', 'jouermoinscher', 'moixsec', 'cyberwar', 'danielbarger67', 'SecurityNewsbot', 'cityofcrows', 'SysAdm_Podcast', 'shafpatel', 'k4linux', 'Refuse_To_Fight', 'x_adn', 'Duffray14', 'AbdelahAbidi', 'pranyny', 'razlivintz', 'unmanarc', 'wallarm', 'foxooAnglet', 'foxoo64', 'brainhackerzz', 'duo_labs', 'zenterasystems', 'jilles_com', 'partyveta760', 'ComixToonFr', 'doaa90429042', 'bestvpnz', 'aebay', 'suigyodo', 'parismonitoring', 'menattitude', 'BretPh0t0n', 'ChariseWidmer', 'racheljamespi', 'ZeNewsLink', 'Omerta_Infosec', '_plesna', 'LawsonChaseJobs', 'fredericpoullet', 'RogersFR', 'jesuiscandice7', 'jeanneG50', 'CryptoXSL', 'maccimum', 'foxtrotfourwbm', 'fido_66', 'AGveille', 'InfoManip', 'HiroProtag', 'jhosley', 'Netmonker', 'tetaneutralnet', 'DefiLocacite', 'MTCyberStaffing', 'thecap59', 'Max1meN1colella', 'CharlesCohle', 'BrianInBoulder', 'ArsneDAndrsy', 'BullFR', 'Five_Star_Tech', 'pourconvaincre', 'Be_HMan', 'click2livefr', 'ElydeTravieso', 'n0rssec', '_fixme', 'infographisteF', 'zephilou', 'puneeth_sword', 'CheapestLock', 'Eprocom', 'LocksmithNearMe', 'YoshiDesBois', 'databreachlaws', 'LDarcam', '_CLX', 'dreadlokeur', '_sinn3r', 'operat0r', 'Moutonnoireu', 'MatToufoutu', 'mubix', 'abcdelasecurite', 'meikk', 'MadDelphi', 'ec_mtl', 'unixist', 'EricSeversonSec', 'slaivyn', 'LhoucineAKALLAM', '_langly', 'S2DAR', 'cabusar', 'julien_c', 'moswaa', 'lycia_galland', 'YrB1rd', 'DogecoinFR', 'corkami', 'Barbayellow', 'Spiceworks', 'dt_secuinfo', 'Yaagneshwaran', 'btreguier', 'TheStupidmonKey', 'follc', '2xyo', 'crazyjunkie1', 'LeCapsLock', 'gizmhail', 'piscessignature', 'JamiesonBecker', '_SaxX_', 'isgroupsrl', 'NuitInfo2K13', 'yenos', 'SecurityTube', 'Gameroverdoses', 'Brihx_', 'silvakreuz', 'DamaneDz', '_bratik', 'vprly', 'didierdeth', 'sudophantom', 'xxradar', 'Techno_Trick', 'malphx', 'wixiweb', 'ChrisGeekWorld', 'AmauryBlaha', 'LRCyber', 'FranckAtDell', 'netrusion', 'ubuntuparty', 'grokFD', 'CISOtech', 'NotifyrInc', 'marcotietz', 'accident', 'darthvadersaber', 'VForNICT', 'ID_Booster', 'yw720', 'AgenceWebEffect', 'JeanLoopUltime', 'guideoss', 'Security_FAQs', 'Oursfriteorchid', 'Gr3gland', 'caaptusss', 'ygini', 'videolikeart', 'Veracode', 'CyberExaminer', 'hackademics_', 'razopbaltaga', 'eric_kavanagh', 'Ikoula', 'LeBlogDuHacker', 'rexperski', 'MathieuAnard', 'ced117', 'Panoptinet', 'BuzzRogers', 'ITSecurityWatch', 'PatchMob', 'officialmcafee', 'hnshah', 'AnonLegionTV', 'sh1rleysm1th', 'soocurious', 'PremiereFR', 'mob4hire', 'ericosx', 'yesecurity', 'DLSPCDoctor', 'tyrus_', 'gritsicon', 'trollMasque', 'AmauryPi', 'OpenForceMaroc', 'CybersimpleSec', 'PorterHick', 'AllTechieNews', 'revvome', 'livbrunet', 'aeris22', 'InfoSecMash', 'gigicristiani', 'stephanekoch', 'leduc_louis', 'ilhamnoorhabibi', 'servermanagedit', 'GTAFRANCE', '1humanvoice', 'stmanfr', 'Current_Tech', 'PEGE_french', 'Kuzbari', 'iisp_hk', 'Facebook_Agent', 'ZeroSkewl', 'chuckdauer', 'Itsuugo', 'Florianothnin', 'neeuQdeR', 'HYCONIQ', 'disk_91', 'ZOOM_BOX_r', 'Rimiologist', 'Matrixinfologic', 'GeneralSeven', 'preventiasvcs', 'atmon3r', 'filowme', 'FcsFcsbasif', 'catalyst', 'Spawnhack', 'globalwifiIntl', 'CajunTechie', 'ConstructionFOI', 'k8em0', 'Flavioebiel', 'FlacoDev', 'Fibo', 'wisemedia_', 'floweb', 'adistafrance', 'AnonBig', 'tacticalflex', 'Katezlipoka', 'MathieuZeugma', 'SophiAntipolis', 'matalaz', 'edehusffis', 'patricksarrea', 'SnapAndShine', 'cryptomars', 'OpPinkPower', 'DidierStevens', 'patatatrax', 'AJMoloney', 'cheetahsoul', 'vxheavenorg', 'defconparties', 'gvalc1', 'clemence_robin', 'XeroFR', 'noncetonic', 'bonjour_madame', 'LeWebSelonEdrek', 'robajackson', 'greenee_gr', 'zahiramyas', 'nation_cyber', 'Rio_Beauty_', 'Sadnachar', 'SecRich', 'unbalancedparen', 'Fyyre', 'VirusExperts', 'Applophile', 'Aziz_Satar', 'SecretDefense', 'Hi_T_ch', 'wireheadlance', 'define__tosh__', 'hamsterjoueur', 'PUREMEDIAHDTV', 'secdocs', 'code010101', 'LagunISA', '_theNextdoor_', 'lefredodulub', 'i4ppleTouch', 'imatin_net', 'KiadySam', 'toiletteintime', 'espeule', '1er_degres', 'BSoie', 'Pintochuks', 'selphiewall479', 'ApScience', 'suivi_avec_lisa', 'TiffenJackson', 'SecretGossips', 'sarahMcCartney2', 'wheatley_core', 'PatSebastien']
@@ -50,24 +51,42 @@ QueueList = []
 
 def checkmenu(wordlist):
 
-
 	try:
 		global newkeywords
 		global checkM
-
+		oldlen = len(wordlist)
 		file = open(TmpMeal,"r")
                 lines = file.read().splitlines()
-		newkeywords = list(set(wordlist) - set(lines))
+		print
+		print "=="
+		lenmatch = len(set(lines) & set(wordlist))
+		while lenmatch >0:
+			print "Found %i occurences :" % lenmatch
+			set(lines) & set(wordlist)
+			print
+			print
+
+			print "Removing from search list ..."
+			wordlist = list(set(wordlist) - set(lines))
+			print
+			print
+			print "New lenght of searchlist : " + str(len(wordlist)) + " (Was " + str(oldlen) + " )"
+			print "=="
+			print
+			lenmatch = len(set(lines) & set(wordlist))
 		file.close()
+		newkeywords = wordlist
 		print
 		print "=="
 		print "Search terms already used removed successfully"
 		print "=="
 		checkM = 1
+
 	except:
 		print "=="
 		print "No previous searchs found for today"
 		print "=="
+	
 
 
 def lastmeal(lastsearch):
@@ -87,7 +106,7 @@ def lastmeal(lastsearch):
 
                 file = open(TmpMeal,"r+w")
 		for words in lastsearch:
-			file.write(words + "/n")
+			file.write(words + "\n")
 			print "Marking " + words + " as old . "
 		file.close()
 
@@ -369,7 +388,7 @@ def limits():
                 print
 
 
-	if totalcall > 6666:
+	if totalcall > 7777:
                 print
                 print
                 print
@@ -696,7 +715,7 @@ def Scoring(tweet,search):
 				print "Tweet :", tweet['text']
 				print "######################################"
 				print ""
-				time.sleep(1)
+				time.sleep(2)
 				tweetlist(Score,tweet['id'])
 			else:
 				print ""
@@ -810,7 +829,7 @@ def searchTst(word):
 	        print
 	        print
 
-		if len(searchresults["statuses"]) > 1 :
+		if len(searchresults["statuses"]) > 3 :
 
 		        for item in searchresults["statuses"]:
 	
@@ -826,6 +845,12 @@ def searchTst(word):
 			print
 			print
 			print
+			print "****************************************"
+			print "Saving non wanted search to no.result"
+                        file = open(noresult,"w+a")
+                        file.write(str(word) + "\n")
+                        file.close()
+
 	else:
                 print
 		searchlimit = 1
