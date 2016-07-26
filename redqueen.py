@@ -431,8 +431,17 @@ def limits():
 		lastmeal(Keywords[:rndwords])
  		sys.exit()
 
-#def Ban(
+def Ban(tweet):
+	#working on it#	
+	global Banned
 
+	print
+	print "*=*=*=*=*=*=*=*=*=*"
+	print "Checking if this Tweet contains any forbidden terms:"
+	print
+	print "Good to go"
+        print "*=*=*=*=*=*=*=*=*=*"
+	print
 
 
 
@@ -444,8 +453,11 @@ def Scoring(tweet,search):
 	global totalcall
 	global updatecall
 	global totalupdatecall
+	global Banned
 
 	Score = 0
+	Banned = 0
+
 	print
 	print
 	print
@@ -464,66 +476,44 @@ def Scoring(tweet,search):
 			print "##"
 
 			Score = Score + 1
-			if tweet['retweet_count'] > 4 and tweet['retweet_count'] < 10:
+			if tweet['retweet_count'] > 3 and tweet['retweet_count'] < 5:
 				Score  = Score + 3
-                        if tweet['retweet_count'] > 10 and tweet['retweet_count'] < 20:
+                        if tweet['retweet_count'] > 5 and tweet['retweet_count'] < 10:
                                 Score  = Score + 4
-                        if tweet['retweet_count'] > 20 and tweet['retweet_count'] < 30:
+                        if tweet['retweet_count'] > 10 and tweet['retweet_count'] < 15:
                                 Score  = Score + 6
-                        if tweet['retweet_count'] > 30 and tweet['retweet_count'] < 40:
+                        if tweet['retweet_count'] > 15 and tweet['retweet_count'] < 20:
                                 Score  = Score + 8
-                        if tweet['retweet_count'] > 40 and tweet['retweet_count'] < 50:
+                        if tweet['retweet_count'] > 20 and tweet['retweet_count'] < 25:
                                 Score  = Score + 10
-                        if tweet['retweet_count'] > 50 and tweet['retweet_count'] < 60:
+                        if tweet['retweet_count'] > 25 and tweet['retweet_count'] < 30:
                                 Score  = Score + 11
-                        if tweet['retweet_count'] > 60 and tweet['retweet_count'] < 70:
+                        if tweet['retweet_count'] > 30 and tweet['retweet_count'] < 35:
                                 Score  = Score + 12
-                        if tweet['retweet_count'] > 70 and tweet['retweet_count'] < 80:
+                        if tweet['retweet_count'] > 35 and tweet['retweet_count'] < 40:
                                 Score  = Score + 13
-                        if tweet['retweet_count'] > 80 and tweet['retweet_count'] < 90:
+                        if tweet['retweet_count'] > 40 and tweet['retweet_count'] < 45:
                                 Score  = Score + 14
-                        if tweet['retweet_count'] > 90 and tweet['retweet_count'] < 100:
+                        if tweet['retweet_count'] > 45 and tweet['retweet_count'] < 50:
                                 Score  = Score + 15
-                        if tweet['retweet_count'] > 100 and tweet['retweet_count'] < 150:
+                        if tweet['retweet_count'] > 50 and tweet['retweet_count'] < 55:
                                 Score  = Score + 16
-                        if tweet['retweet_count'] > 150 and tweet['retweet_count'] < 200:
+                        if tweet['retweet_count'] > 55 and tweet['retweet_count'] < 60:
                                 Score  = Score + 17
-                        if tweet['retweet_count'] > 200 and tweet['retweet_count'] < 250:
+                        if tweet['retweet_count'] > 60 and tweet['retweet_count'] < 65:
                                 Score  = Score + 18
-                        if tweet['retweet_count'] > 250 and tweet['retweet_count'] < 300:
+                        if tweet['retweet_count'] > 65 and tweet['retweet_count'] < 70:
                                 Score  = Score + 19
-                        if tweet['retweet_count'] > 300 and tweet['retweet_count'] < 350:
+                        if tweet['retweet_count'] > 70 and tweet['retweet_count'] < 75:
                                 Score  = Score + 20
-                        if tweet['retweet_count'] > 350 and tweet['retweet_count'] < 400:
+                        if tweet['retweet_count'] > 75 and tweet['retweet_count'] < 80:
                                 Score  = Score + 21
-                        if tweet['retweet_count'] > 300 and tweet['retweet_count'] < 350:
+                        if tweet['retweet_count'] > 80 and tweet['retweet_count'] < 85:
                                 Score  = Score + 22
-                        if tweet['retweet_count'] > 350 and tweet['retweet_count'] < 400:
+                        if tweet['retweet_count'] > 85 and tweet['retweet_count'] < 90:
                                 Score  = Score + 23
-                        if tweet['retweet_count'] > 400 and tweet['retweet_count'] < 450:
-                                Score  = Score + 24
-                        if tweet['retweet_count'] > 450 and tweet['retweet_count'] < 500:
-                                Score  = Score + 25
-                        if tweet['retweet_count'] > 500 and tweet['retweet_count'] < 550:
-                                Score  = Score + 26
-                        if tweet['retweet_count'] > 600 and tweet['retweet_count'] < 650:
-                                Score  = Score + 27
-                        if tweet['retweet_count'] > 700 and tweet['retweet_count'] < 750:
-                                Score  = Score + 28
-                        if tweet['retweet_count'] > 750 and tweet['retweet_count'] < 800:
-                                Score  = Score + 29
-                        if tweet['retweet_count'] > 850 and tweet['retweet_count'] < 900:
-                                Score  = Score + 30
-                        if tweet['retweet_count'] > 900 and tweet['retweet_count'] < 950:
-                                Score  = Score + 31
-                        if tweet['retweet_count'] > 950 and tweet['retweet_count'] < 1000:
-                                Score  = Score + 32
-                        if tweet['retweet_count'] > 1000 and tweet['retweet_count'] < 1500:
-                                Score  = Score + 33
-                        if tweet['retweet_count'] > 1500 and tweet['retweet_count'] < 2000:
-                                Score  = Score + 34
-                        if tweet['retweet_count'] > 2000 :
-                                Score  = Score + 35 
+                        if tweet['retweet_count'] > 90:
+                                Score  = Score + 23 + 3
 
 
 
@@ -558,52 +548,52 @@ def Scoring(tweet,search):
 			print "##"
 			Score = Score + 1
 			fav = tweet['favorite_count']
-			if fav > 10 and fav < 20:
+			if fav > 1 and fav < 5:
                         	Score = Score + 1
-			if fav > 20 and fav < 30:
+			if fav > 5 and fav < 10:
 				Score = Score + 2
-			if fav > 30 and fav < 40:
+			if fav > 10 and fav < 15:
 				Score = Score + 3
-                        if fav > 40 and fav < 50:
-                                Score = Score + 4 
-                        if fav > 50 and fav < 60:
+                        if fav > 15 and fav < 20:
+                                Score = Score + 4
+                        if fav > 20 and fav < 25:
                                 Score = Score + 5
-                        if fav > 60 and fav < 70:
+                        if fav > 25 and fav < 30:
                                 Score = Score + 6
-                        if fav > 70 and fav < 80:
-                                Score = Score + 7 
-                        if fav > 80 and fav < 90:
+                        if fav > 30 and fav < 35:
+                                Score = Score + 7
+                        if fav > 35 and fav < 40:
                                 Score = Score + 8
-                        if fav > 90 and fav < 100:
+                        if fav > 40 and fav < 45:
                                 Score = Score + 9
-                        if fav > 100 and fav < 150:
+                        if fav > 45 and fav < 50:
                                 Score = Score + 10 
-                        if fav > 150 and fav < 200:
+                        if fav > 50 and fav < 55:
                                 Score = Score + 11
-                        if fav > 200 and fav < 250:
+                        if fav > 55 and fav < 60:
                                 Score = Score + 12
-                        if fav > 250 and fav < 300:
+                        if fav > 60 and fav < 65:
                                 Score = Score + 13
-                        if fav > 300 and fav < 350:
+                        if fav > 65 and fav < 70:
                                 Score = Score + 14
-                        if fav > 350 and fav < 400:
+                        if fav > 70 and fav < 75:
                                 Score = Score + 15
-                        if fav > 400 and fav < 500:
+                        if fav > 75 and fav < 80:
                                 Score = Score + 16
-                        if fav > 500 and fav < 600:
+                        if fav > 80 and fav < 85:
                                 Score = Score + 17
-                        if fav > 600 and fav < 700:
+                        if fav > 85 and fav < 90:
                                 Score = Score + 18
-                        if fav > 700 and fav < 800:
+                        if fav > 90 and fav < 95:
                                 Score = Score + 19 
-                        if fav > 800 and fav < 900:
+                        if fav > 95 and fav < 100:
                                 Score = Score + 20
-                        if fav > 900 and fav < 1000:
+                        if fav > 100 and fav < 105:
                                 Score = Score + 21
-                        if fav > 1000 and fav < 2000:
+                        if fav > 105 and fav < 110:
                                 Score = Score + 22
-                        if fav > 2000:
-                                Score = Score + 23
+                        if fav >= 123:
+                                Score = Score + 23 + 3
 
 
 
@@ -700,7 +690,13 @@ def Scoring(tweet,search):
 				Score = Score + 23
 	if tweet['lang'] == "en" or tweet['lang'] == "fr" or tweet['lang'] == "en-gb":
 
-			if Score > 10 :
+		Ban(tweet['text'])
+
+		if Banned == 0:
+			if Score > 15 :
+				print
+				print
+				print
 				print "######################################"
 				print "Adding to Retweet List"
 				print
@@ -715,21 +711,38 @@ def Scoring(tweet,search):
 				print "Tweet :", tweet['text']
 				print "######################################"
 				print ""
+				print
+				print
+				print
 				time.sleep(2)
 				tweetlist(Score,tweet['id'])
 			else:
 				print ""
+				print "================================================================================"
 				print ":( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :("
 				print "This tweet does not match the requirement needed score to be retweeted. (Score)"
 				print ":( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :("
+				print "================================================================================"
 				print ""
-
+		
 				time.sleep(1)
+		else:
+                                print ""
+                                print "================================================================================"
+                                print ":( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :("
+                                print "This tweet does not match the requirement needed score to be retweeted. (Banned)"
+                                print ":( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :("
+                                print "================================================================================"
+                                print ""
+				time.sleep(1)
+
 	else:
                                 print ""
+				print "================================================================================"
 				print ":( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :("
                                 print "This tweet does not match the requirement needed to be retweeted. (Language)"
 				print ":( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :("
+				print "================================================================================"
                                 print ""
 				time.sleep(1)
 
@@ -878,14 +891,13 @@ print "Total search terms : ",rndwords
 print
 print "**"
 print
-
 time.sleep(5)
 print
 print
 print
 print
 print "=/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\="
-print "=Check Last Searched hashtag function started="
+print "=Check Last Searched hashtags function started="
 print "=/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\="
 print
 print
