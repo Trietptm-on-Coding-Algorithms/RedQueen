@@ -566,7 +566,7 @@ def Idlist(id):
                 lines = file.read().splitlines()
 
 		for saved in lines:
-
+		   if saved != "":
 			if str(saved) in str(id):
 
 				print
