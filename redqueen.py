@@ -574,6 +574,9 @@ def Idlist(id):
 				print "Already sent .. "
 				print "*=*=*=*=*=*=*=*=*=*"
 				print
+				print "Id from file :",saved
+				print "tweet id :",id
+				
 				alreadysend = 1
 
 		if alreadysend == 0:
