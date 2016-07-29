@@ -5,5 +5,3 @@ depending on their contents , nbr of followers , retweets , favorites , language
 
 Then Sends me a dm when done retweeting all the good stuff in its timeline .
 
-Next step : save tweets ids to prevent already sent error .
-
