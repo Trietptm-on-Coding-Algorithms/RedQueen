@@ -548,6 +548,8 @@ def Idlist(id):
 
 		global alreadysend
 
+		alreadysend = 0
+
                 try:
                         file = open(idsaved,"r")
                         file.close()
@@ -885,6 +887,7 @@ def Scoring(tweet,search):
                                         print ":( :( :( :( :( :( :( :( :( :( :( :("
                                         print "==================================="
                                         print ""
+					alreadysend = 0
                                         time.sleep(1)
 
 
