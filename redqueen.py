@@ -143,7 +143,7 @@ def SaveTotalCall(call,update):
 			file.write("0")
 			file.close()
 
-		file = open(TmpDay,"r"+"a")
+		file = open(TmpDay,"a+")
 		lines = file.read().splitlines()
 		lenfile = len(lines)
 		lastitem = lines[lenfile -1]
@@ -169,7 +169,7 @@ def SaveTotalCall(call,update):
                         file2.write("0")
                         file2.close()
 
-                file2 = open(TmpDay2,"r"+"a")
+                file2 = open(TmpDay2,"a+")
                 lines2 = file2.read().splitlines()
                 lenfile2 = len(lines2)
                 lastitem2 = lines2[lenfile2 -1]
@@ -531,7 +531,7 @@ def Saveid(id):
                         file.close()
 
                 file = open(idsaved,"a")
-                file.write(str(id) + "\n")
+                file.write("\n"+str(id))
 		file.close()
 
 		print
@@ -562,12 +562,13 @@ def Idlist(id):
                         file.write("")
                         file.close()
 
-		file = open(idsaved,"r")
+		file = open(idsaved,"r+")
                 lines = file.read().splitlines()
 
 		for saved in lines:
-		   if saved != "":
-			if str(saved) in str(id):
+
+		   if saved != "\n":
+		   	if str(saved) in str(id):
 
 				print
 				print "*=*=*=*=*=*=*=*=*=*"
