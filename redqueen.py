@@ -113,8 +113,8 @@ def flushtmp():
 		print
 
 		file = open(Session,"w")
-		file.write(str(currentdate)
-
+		file.write(str(currentdate))
+		file.close()
 
 
 def checkmenu(wordlist):
