@@ -11,16 +11,24 @@ from operator import itemgetter
 
 #Some Vars
 
-day = datetime.date.today()
+currentdate = datetime.datetime.now()
+
 path = "./Tmp/"
-TmpDay = str(path) + "total-" + str(day)
-TmpDay2 = str(path) + "update-" + str(day)
-TmpMeal = str(path) + "meal-" + str(day)
-noresult = str(path) + "no.result"
-idsaved = str(path) + "id.saved"
+
+TmpDay = str(path) + "Total Api .Call" 
+
+TmpDay2 = str(path) + "Update Status .Call"
+
+TmpMeal = str(path) + "Search Terms .Used"
+
+Session = str(path) + "Current .Session"
+
+noresult = str(path) + "No .Result"
+
+idsaved = str(path) + "Tweets .Sent"
 
 restabit = 0
-0
+
 twitter = Twython(app_key, app_secret, oauth_token, oauth_token_secret)
 
 Keywords = ["ack","angry fruit salad","automagically","Syrian Electronic Army","LulzSec","gray hat","Distributed denial of service","Denial of service","compiler","Clone phishing","TWEAK","PSEUDOPRIME","DAEMON","CRLF","COMM MODE","CANONICAL","Ethical Hacking","Skid","ANSI Bomb","blue hat","defaced","Dictionary Attack","doxing","DOX","FUD","Fully undetectable","grey hat","IP Grabbing","HOIC tool","LOIC tool","Rainbow Table","rat trojan","Remote Administration Tool","ring3","ring2","ring0","viri","warez","vps","worm malware","turing test","sysadmin","SaaS","stack buffer overflow","CA cert","Hardware vulnerability","physical backdoor","Vuln:","Vuln","adblocker","Exploit framework","crypto party","ssh","Passphrase","Linux Distro","RFC","Hardcoded","hackintosh","Os X","P2P","cloud-based","Oracle java","IT guy","Encrypted Chat","VmWare","cyber police","AdGholas","malvertising","hadopi","cnil","golang","hacked by","piratage","Postgresql","Julian Assange","DNC","GNU","QRLJacking","kevin mitnick","csrf exploit","session splicing","darkweb",".onion","wikileaks","wlan","Wireless Local Area Network","wardriving","Wireless Access Point","wep","cyber security","Wpa2","blackhat","Shellcode","vpn","Virtual Machine","sandboxing","crypto currency","Full Disclosure","Tunneling","Gps spoofing","untrusted Certificate","ransomware","Trojan Horse","Transport Layer Security","Triple DES","Assembly language","Remote desktop protocole","Traffic Encryption Key","security traffic Analysis","Tracking Cookie","tampered data","bluetooth flaw","data breach","script kiddie","brute force","Symmetric Key","Surrogate Access","Raspberry pi","Arduino","Steganography","Spyware","mail bombing","jailbreak","YesCard","Skimming","Phreaking","cracking","malloc","data Sensitivity","Python exploit","Ruby Exploit","security kernel","C++ exploit","reverse Engineering","Security Engineering","Perl Exploit","ssl","hacking tool","php vulnerability","Secure Hash Algorithm","DNS","Scatternet","Cult of the dead cow","javascript exploit","Sandboxing","Rootkit","Bash script","windbg","rogue device","ollydbg","winsdam","ip spoofing","Rijndael","apache vulnerability","darkdao","repository","shodan","scammers","critical vulnerability","code injection","Icedbg","RFID vulnerability","RFID flaw","Radio Frequency Identification","Gbd ida","private key","pseudorandom","Proxy Agent","tor network","vpn open source","memory corruption","proxy list","proxychain","data execution prevention","heap exploitation","bypass stack cookies","Fuzzing","integer overflow","hackathon","api key","1337","Social-Engeneering Toolkit","port scanner","bluetooth vulnerability","bluetooth flaw","nmap","mass port scanning","Payload","Framework","port knocking","wireless attack","log files","router vulnerability","packet sniffer","phpmyadmin vulnerability","open source","phbb vulnerability","password attack","penetration technique","browser exploit","warberrypi ","wordpress exploit","binary memory","byod","router exploit","Cookie stuffing","Windows stack overflow","shell exploit","message digest","Cryptosystem","reverse shell","MitM","hardware backdoor","malicious code","lfi exploit","magnetic remanence","data intercept","ip cam flaw","meterpreter","system level exploration","pastejacking","network takeover","Sphearphishing","key logger","key escrow","Kerberos","flood attack","injection fuzzer","ipsec","evading ids","system intrusion","ipv6","ipv4","Fake update","packet injection","bruteforcer xss","android vulnerability","linux vulnerability","ios vulnerability","artificial intelligence","windows vulnerability","magstripe spoofer","handshake protocole","audit tool","armitage","grey box testing","disk encryption","frequency hopping","forward cipher","subdomain enumeration","Firefox vulnerability","bypass firewall","file encryption","ssl tls interception","extranet","domaine name permutation","ftp vulnerability","fingerprint tool","rssi","visual analysis tool","end to end encryption","robots.txt","encrypted network","tinfoleak","infosec","encoding","voip vulnerability","embedded crypto","electronic signature","egress filtering","eavesdropping","dual use certificate","dmz","wireless scanner","decrypt","decipher","wireless audit","data security","data integrity","network mapper","data encryption standard","data encryption algorithm","incident response tool","defcon","cyber attack","web spider","cryptology","hash function","cryptographic","cryptanalysis","command injection","compression side-channel","credential","cover coding","xss spider","key generation","network exploitation","network attack","local pentest","COMSEC","CVS","common vulnerabilities","internet of things","misconfiguration","collision hash","internet of shit","cloud computing","clear text","Xor","checksum","bulk encryption","joomla vulnerability","sqli","data leak","users passwords","blackbox pentest","quantic computer","Critical patch","playstation jailbreak","banner grabbing","xbox jailbreak","backdoor infosec","hexadecimal","privacy windows","authentication token","authentication protocol","audit framework","open source security tool","magic number signature","BSides","antispyware","ip spoofing detection","QR code infosec","anonymous","advanced persistent threats","pirate bay","advanced encryption standard","admin account","add-on security","ad hoc network","hacked site","defaced","bypass login","cryptography","phishing infosec","honeypot","hacking","ddos","malware","rfid","patch flaw","SocialEngineering","0day","cross site scripting","cyber security","install backdoor","forensic","blind sql injection","local file inclusion","privilege escalation","hacker attack","request forgery","metasploit","password","sql injection","privilege elevation","drupal vulnerability","chinese hacker","penetration testing","header injection","pentest","man in the middle","man in the browser","remote access","java security","buffer overflow","keylog","nuke script","darknet","russian hacker","remote exploit","israel hack","ransomware","trojan","botnet","snowden","nsa","blackhat","whitehat","hacktivist","printer exploit"]
@@ -54,6 +62,60 @@ newkeywords = []
 QueueList = []
 
 #Some Defs
+
+def flushtmp():
+
+	if os.path.exists(Session):
+
+		file = open(Session,"r")
+		datefile = file.read()
+		date_object = datetime.datetime.strptime(str(datefile), '%Y-%m-%d %H:%M:%S.%f')
+
+		Laps = date_object - currentdate
+
+		if Laps.seconds > 86400:
+
+
+			print
+			print "=="
+			print "Flushing Temps Files"
+			print "=="
+			print
+
+			file.close()
+			time.sleep(3)
+
+			os.remove(Session)
+
+
+		        if os.path.exists(TmpDay):
+		            os.remove(TmpDay)
+
+
+		        if os.path.exists(TmpDay2):
+		            os.remove(TmpDay2)
+
+
+       			if os.path.exists(TmpMeal):
+        		    os.remove(TmpMeal)
+
+
+
+
+
+	else:
+		print
+		print
+		print "=="
+		print "First Session For today"
+		print "=="
+		print
+		print
+
+		file = open(Session,"w")
+		file.write(str(currentdate)
+
+
 
 def checkmenu(wordlist):
 
@@ -249,6 +311,12 @@ def Retweet():
 
 				FinalItem = item.split("-")[1]
 				time.sleep(1)
+		                print "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+        		        print "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+        		        print "!                RETWEETING               !"
+        		        print "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+        	       	 	print "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+
 				print
 				print "**"
 				print "Retweeting : ",FinalItem
@@ -497,7 +565,7 @@ def Ban(tweet):
 	print "Checking if this Tweet contains any forbidden terms:"
 	print
 	for forbid in banlist:
-		if forbid in tweet:
+		if forbid.lower() in tweet.lower():
 
 			print
 			print "This tweet contains forbidden terms :"
@@ -567,18 +635,18 @@ def Idlist(id):
 
 		for saved in lines:
 
-		   if saved != "\n":
+		   if saved != "\n" or saved != "":
 		   	if str(saved) in str(id):
 
-				print
-				print "*=*=*=*=*=*=*=*=*=*"
-				print "Already sent .. "
-				print "*=*=*=*=*=*=*=*=*=*"
-				print
-				print "Id from file :",saved
-				print "tweet id :",id
+					print
+					print "*=*=*=*=*=*=*=*=*=*"
+					print "Already sent .. "
+					print "*=*=*=*=*=*=*=*=*=*"
+					print
+					print "Id from file :",saved
+					print "tweet id :",id
 				
-				alreadysend = 1
+					alreadysend = 1
 
 		if alreadysend == 0:
 
@@ -1067,6 +1135,10 @@ def searchTst(word):
 
 #Some Code
 
+print "=/\/\/\/\/\/\/\/\/\/\/\/\="
+print "=Calling Flush function="
+print "=/\/\/\/\/\/\/\/\/\/\/\/\="
+flushtmp()
 print "=/\/\/\/\/\/\/\/\/\/\/\/\="
 print "=Calling Search function="
 print "=/\/\/\/\/\/\/\/\/\/\/\/\="
