@@ -7,7 +7,7 @@ import datetime
 from twython import Twython, TwythonError
 from TwitterApiKeys import app_key, app_secret, oauth_token, oauth_token_secret
 from operator import itemgetter
-
+from pyfiglet import Figlet
 
 #Some Vars
 
@@ -31,7 +31,7 @@ restabit = 0
 
 twitter = Twython(app_key, app_secret, oauth_token, oauth_token_secret)
 
-Keywords = ["ack","angry fruit salad","automagically","Syrian Electronic Army","LulzSec","gray hat","Distributed denial of service","Denial of service","compiler","Clone phishing","TWEAK","PSEUDOPRIME","DAEMON","CRLF","COMM MODE","CANONICAL","Ethical Hacking","Skid","ANSI Bomb","blue hat","defaced","Dictionary Attack","doxing","DOX","FUD","Fully undetectable","grey hat","IP Grabbing","HOIC tool","LOIC tool","Rainbow Table","rat trojan","Remote Administration Tool","ring3","ring2","ring0","viri","warez","vps","worm malware","turing test","sysadmin","SaaS","stack buffer overflow","CA cert","Hardware vulnerability","physical backdoor","Vuln:","Vuln","adblocker","Exploit framework","crypto party","ssh","Passphrase","Linux Distro","RFC","Hardcoded","hackintosh","Os X","P2P","cloud-based","Oracle java","IT guy","Encrypted Chat","VmWare","cyber police","AdGholas","malvertising","hadopi","cnil","golang","hacked by","piratage","Postgresql","Julian Assange","DNC","GNU","QRLJacking","kevin mitnick","csrf exploit","session splicing","darkweb",".onion","wikileaks","wlan","Wireless Local Area Network","wardriving","Wireless Access Point","wep","cyber security","Wpa2","blackhat","Shellcode","vpn","Virtual Machine","sandboxing","crypto currency","Full Disclosure","Tunneling","Gps spoofing","untrusted Certificate","ransomware","Trojan Horse","Transport Layer Security","Triple DES","Assembly language","Remote desktop protocole","Traffic Encryption Key","security traffic Analysis","Tracking Cookie","tampered data","bluetooth flaw","data breach","script kiddie","brute force","Symmetric Key","Surrogate Access","Raspberry pi","Arduino","Steganography","Spyware","mail bombing","jailbreak","YesCard","Skimming","Phreaking","cracking","malloc","data Sensitivity","Python exploit","Ruby Exploit","security kernel","C++ exploit","reverse Engineering","Security Engineering","Perl Exploit","ssl","hacking tool","php vulnerability","Secure Hash Algorithm","DNS","Scatternet","Cult of the dead cow","javascript exploit","Sandboxing","Rootkit","Bash script","windbg","rogue device","ollydbg","winsdam","ip spoofing","Rijndael","apache vulnerability","darkdao","repository","shodan","scammers","critical vulnerability","code injection","Icedbg","RFID vulnerability","RFID flaw","Radio Frequency Identification","Gbd ida","private key","pseudorandom","Proxy Agent","tor network","vpn open source","memory corruption","proxy list","proxychain","data execution prevention","heap exploitation","bypass stack cookies","Fuzzing","integer overflow","hackathon","api key","1337","Social-Engeneering Toolkit","port scanner","bluetooth vulnerability","bluetooth flaw","nmap","mass port scanning","Payload","Framework","port knocking","wireless attack","log files","router vulnerability","packet sniffer","phpmyadmin vulnerability","open source","phbb vulnerability","password attack","penetration technique","browser exploit","warberrypi ","wordpress exploit","binary memory","byod","router exploit","Cookie stuffing","Windows stack overflow","shell exploit","message digest","Cryptosystem","reverse shell","MitM","hardware backdoor","malicious code","lfi exploit","magnetic remanence","data intercept","ip cam flaw","meterpreter","system level exploration","pastejacking","network takeover","Sphearphishing","key logger","key escrow","Kerberos","flood attack","injection fuzzer","ipsec","evading ids","system intrusion","ipv6","ipv4","Fake update","packet injection","bruteforcer xss","android vulnerability","linux vulnerability","ios vulnerability","artificial intelligence","windows vulnerability","magstripe spoofer","handshake protocole","audit tool","armitage","grey box testing","disk encryption","frequency hopping","forward cipher","subdomain enumeration","Firefox vulnerability","bypass firewall","file encryption","ssl tls interception","extranet","domaine name permutation","ftp vulnerability","fingerprint tool","rssi","visual analysis tool","end to end encryption","robots.txt","encrypted network","tinfoleak","infosec","encoding","voip vulnerability","embedded crypto","electronic signature","egress filtering","eavesdropping","dual use certificate","dmz","wireless scanner","decrypt","decipher","wireless audit","data security","data integrity","network mapper","data encryption standard","data encryption algorithm","incident response tool","defcon","cyber attack","web spider","cryptology","hash function","cryptographic","cryptanalysis","command injection","compression side-channel","credential","cover coding","xss spider","key generation","network exploitation","network attack","local pentest","COMSEC","CVS","common vulnerabilities","internet of things","misconfiguration","collision hash","internet of shit","cloud computing","clear text","Xor","checksum","bulk encryption","joomla vulnerability","sqli","data leak","users passwords","blackbox pentest","quantic computer","Critical patch","playstation jailbreak","banner grabbing","xbox jailbreak","backdoor infosec","hexadecimal","privacy windows","authentication token","authentication protocol","audit framework","open source security tool","magic number signature","BSides","antispyware","ip spoofing detection","QR code infosec","anonymous","advanced persistent threats","pirate bay","advanced encryption standard","admin account","add-on security","ad hoc network","hacked site","defaced","bypass login","cryptography","phishing infosec","honeypot","hacking","ddos","malware","rfid","patch flaw","SocialEngineering","0day","cross site scripting","cyber security","install backdoor","forensic","blind sql injection","local file inclusion","privilege escalation","hacker attack","request forgery","metasploit","password","sql injection","privilege elevation","drupal vulnerability","chinese hacker","penetration testing","header injection","pentest","man in the middle","man in the browser","remote access","java security","buffer overflow","keylog","nuke script","darknet","russian hacker","remote exploit","israel hack","ransomware","trojan","botnet","snowden","nsa","blackhat","whitehat","hacktivist","printer exploit"]
+Keywords = ["sea hacker group","angry fruit salad","automagically","Syrian Electronic Army","LulzSec","gray hat","Distributed denial of service","Denial of service","compiler","Clone phishing","TWEAK","PSEUDOPRIME","DAEMON","CRLF","COMM MODE","CANONICAL","Ethical Hacking","Skidz","ANSI Bomb","blue hat","defaced","Dictionary Attack","doxing","DOX","FUD","Fully undetectable","grey hat","IP Grabbing","HOIC tool","LOIC tool","Rainbow Table","rat trojan","Remote Administration Tool","ring3","ring2","ring0","viri","warez","vps","worm malware","turing test","sysadmin","SaaS","stack buffer overflow","CA cert","Hardware vulnerability","physical backdoor","Vuln:","Vuln","adblocker","Exploit framework","crypto party","ssh","Passphrase","Linux Distro","RFC","Hardcoded","hackintosh","Os X","P2P","cloud-based","Oracle java","IT guy","Encrypted Chat","VmWare","cyber police","AdGholas","malvertising","hadopi","cnil","golang","hacked by","piratage","Postgresql","Julian Assange","DNC","GNU","QRLJacking","kevin mitnick","csrf exploit","session splicing","darkweb",".onion","wikileaks","wlan","Wireless Local Area Network","wardriving","Wireless Access Point","wep","cyber security","Wpa2","blackhat","Shellcode","vpn","Virtual Machine","sandboxing","crypto currency","Full Disclosure","Tunneling","Gps spoofing","untrusted Certificate","ransomware","Trojan Horse","Transport Layer Security","Triple DES","Assembly language","Remote desktop protocole","Traffic Encryption Key","security traffic Analysis","Tracking Cookie","tampered data","bluetooth flaw","data breach","script kiddie","brute force","Symmetric Key","Surrogate Access","Raspberry pi","Arduino","Steganography","Spyware","mail bombing","jailbreak","YesCard","Skimming","Phreaking","cracking","malloc","data Sensitivity","Python exploit","Ruby Exploit","security kernel","C++ exploit","reverse Engineering","Security Engineering","Perl Exploit","ssl","hacking tool","php vulnerability","Secure Hash Algorithm","DNS","Scatternet","Cult of the dead cow","javascript exploit","Sandboxing","Rootkit","Bash script","windbg","rogue device","ollydbg","winsdam","ip spoofing","Rijndael","apache vulnerability","darkdao","repository","shodan","scammers","critical vulnerability","code injection","Icedbg","RFID vulnerability","RFID flaw","Radio Frequency Identification","Gbd ida","private key","pseudorandom","Proxy Agent","tor network","vpn open source","memory corruption","proxy list","proxychain","data execution prevention","heap exploitation","bypass stack cookies","Fuzzing","integer overflow","hackathon","api key","1337","Social-Engeneering Toolkit","port scanner","bluetooth vulnerability","bluetooth flaw","nmap","mass port scanning","Payload","Framework","port knocking","wireless attack","log files","router vulnerability","packet sniffer","phpmyadmin vulnerability","open source","phbb vulnerability","password attack","penetration technique","browser exploit","warberrypi ","wordpress exploit","binary memory","byod","router exploit","Cookie stuffing","Windows stack overflow","shell exploit","message digest","Cryptosystem","reverse shell","MitM","hardware backdoor","malicious code","lfi exploit","magnetic remanence","data intercept","ip cam flaw","meterpreter","system level exploration","pastejacking","network takeover","Sphearphishing","key logger","key escrow","Kerberos","flood attack","injection fuzzer","ipsec","evading ids","system intrusion","ipv6","ipv4","Fake update","packet injection","bruteforcer xss","android vulnerability","linux vulnerability","ios vulnerability","artificial intelligence","windows vulnerability","magstripe spoofer","handshake protocole","audit tool","armitage","grey box testing","disk encryption","frequency hopping","forward cipher","subdomain enumeration","Firefox vulnerability","bypass firewall","file encryption","ssl tls interception","extranet","domaine name permutation","ftp vulnerability","fingerprint tool","rssi","visual analysis tool","end to end encryption","robots.txt","encrypted network","tinfoleak","infosec","encoding","voip vulnerability","embedded crypto","electronic signature","egress filtering","eavesdropping","dual use certificate","dmz","wireless scanner","decrypt","decipher","wireless audit","data security","data integrity","network mapper","data encryption standard","data encryption algorithm","incident response tool","defcon","cyber attack","web spider","cryptology","hash function","cryptographic","cryptanalysis","command injection","compression side-channel","credential","cover coding","xss spider","key generation","network exploitation","network attack","local pentest","COMSEC","CVS","common vulnerabilities","internet of things","misconfiguration","collision hash","internet of shit","cloud computing","clear text","Xor","checksum","bulk encryption","joomla vulnerability","sqli","data leak","users passwords","blackbox pentest","quantic computer","Critical patch","playstation jailbreak","banner grabbing","xbox jailbreak","backdoor infosec","hexadecimal","privacy windows","authentication token","authentication protocol","audit framework","open source security tool","magic number signature","BSides","antispyware","ip spoofing detection","QR code infosec","anonymous","advanced persistent threats","pirate bay","advanced encryption standard","admin account","add-on security","ad hoc network","hacked site","defaced","bypass login","cryptography","phishing infosec","honeypot","hacking","ddos","malware","rfid","patch flaw","SocialEngineering","0day","cross site scripting","cyber security","install backdoor","forensic","blind sql injection","local file inclusion","privilege escalation","hacker attack","request forgery","metasploit","password","sql injection","privilege elevation","drupal vulnerability","chinese hacker","penetration testing","header injection","pentest","man in the middle","man in the browser","remote access","java security","buffer overflow","keylog","nuke script","darknet","russian hacker","remote exploit","israel hack","ransomware","trojan","botnet","snowden","nsa","blackhat","whitehat","hacktivist","printer exploit"]
 
 random.shuffle(Keywords)
 
@@ -39,7 +39,9 @@ Following = ['CUSecTech', 'InfoSecHotSpot', 'IndieRadioPlay', 'TopMaths', 'ergn_
 
 Friends = ['pondeboard1', 'ceb0t', 'theStump3r', 'uncl3dumby', 'gr3yr0n1n', 'poa_nyc', 'Demos74dx', 'sebastien_i', 'HAKTUTS', 'R00tkitSMM', 'pondeboard', 'AcidRampage', 'IncursioSubter', 'BSeeing', 'evleaks', 'InfoSec_BT', 'HIDGlobal', 'kjhiggins', 'vkamluk', 'codelancer', 'ciderpunx', 'HugoPoi', 'kfalconspb', 'lconstantin', 'coolhardwareLA', 'fsirjean', 'h0x0d', 'RCCyberofficiel', 'Tech_NurseUS', 'whitehatsec', 'oej', 'Trencube_GD', 'cissp_googling', '_pronto_', 'CtrlSec', 'ModusMundi', 'SwiftOnSecurity', 'RichRogersIoT', 'jonathansampson', 'Luiz0x29A', 'StephenHawking8', 'dpmilroy', 'usa_satcom', 'hack3rsca', 'PELISSIERTHALES', 'g00dies4', 'rpsanch', 'furiousinfosec', 'Om_dai33', 'wulfsec', 'securiteIT', 'pavornoc', 'hacking_report', 'primeroinfotek', 'L4Y5_G43Y', 'PaulM', 'seclyst', 'cmpxchg16', 'iainthomson', 'e_modular', '_jtj1333', 'n0psl', 'blaked_84', 'tb2091', 'dfirfpi', 'manonbinet001', 'webmathilde', '0xDUDE', 'nn81', 'CryptoKeeUK', 'n1nj4sec', 'ydklijnsma', 'scanlime', '0x6D6172696F', 'nono2357', 'derekarnold', 'hasherezade', '_HarmO_', 'OxHaK', 'CWICKET', 'linuxaudit', 'Space__Between', 'lordofthelake', 'Hired_FR', 'Laughing_Mantis', 'InfoSecHotSpot', 'geeknik', 'CharlesCohle', 'BretPh0t0n', 'jilles_com', 'duo_labs', 'unmanarc', 'x_adn', 'k4linux', 'shafpatel', 'SysAdm_Podcast', 'Everette', 'DadiCharles', 'danielbarger67', 'quequero', 'SecurityNewsbot', 'cityofcrows', 'Dinosn', 'ibmxforce', 'thepacketrat', 'cryptoishard', 'DEYCrypt', 'attritionorg', 'mzbat', 'da_667', 'krypt3ia', 'Z0vsky', 'BSSI_Conseil', 'SecMash', 'corexpert', 'maldevel', 'pof', 'FFD8FFDB', 'Snowden', 'lexsi', 'bestvpnz', 'EnfanceGachee', 'samykamkar', 'pevma', 'kafeine', 'k0ntax1s', 'gN3mes1s', 'GawkerPhaseZero', 'FreedomHackerr', 'sec_reactions', '0xAX', 'nolimitsecu', 'bascule', 'm3g9tr0n', 'nbs_system', 'sn0wm4k3r', 'jivedev', 'd_olex', 'indiecom', 'BlueCoat', 'Tif0x', 'UnGarage', 'HomeSen', 'CTF365', 'Securityartwork', 'accessnow', 'ZeljkaZorz', 'mortensl', 'ThomasNigro', 'Sidragon1', 'garage4hackers', 'hanno', 'p4r4n0id_il', 'AsymTimeTweeter', 'Omerta_Infosec', 'nopsec', 'cyberguerre', 'Protocole_ZATAZ', 'Grain_a_moudre', 'BIUK_Tech', 'TMZvx', '_plesna', 'PhysicalDrive0', 'rodneyjoffe', 'ithurricanept', 'sec0ps', 'comex', 'deepimpactio', 'ClechLoic', 'AGveille', 'amzben', 'FIC_fr', 'EricSeversonSec', 'MalwarePorn', 'Odieuxconnard', 'unixist', 'LhoucineAKALLAM', '_langly', 'S2DAR', 'pwcrack', 'PhilHagen', 'Falkvinge', 'IPv4Countdown', 'lycia_galland', 'wirehack7', 'linux_motd', 'lamagicien', 'ubuntumongol', '_cypherpunks_', 'TekDefense', 'LeakSourceInfo', 'moswaa', 'OsandaMalith', 'Lope_miauw', 'dt_secuinfo', 'morganhotonnier', 'Relf_PP', 'abcderza', 'Barbayellow', 'corkami', 'KitPloit', 'ec_mtl', 'bugs_collector', 'BleepinComputer', 'Tinolle1955', 'valdesjo77', 'xombra', 'julien_c', 'Spiceworks', 'snipeyhead', 'YrB1rd', 'Trojan7Sec', 'Yaagneshwaran', 'ZATAZWEBTV', 'f8fiv', 'Netmonker', 'epelboin', '0xmchow', 'angealbertini', 'Incapsula_com', 'SurfWatchLabs', 'Exploit4Arab', 'hackerstorm', '2xyo', 'JamiesonBecker', 'NuitInfo2K13', '_SaxX_', 'piscessignature', 'crazyjunkie1', 'SecurityTube', 'comptoirsecu', '_saadk', 'penpyt', 'yenos', 'Intrinsec', 'udgover', 'jujusete', 'poulpita', 'suffert', 'clementd', '_CLX', '_bratik', 'tomchop_', 'vprly', 'mboelen', 'martijn_grooten', 'aristote', 'gandinoc', 'silvakreuz', 'ifontarensky', 'cedricpernet', 'y0m', 'knowckers', 'lakiw', 'didierdeth', 'paulsparrows', 'sudophantom', 'arbornetworks', 'AzzoutY', 'cabusar', 'Xartrick', 'netrusion', 'AmauryBlaha', 'Techno_Trick', 'wixiweb', 'hackhours', 'netbiosX', 'Daniel15', 'Routerpwn', 'asl', 'jeetjaiswal22', 'shoxxdj', 'FranckAtDell', 'ubuntuparty', 'jpgaulier', 'adulau', 'fredraynal', 'shu_tom', 'Cyberprotect', 'LRCyber', 'cymbiozrp', 'bitcoinprice', 'lafibreinfo', 'dreadlokeur', 'YoouKube', 'NotifyrInc', 'olfashdeb', 'MiltonSecurity', 'quota_atypique', 'TNWmicrosoft', 'LLO64', 'davromaniak', 'ID_Booster', 'VForNICT', 'klorydryk', 'vam0810', 'SecurityWeek', 'secludedITaid', 'montrehack', 'cvebot', 'chetfaliszek', 'NeckbeardHacker', 'hipsterhacker', 'AgenceWebEffect', 'marcotietz', 'erwan_lr', 'guideoss', 'sonar_guy', 'notsosecure', 'FlipFlop8bit', 'MalwareAnalyzer', 'yw720', 'SebBLAISOT', 'Cubox_', 'Ninja_S3curity', 'maximemdotnet', 'lea_linux', 'securitypr', '0xUID', 'MargaretZelle', 'Gr3gland', 'steveklabnik', 'iooner', 'caaptusss', 'tuxfreehost', 'ygini', 'Mind4Digital', 'ADNcomm', 'Veracode', 'hackademics_', 'xhark', 'TopHatSec', '0xSeldszar', 'PLXSERT', 'eric_kavanagh', 'IT_securitynews', 'devttyS0', 'Parisot_Nicolas', 'dclauzel', 'SCMagazine', 'JoceStraub', 'HackerfreeUrss', 'dascritch', 'aabaglo', 'ITConnect_fr', 'razopbaltaga', 'cargamax', 'MyOmBox', 'Wobility', 'evdokimovds', 'dookie2000ca', 'nuke_99', 'isgroupsrl', '_fwix_', 'LeBlogDuHacker', 'Ikoula', 'PortableWebId', 'OfficialGirish', 'httphacker', 'ripemeeting', 'ymitsos', 'Solarus0', 'Zestryon', 'ko_pp', 'etribart', 'TomsGuideFR', 'k3170Makan', 'jeeynet', 'qualys', 'KdmsTeam', 'frsilicon', 'astro_luca', 'rexperski', 'spiwit', 'nuclearleb', 'mcherifi', 'laVeilleTechno', 'framasoft', 'NyuSan42', 'nextinpact', 'PirateOrg', 'MathieuAnard', 'blesta', 'IPv6Lab', 'billatnapier', 'starbuck3000', 'jmplanche', 'pbeyssac', 'Keltounet', 'cwolfhugel', 'ZeCoffre', 'Dave_Maynor', 'durand_g', 'TMorocco', 'CyberExaminer', 'PatchMob', 'Nathanael_Mtd', '1nf0s3cpt', 'ospero_', 'ced117', 'LinuxActus', 'Panoptinet', 'schoolofprivacy', 'TrustedSec', 'maccimum', 'hadhoke', 'Jordane_T', 'novogeek', 'ChimeraSecurity', 'officialmcafee', 'GolumModerne', 'milw0rms', 'AsmussenBrandon', 'arnolem', 'Goofy_fr', 'AnonLegionTV', 'infoworld', 'soocurious', 'atarii', 'SebydeBV', 'JacquesBriet', 'ITSecurityWatch', 'SecurityFact', 'dorkitude', 'CISecurity', 'bishopfox', 'jeremieberduck', 'ericosx', 'dimitribest', 'levie', 'andreaglorioso', 'tyrus_', 'DLSPCDoctor', 'guiguiabloc', 'AlainClapaud', 'yesecurity', 'trollMasque', 'planetprobs', 'vincib', 'LeCapsLock', 'kafeinnet', 'Irrodeus', 'jbfavre', 'guestblog', 'rboulle', 'Fr33Tux', 'SecurityHumor', 'creoseclabs', 'm0rphd', 'argevise', 'gritsicon', 'veorq', 'Abdelmalek__', 'OpenForceMaroc', 'hashbreaker', 'AlexandreThbau1', 'MacPlus', 'yrougy', 'MaldicoreAlerts', 'AmauryPi', 'TrendMicroFR', 'sirchamallow', 'ACKFlags', 'jameslyne', 'LaNMaSteR53', 'AllTechieNews', 'garfieldair', 'PorterHick', 'arstechnica', 'sendio', 'CipherLaw', 'Golem_13', 'livbrunet', 'RealMyop', 'KenBogard', 'KarimDebbache', 'SmoothMcGroove', 'AlDeviant', 'Canardpcredac', 'SebRuchet', 'F_Descraques', 'Unul_Officiel', 'Poischich', 'drlakav', 'genma', 'lastlineinc', 'Cryptomeorg', 'CybersimpleSec', 'DarkReading', 'tqbf', 'gyust', 'KanorUbu', 'walane_', 'jedisct1', 'hadopiland', 'all_exploit_db', 'brutelogic_br', 'lechat87', 'gigicristiani', 'aeris22', 'terminalfix', 'ChristophePINO', 'ihackedwhat', 'InfoSecMash', 'bayartb', 'ErrataRob', 'DefuseSec', 'jcsirot', 'christiaan008', 'gopigoppu', 'lawmanjapan', 'RichardJWood', 'darthvadersaber', 'BryanAlexander', 'leduc_louis', 'distriforce', 'democraticaudit', 'PaulChaloner', 'kentbye', 'HacknowledgeC', 'servermanagedit', 'Coders4africa', 'securitycast', 'macbid', 'tomsguide', 'DrInfoSec', '1humanvoice', 'fsf', 'volodia', 'clusif', 'gbillois', 'theliaecommerce', 'JoshMock', 'MarConnexion', 'stmanfr', 'archiloque', 'ggreenwald', 'libdemwasjailed', 'inthecloud247', 'BlogsofWarIntel', 'pewem_formation', 'zdnetfr', 'Current_Tech', 'ilhamnoorhabibi', 'PEGE_french', 'Lu1sma', 'msftsecurity', 'ashish771', 'brutenews', 'iPhoneTweak_fr', 'my_kiwi', 'SilvaForestis', 'PierreTran', 'Kuzbari', 'r0bertmart1nez', 'yttr1um', 'hrousselot', 'crashsystems', 'benlandis', 'netsecu', 'securityaffairs', 'Stormbyte', 'iisp_hk', 'zonedinteret', 'Facebook_Agent', 'confidentiels', 'CryptoFact', 'chuckdauer', 'vriesjm', '_antoinel_', 'dhanji', '_reflets_', 'Anon_Online', 'MailpileTeam', 'Itsuugo', 'mdecrevoisier', 'freeboxv6', 'garwboy', 'StackCrypto', 'ChanologyFr', '_gwae', 'ashk4n', 'nzkoz', 'Florianothnin', 'neeuQdeR', 'UsulduFutur', 'BullGuard', 'samehfayed', 'olesovhcom', 'dragondaymovie', 'Itforma', 'HYCONIQ', 'axcheron', 'blakkheim', 'pressecitron', 'ChrisGeekWorld', 'episod', 'thalie30', 'disk_91', 'idfpartipirate', 'PPAlsace', 'FlorenceYevo', 'gdbassett', 'VulnSites', 'Secunia', 'iteanu', 'sciendus', 'esrtweet', '6l_x', 'MduqN', 'Skhaen', 'daveaitel', 'ZeroSkewl', 'Rimiologist', 'ekse0x', 'ZOOM_BOX_r', 'aanval', 'fhsales', 'Ruslan_helsinky', 'OpLastResort', 'fcouchet', 'GTAXLnetIRC', 'TheAdb38', 'DeloitteUS', 'GeneralSeven', 'AustenAllred', 'AlliaCERT', 'Double_L83', 'scoopit', 'Dylan_irzi11', 'fr0gSecurity', 'atmon3r', '0x736C316E6B', 'Hask_Sec', 'Zer0Security', 'xssedcom', 'php_net', 'phpizer', 'JpEncausse', 'M4ke_Developp', 'nkgl', 'preventiasvcs', 'SwiftwayNet', 'c4software', 'who0', 'gandi_net', 'H_Miser', 'nikcub', 'gcouprie', 'MindDeep', 'MdM_France', 'SpritesMods', 'NakedSecurity', 'GDataFrance', 'conciseonline', 'filowme', 'regislutter', 'CelebsBreaking', 'globalwifiIntl', 't2_fi', 'catalyst', 'x6herbius', 'cryptocatapp', 'arahal_online', 'mtigas', 'ALLsecuritySoft', 'lisachenko', 'renaudaubin', 'wamdamdam', '01net', 'secuobsrevuefr', 'DataSecuB', 'drambaldini', 'secu_insight', 'cyber_securite', 'smeablog', 'DecryptedMatrix', 'eCoreTechnoS', 'topcodersonline', 'Sec_Cyber', 'thegaryhawkins', 'CajunTechie', 'Othrys', 'jeromesegura', 'RazorEQX', 'Xylit0l', 'c_APT_ure', 'it4sec', 'ConstructionFOI', 'Official_SEA16', 'OpGabon', 'SecuraBit', 'esheesle', 'brutelogic', 'taziden', 'sam_et_max', 'iMilnb', 'Clubic', 'greenee_gr', 'fo0_', 'nathanLfuller', 'carwinb', 'puellavulnerata', 'samphippen', 'ntisec', 'dummys1337', 'flanvel', 'SUPINFO', 'Epitech', 'Erebuss', 'infobytesec', 'garybernhardt', 'mab_', 'wisemedia_', 'LagunISA', 'wiretapped', 'verge', 'crowd42', 'virusbtn', 'FlacoDev', 'SunFoundation', 'TheNextWeb', 'guillaumeQD', 'IBMSecurity', 'code010101', 'gvalc1', 'adistafrance', 'LeWebSelonEdrek', 'tacticalflex', 'imatin_net', 'espeule', 'Applophile', 'nation_cyber', 'zahiramyas', 'alexheid', 'SecMailLists', 'mob4hire', 'AnonBig', 'FloCorvisier', 'MathieuZeugma', 'Katezlipoka', 'w_levin', 'climagic', 'PartiPirate', 'InfosecNewsBot', 'nedos', 'jerezim', 'katylevinson', 'ThVillepreux', 'PBerhouet', 'dbbimages', 'irqed', 'BLeQuerrec', 'patricksarrea', 'pierre_alonso', 'Flameche', 'AndreaMann', 'SciencePorn', 'mvario1', 'AbbyMartin', 'TheGoodWordMe', 'chroniclesu', 'DoubleJake', 'Kilgoar', 'TylerBass', 'FievetJuliette', 'Reuters', 'mrjmad', 'Sebdraven', 'SophiAntipolis', 'LaFranceapeur', 'papygeek', 'gordonzaula', 'neufbox4', 'plugfr', 'BenoitMio', '_Kitetoa_', 'Numendil', 'laquadrature', 'kheops2713', 'Slatefr', 'benjaltf4_', 'Fibo', 'codesscripts', 'zorelbarbier', 'Be_HMan', 'FranceAnonym', 'SpartacusK99', 'Free_Center', 'TrucAstuce', 'schignard', 'ciremya', 'MatVHacKnowledg', 'FreenewsActu', 'XSSed_fr', 'planetubuntu', 'S_surveillance', 'cyphercat_eu', 'Hack_Gyver', 'ncaproni', 'MISCRedac', 'Cyber_Veille', 'journalduhack', 'bidouillecamp', 'Apprenti_Sage', 'Oxygen_IT', 'FIC_Obs', 'orovellotti', 'cyberdefenseFR', 'l1formaticien', 'Reseauxtelecoms', 'neuromancien', 'actuvirus', 'cryptomars', 'amaelle_g', 'Hybird', 'Monitoring_fr', 'Zythom', 'InfosReseaux', 'speude', 'lavachelibre', 'dezorda', 'Bugbusters_fr', '3615internets', 'planetedomo', 'Mayeu', 'HeliosRaspberry', 'CiscoFrance', 'anonfrench', 'IvanLeFou', 'NosOignons', 'OSSIRFrance', 'patatatrax', 'EFF', 's7ephen', 'kaspersky', '2600', 'cheetahsoul', 'OpPinkPower', 'AJMoloney', 'ecrans', 'anonhive', 'julien_geekinc', 'Anonymous_SA', 'USAnonymous', 'e_kaspersky', 'FSecure', 'ClipperChip', 'ax0n', 'hevnsnt', 'Aratta', 'yolocrypto', 'waleedassar', 'postmodern_mod3', 'kochetkov_v', 'pwntester', 'bartblaze', 'TheDanRobinson', 'unpacker', 'r_netsec', 'AnonymousPress', 'priyanshu_itech', 'kinugawamasato', 'mozwebsec', 'zonehorg', 'beefproject', 'YourAnonNews', 'boblord', 'vikram_nz', 'PublicAnonNews', 'kkotowicz', 'hackersftw', '0xerror', 'fancy__04', 'l33tdawg', 'node5', '0xjudd', '_mr_me_', 'sickness416', 'googleio', 'infosecmafia', 'p0sixninja', 'isa56k', 'TheWhiteHatTeam', 'inj3ct0r', 'snowfl0w', 'SocEngineerInc', 'jdcrunchman', 'DiptiD10', 'ehackingdotnet', 'jack_daniel', 'BrandonPrry', 'TurkeyAnonymous', 'MarkWuergler', 'pranesh', 'eddieschwartz', 'mozilla', 'deCespedes', 'M0nk3H', 'tpbdotorg', 'IPredatorVPN', 'smarimc', 'Thomas_Drake1', 'opindia_revenge', 'Malwarebytes', 'EHackerNews', 'HNBulletin', 'dietersar', 'CCrowMontance', 'r3shl4k1sh', 'DanielEllsberg', 'PMOIndia', 'SecurityPhresh', 'vxheavenorg', 'kgosztola', 'TheHackersNews', 'jeromesaiz', 'Trem_r', 'netsabes', 'Flaoua', 'DannyDeVito', 'p0sixn1nja', 'twitfics', 'wzzx', 'DustySTS', 'Lincoln_Corelan', 'SecureTips', 'InfoSecRumors', 'matthew_d_green', 'agl__', 'elwoz', 'apiary', '0xabad1dea', 'dangoodin001', 'kpoulsen', 'ethicalhack3r', 'SecBarbie', 'dguido', 'marcusjcarey', 'jadedsecurity', 'petitpetitam', 'hackeracademy', 'moreauchevrolet', 'Jean_Leymarie', 'tricaud', 'Nipponconnexion', 'OtakuGameWear', 'schneierblog', 'g4l4drim', '0x73686168696e', 'securityvibesfr', 'window', 'sm0k_', 'pentesteur', 'AlainAspect', 'chandraxray', 'AstronomyNow', 'Astro_Society', 'SpitzerScope', 'NASAspitzer', 'NASAWebb', 'NASAFermi', 'SpaceflightNow', 'NASAStennis', 'sciam', 'WISE_Mission', 'NASA_Images', 'NatGeo', 'NASAblueshift', 'universetoday', 'NASAJPL_Edu', 'NASA_Orion', 'TrinhXuanThuan', 'Infographie_Sup', 'MartinAndler', 'pierenry', 'Bruno_LAT', 'RichardDawkins', 'guardianscience', 'TheSkepticMag', 'TomFeilden', 'gemgemloulou', 'AdamRutherford', 'Baddiel', 'DrAliceRoberts', 'ProfWoodward', 'SarcasticRover', 'robajackson', 'MarsCuriosity', 'BBCBreaking', 'shanemuk', 'Schroedinger99', 'AtheneDonald', 'imrankhan', 'danieldennett', 'paulwrblanchard', 'MartinPeterFARR', 'DPFink', 'sapinker', 'chrisquigg', 'minutephysics', 'AdamFrank4', 'SpaceX', 'astrolisa', 'Erik_Seidel', 'simonecelia', 'PhilLaak', 'TEDchris', 'colsonwhitehead', 'plutokiller', 'dvergano', 'carlzimmer', 'j_timmer', 'edyong209', 'Laelaps', 'bmossop', 'maiasz', 'ericmjohnson', 'WillmJames', 'BadAstronomer', 'billprady', 'reneehlozek', 'PolycrystalhD', 'BoraZ', 'sethmnookin', 'albionlawrence', 'RisaWechsler', 'seanmcarroll', 'imaginaryfndn', 'PhysicsNews', 'DiggScience', 'bigthink', 'PopSci', 'AIP_Publishing', 'NSF', 'NewsfromScience', 'BBCScienceNews', 'PhysicsWorld', 'ScienceNews', 'physorg_com', 'TED_TALKS', 'TreeHugger', 'physorg_space', 'physorg_tech', 'NASAGoddard', 'CERN_FR', 'neiltyson', 'ProfBrianCox', 'SethShostak', 'b0yle', 'NASAJPL', 'worldofscitech', 'michiokaku', 'OliverSacks', 'AMNH', 'JannaLevin', 'bgreene', 'AssoDocUp', 'MyScienceWork', 'ParisDiderot', 'molmodelblog', 'neilfws', 'pjacock', 'dalloliogm', 'yokofakun', 'mrosenbaum711', 'joshwhedon', 'BrentSpiner', 'moonfrye', 'greggrunberg', 'Schwarzenegger', 'RealRonHoward', 'arnettwill', 'AmandaSeyfried', 'JasonReitman', 'DohertyShannen', 'JohnStamos', 'frankiemuniz', 'TheRealNimoy', 'EyeOfJackieChan', 'dhewlett', 'ZacharyLevi', 'MillaJovovich', 'JohnCleese', 'BambolaBambina', 'CERN', 'CNES', 'Inserm', 'NASA', 'USGS', 'NatureNews', 'Planck', 'IN2P3_CNRS', 'Inria', 'INC_CNRS', 'tgeadonis', 'inp_cnrs', 'AlainFuchs', 'CNRSImages', 'FabriceImperial', 'CNRS', 'laurentguyot', 'consult_detect', 'NewsBreaker', 'ISS_Research', 'nicolaschapuis', 'PolarisTweets', 'uncondamne', 'veytristan', 'gplesse', 'MattBellamy', 'LeParisien_Tech', 'Pontifex_fr', 'DenisCourtine', 'PascalDronne', 'NSegaunes', 'LeParisien_Buzz', 'NoemieBuffault', 'LesInconnus', 'FBIBoston', 'Pascallegitimus', 'lucabalo', 'isabellemathieu', 'FlorentLadeyn', 'NaoelleTopChef', 'quentintopchef', 'julienduFFe', 'natrevenu', 'yannforeix', 'defrag', 'rybolov', 'securid', 'stacythayer', 'tcrweb', 'Techdulla', 'TimTheFoolMan', 'treguly', 'YanceySlide', 'golfhackerdave', 'liquidmatrix', 'jonmcclintock', 'infosecpodcast', 'HypedupCat', 'Hak5', 'georgevhulme', 'gcluley', 'gattaca', 'g0ne', 'EACCES', 'digininja', 'devilok', 'd4ncingd4n', 'CSOonline', 'anthonymckay', 'abaranov', 'aaronbush', '_LOCKS', 'security_pimp', 'teksquisite', 'blpnt', 'alpharia', 'jgarcia62', '_MC_', 'InfoSec208', 'SPoint', 'i0n1c', 'torproject', 'room362', 'nicowaisman', 'VirusExperts', 'DavidHarleyBlog', 'follc', 'episeclab', 'manhack', 'pollux7', 'y0ug', 'Hallewell', 'SteveGoldsby', 'polarifon', 'malwarecityFR', 'Webroot', 'Infosanity', 'BitDefenderAPAC', 'VirusExpert', 'securitypro2009', 'blackd0t', 'securityfocus', 'DanaTamir', 'securitywatch', 'securitynetwork', 'PrivacySecurity', 'securitystuff', 'myCSO', 'RSAsecurity', 'SecurityExtra', 'WebSecurityNews', 'web_security', 'SCmagazineUK', 'TechProABG', 'malwareforensix', 'stephanekoch', 'daleapearson', 'CyberSploit', 'veryblackhat', 'opexxx', 'Hakin9', 'EvilFingers', 'isaudit', 'SpiderLabs', 'securegear', 'gdssecurity', 'ioerror', 'yaunbug', 'dstmx', 'zentaknet', 'wireheadlance', 'TenableSecurity', 'secdocs', 'proactivedefend', 'racheljamespi', 'xxradar', 'aebay', 'vincentzimmer', 'xanda', 'MarioVilas', 'sting3r2013', 'SecRich', 'deanpierce', 'HaDeSss', 'Jolly', 'searchio', 'thomas_wilhelm', 'gollmann', 'HackerTheDude', 'ADMobilForensic', 'SecurityStream', 'gadievron', 'tomaszmiklas', 'irongeek_adc', '_____C', 'operat0r', 'carne', 'fmavituna', 'PandaSecurityFR', 'freaklabs', 'alphaskade', 'hgruber97', 'noncetonic', 'AVGFree', 'k0st', 'kargig', 'lgentil', 'andreasdotorg', 'redragonvn', 'theharmonyguy', 'NoSuchCon', 'b10w', '0security', 'Z3r0Point', 'bortzmeyer', 'ahoog42', 'gianluca_string', 'eLearnSecurity', 'k4l4m4r1s', 'issuemakerslab', 'matalaz', 'ForcepointLabs', 'iExploitXinapse', 'itespressofr', 'ehmc5', 'practicalexplt', 'Pentesting', 'avkolmakov', 'manicode', 'HITBSecConf', 'sensepost', 'TeamSHATTER', 'n00bznet', 'thegrugq', 'judy_novak', 'TaPiOn', 'revskills', 'randomdross', 'malphx', 'OpenMalware', 'syngress', '2gg', 'GNUCITIZEN', 'chrissullo', 'michael_howard', 'c7five', 'pdp', 'securosis', 'Shadowserver', 'BlackHatHQ', 'securityincite', 'bsdaemon', 'Secn00b', 'dyngnosis', 'mwtracker', 'BorjaMerino', 'packetlife', 'toolcrypt', 'hackmiami', 'OWASP_France', 'jkouns', 'Mario_Vilas', 'zate', '_supernothing', 'aszy', 'lestutosdenico', 'espreto', '_sinn3r', 'aloria', 'Fyyre', 'SymantecFR', 'aircrackng', 'hackerschoice', 'MuscleNerd', 'smalm', 'OxbloodRuffin', 'subliminalhack', 'bannedit0', 'armitagehacker', 'RealGeneKim', 'mxatone', 'Snort', 'rebelk0de', 'hackingexposed', 'virustotalnews', 'InfiltrateCon', 'aramosf', 'msfdev', 'ChadChoron', 'n0secure', 'ITRCSD', 'CyberDefender', 'ArxSys', 'lulzb0at', 'crypt0ad', 'Stonesoft_FR', 'LordRNA', 'WindowsSCOPE', 'yo9fah', 'michelgerard', 'NAXSI_WAF', 'v14dz', 'x0rz', 'tbmdow', 'kasperskyfrance', 'Agarri_FR', 'ISSA_France', 'Jhaddix', 'Heurs', 'PlanetCreator', 'infernosec', 'rexploit', 'ConfCon', 'securityshell', 'bonjour_madame', 'minusvirus', 'emiliengirault', 'dvrasp', 'virtualabs', 'rfidiot', 'ttttth', 'msuiche', 'Ivanlef0u', 'Korben', 'hackersorg', 'shell_storm', 'WTFuzz', 'MoonSols', 'newsoft', 'vnsec', 'in_reverse', 'hackerfantastic', 'mtrancer', 'datacenter', 'stelauconseil', 'CNIL', 'exploitdb', 'BillBrenner70', 'lagrottedubarbu', 'HackingDave', 'VUPEN', 'siddartha', 'bluetouff', 'sstic', 'ToolsWatch', 'emmasauzedde', 'lseror', 'bearkasey', 'xme', 'helpnetsecurity', 'hackinthebox', 'Transiphone', 'hackaday', 'TheSuggmeister', 'Herve_Schauer', 'humanhacker', 'it_audit', 'Jipe_', 'FredLB', '0vercl0k', 'secbydefault', 'kerouanton', 'dragosr', 'endrazine', 'HBGary', 'pentestit', 'madpowah', 'serphacker', 'security4all', 'SecuObs', 'vloquet', 'joegrand', 'matrosov', 'DIALNODE', 'brucon', 'corelanc0d3r', 'RSnake', '0xcharlie', 'taviso', '41414141', 't0ka7a', 'thedarktangent', 'mubix', 'jonoberheide', 'spacerog', 'ChrisJohnRiley', 'securityninja', 'threatpost', 'nasko', 'mwrlabs', 'justdionysus', 'iHackwing', 'DJLahbug', 'cyber_security', 'hardhackorg', 'e2del', 'a41con', 'msftsecresponse', 'sans_isc', 'egyp7', 'antic0de', 'mikko', '_MDL_', 'mdowd', 'carnal0wnage', 'jeremiahg', 'xorlgr', 'cesarcer', 'BlackHatEvents', 'MatToufoutu', 'csec', 'selectrealsec', 'CERTXMCO', 'SecuritySamurai', 'razlivintz', 'etcpasswd', 'The_Sec_Pub', 'meikk', 'securityweekly', 'alexsotirov', 'DidierStevens', 'beist', 'stalkr_', 'dakami', 'halvarflake', 'dinodaizovi', 'silviocesare', 'stephenfewer', 'barnaby_jack', 'andremoulu', 'thierryzoller', 'PwnieAwards', 'reversemode', 'kalilinux', 'gynvael', 'pusscat', 'abcdelasecurite', 'johnjean', 'ninjanetworks', 'sotto_', 'SecretDefense', 'FFW', 'commonexploits', 'x86ed', 'zsecunix', 'hack_lu', 'Majin_Boo', 'BadShad0w', 'FlUxIuS', 'valuphone', 'free_man_', 'teamcymru', 'ihackstuff', 'secureideas', 'sansforensics', 'benoitbeaulieu', 'LaFermeDuWeb', 'TwitPic', 'noaheverett', 'lostinsecurity', 'democracynow', 'dougburks', 'zephilou', 'kevinmitnick', 'defcon', 'SecurityBSides', 'haxorthematrix', 'rmogull', 'unbalancedparen', 'perfectvendetta', 'siccsudo', 'Nan0Sh3ll', 'newroot', 'ClsHackBlog', '27c3', 'c3streaming', 'SOURCEConf', 'eugeneteo', 'moxie', 'dlitchfield', 'thezdi', 'scarybeasts', 'ryanaraine', 'kernelpool', 'esizkur', 'richinseattle', 'WeldPond', 'k8em0', 'jduck', 'ultramegaman', 'tsohlacol', 'HeatherLeson', 'myrcurial', 'nudehaberdasher', 'drraid', 'Agarik', 'Aziz_Satar', 'hackinparis', 'sdwilkerson', 'Satyendrat', 'LawyerLiz', 'UnderNews_fr', 'deobfuscated', 'HacKarl', 'StopMalvertisin', 'djrbliss', 'TinKode', 'HappyRuche', 'rssil', 'sysdream', 'acissi', 'migrainehacker', 'xsploitedsec', 'sucurisecurity', 'bonjourvoisine', 'Sorcier_FXK', 'mikekemp', 'jaysonstreet', 'roman_soft', 'xavbox', 'HackBBS', 'securitytwits', 'Hi_T_ch', 'DarK_Kiev', 'lbstephane', 'hugofortier', 'bl4sty', 'kaiyou466', 'Thireus', 'Paul_da_Silva', 'fbaligant', '_metalslug_', 'ochsff', 'fjserna', 'JonathanSalwan', 'ericfreyss', 'julianor', 'j00ru', '0xGrimmlin', 'define__tosh__', 'hesconference', 'Calculonproject', 'ZenkSecurity', 'Moutonnoireu', 'newsycombinator', 'securityh4x', 'corbierio', 'Security_Sifu', 'str0ke', 'owasp', 'milw0rm', 'gsogsecur', 'USCERT_gov', 'packet_storm', 'CoreSecurity', 'CiscoSecurity', 'ECCOUNCIL', 'securityweb', 'debian_security', 'ubuntu_security', 'SocialMediaSec', 'offsectraining', 'JournalDuPirate', 'ThisIsHNN', 'nmap', 'metasploit', 'orangebusiness', 'tixlegeek', 'rapid7', 'defconparties', 'ProjectHoneynet', 'NoWatch', '1ns0mn1h4ck', 'zataz', 'r00tbsd', 'hackerzvoice', 'JournalDuGeek', 'Senat_Direct', 'franceculture', 'MetroFrJustice', 'MrAntoineDaniel', 'tanguy', '_clot_', 'Reuno', 'chiptune', 'nicolasfolliot', 'johnmartz', 'lifehacker', 'Vfalkrr', 'AurelieThuot', 'PinkPaink', 'jnkboy', 'ManardUV', 'AsherVo', 'Stephan_Kot', 'thatgamecompany', 'Dedodante', 'RomainSegaud', 'TheMarkTwain', 'Maitre_Eolas', 'jmechner', 'SeinfeldToday', '5eucheu', 'FRANCHEMENT_', 'SuricateVideo', 'alainjuppe', 'antoine64', 'ydca_nico', 'aleksou', 'docslumpy', 'jeremy345', 'TRYWAN', 'UrielnoSekai', 'Mister_AlAmine', 'KrSWOoD', 'hamsterjoueur', 'JyanMaruku', 'insertcoinFR', 'MisterAdyboo', 'MrBouclesDor', 'Gorkab', '____Wolf____', 'Ben_MORIN', 'lestortuesninja', 'neocalimero', 'Sadnachar', 'KazHiraiCEO', 'Bethesda_fr', 'ChrisToullec', 'Juliette1108', 'RisingStarGames', 'LtPaterson', 'VGLeaks', 'SonySantaMonica', 'l87Nico', 'Yatuu', 'cbalestra', 'yosp', 'twfeed', 'ludaudrey', 'RpointB', 'danielbozec', 'LiveScience', 'Rue89', 'ScienceChannel', 'ScienceDaily', 'ubergizmofr', 'Gizmodo', 'Virgini2Clausad', 'fabriceeboue', 'ThibBracci', 'labeauf', 'waterkids', 'MisterMcFlee', 'FranckLassagne', 'GraiggyLand', 'Galagan_', 'BenCesari', '_RaHaN_', 'Tris_Acatrinei', 'Valent1Bouttiau', 'Julien_Bouillet', 'UncleTex', 'Suchablog', 'laboitecom', 'coverflow_prod', 'TeamTerrasse', 'IGmagazine', 'Wael3rd', 'Rogedelaaa', 'starcowparis', 'liloudalas', 'emanu124', 'xfrankblue', 'K0RSIK0', 'UlycesEditions', 'Djoulo', 'cabanong', 'laureleuwers', 'clemence_robin', 'suriondt', '_Supertroll', 'Neveu_Tiphaine', '_theNextdoor_', 'tomnever', 'DavidChoel', 'Elmedoc', 'Delzarissa', 'Nolife_Online', 'NicolAspatoule', 'Frederic_Molas', 'Marcuszeboulet', 'PlayStation', 'RockstarGames', 'Naughty_Dog', 'notch', 'pirmax', 'miklD75', 'ClorindeB', 'NathalieAndr', 'ODB_Officiel', 'LeGoldenShow', 'HIDEO_KOJIMA_EN', 'damiensaez', 'DIEUDONNEMBALA', 'FQXi', 'PerleDuBac', 'SatoshiKon_bot', 'shin14270', 'tsamere', 'Bouletcorp', 'CasselCecile', 'RaynaudJulie', 'LionnelAstier', 'swinefever', 'normanlovett1', 'SteveKeys66', 'DannyJohnJules', 'LeoDiCaprio', 'wikileaks', 'TORDFC', 'RedDwarfHQ', 'DalaiLama', 'Al_Hannigan', 'AnthonySHead', 'SteveMartinToGo', 'bobsaget', 'gwenstefani', 'JohnMCochran', 'ActuallyNPH', 'CobieSmulders', 'alydenisof', 'jasonsegel', 'kavanaghanthony', 'RafMezrahi', 'BellemareOut', 'BellemarePieR', 'rataud', 'piresrobert7', 'beigbedersays', 'IamJackyBlack', 'oizo3000', 'ericetramzy', 'yannlaffont', 'michel_denisot', 'VincentDesagnat', 'PaulMcCartney', 'Pascal__Vincent', 'JimCarrey', 'simonastierHC', 'manulevyoff', 'GillesLellouche', 'axellelaffont', 'xaviercouture', 'emougeotte', 'bernardpivot1', 'sgtpembry', 'Xavier75', 'NicolasBedos1', 'Chabat_News', 'stephaneguillon', 'farrugiadom', 'francoisrollin', 'kyank', 'levrailambert', 'lolobababa', 'jimalkhalili', 'alexnassar', 'suivi_avec_lisa', 'Suzuka_Nolife', 'DavidHasselhoff', 'CCfunkandsoul', 'CaptainAJRimmer', 'DougRDNaylor', 'bobbyllew', 'katherineravard', 'ReizaRamon', 'kaorinchan', 'NolifeOfficiel', 'floweb', 'Thugeek', 'LoloBaffie', 'charlottesavary', 'SebRaynal', 'GirlButGeek', 'bjork', 'YOUNMICHAEL', 'hartza_info', 'ApScience', 'ApertureSciCEO', 'wheatley_core', 'ApertureSciPR', 'lilyallen', 'koreus', 'MichaelYoun']
 
-banlist = ['WhitePaper','WHITEPAPER','whitepaper','Whitepaper','To help you','to help you','To Help You','Marketing','marketing','check out this','mimicking ghosts','fundamental tactics','FREE','Richard Armitage','@EdgeofSports','Tips','tips','Increase','growth','free','Growth','Join Free ','vulnerability of women','cornwall','Forensic Mystery','Learn how','Healthcare','Security Epidemic','ASMSG','microbiome','flood of refugees','Donald Trump','spider couples','Follow us','Sida','carotte','moche','slow motion','fake tweets','meuf']
+banlist = ['broad gauge','felties','glow in the dark','scrapbooking','helixstudios','solidarity',' activist','sweatshop','help grow','Digital buyer','trump','baise','top stories','skid game','arrieta','leading off:','baby hat','newborn','Rt for','dining table','retweet','vibrators','rainbow round','skid row','malliardreport','breaking news','scoop:','spider art','subscribe:','subscribe to our','GOT7','Join us','explosive device','fuzzing feeling','future of our people','sex','pute','penis','sports','toilet valve','toilet water','sfxns','smoke','ptdr','VosMecsQui','cheveux','learn more:','tanning','long trajet','rainbow-filled','Hillary','Hartunes','mystery','Aspirin','growing','please share','rainbow dash','Truth coffee','top 5','rainbow glass','jet lag','jet-lag','clinton campaign','buzzfeed','microbial','growth','are you prepared','nautical','biopsies','reverse vending','Tokyo ghoul','Galang','kingarmani','Trump','rugby','I liked a @Youtube video from','White man','WHITEPAPER','white girl','Whitepaper','growing','to help you','spider thread',' Marketing ','check this out','check out this','mimicking ghosts','fundamental tactics','FREE','Richard Armitage','@EdgeofSports','Tips','tips','Increase','growth','free','Growth','Join Free ','vulnerability of women','cornwall','Forensic Mystery','Learn how','Healthcare','Security Epidemic','ASMSG','microbiome','flood of refugees','Donald Trump','spider couples','Follow us','Sida','carotte','moche','slow motion','fake tweets','meuf','Market Research']
+
+banppl = ['FrancisMastroMj','StartupProduct','MyCloudstar','tonni_olsen','aliciacrisp1','AdeosunA1','fxckmodel','crochet_rr','FaustianDemon','MalliardReport','AllyBenoliel','biiiiitchy_69','richchigga','sexualgifs_','neymarjr','sofarrsogud','thesecret','Swaaann_','DJ_Korsakoff','Poetryinsunsets','alexielsi','MonMecNePeutPas','cvrentin','RailMinIndia']
 
 apicall = 0
 
@@ -65,6 +67,10 @@ QueueList = []
 
 def flushtmp():
 
+        Fig = Figlet(font='rev')
+        print Fig.renderText('flushtmp()')
+
+
 	if os.path.exists(Session):
 
 		file = open(Session,"r")
@@ -78,7 +84,8 @@ def flushtmp():
 
 			print
 			print "=="
-			print "Flushing Temps Files"
+			Fig = Figlet(font='cosmike')
+			print Fig.renderText('Flushing Temps Files')
 			print "=="
 			print
 
@@ -99,15 +106,30 @@ def flushtmp():
        			if os.path.exists(TmpMeal):
         		    os.remove(TmpMeal)
 
+		else:
+			lfts = 86400 - Laps.seconds
 
-
+			print
+			print 
+			print "=="
+                        Fig = Figlet(font='cosmike')
+                        print Fig.renderText('Starting from Last Session')
+			print
+			print "Numbers of seconds since the first api call :",Laps.seconds
+			print "%i Seconds left until Twitter flushs apicalls :" % lfts
+			print "=="
+			print
+			print
+			print
 
 
 	else:
 		print
 		print
 		print "=="
-		print "First Session For today"
+                Fig = Figlet(font='cosmike')
+                print Fig.renderText('New Session Started')
+		print currentdate
 		print "=="
 		print
 		print
@@ -118,7 +140,9 @@ def flushtmp():
 
 
 def checkmenu(wordlist):
-
+        Fig = Figlet(font='rev')
+        print Fig.renderText('CheckMenu()')
+	print
 	try:
 		global newkeywords
 		global checkM
@@ -146,19 +170,23 @@ def checkmenu(wordlist):
 		newkeywords = wordlist
 		print
 		print "=="
-		print "Search terms already used removed successfully"
+                Fig = Figlet(font='slscript')
+                print Fig.renderText('Search terms already used removed successfully')
 		print "=="
 		checkM = 1
 
 	except:
 		print "=="
-		print "No previous searchs found for today"
+                Fig = Figlet(font='slscript')
+                print Fig.renderText('No previous searchs found for today')
 		print "=="
 	
 
 
 def lastmeal(lastsearch):
 
+                Fig = Figlet(font='rev')
+                print Fig.renderText('LastSearch()')
 
                 try:
                         file = open(TmpMeal,"r")
@@ -179,14 +207,14 @@ def lastmeal(lastsearch):
 		file.close()
 
 
-
 def SaveTotalCall(call,update):
                 print
                 print
                 print
                 print
                 print
-		print "===================SAVING CALLS==================="
+		Fig = Figlet(font='rev')
+                print Fig.renderText('SaveTotalCall()')
 		print
 
 		global totalcall
@@ -258,6 +286,9 @@ def Retweet():
 	global updatecall
 	global totalupdatecall
 
+        Fig = Figlet(font='rev')
+        print Fig.renderText('Retweet()')
+
         if allok == 1:
 		print
 		print
@@ -282,8 +313,9 @@ def Retweet():
 		time.sleep(1)
 
 		if nbrRtwt == 0:
-			print "Cant retweet all of them .."
-			print "Trying to guess of many tweets can still be send ."
+                        Fig = Figlet(font='thick')
+                        print Fig.renderText('Cant Retweet All Of Them ..')
+			print Fig.renderText('Trying to guess of many tweets can still be send .')
 			tmpcall = int(totalupdatecall)
 			mx = 2223
 			res = 0
@@ -300,7 +332,9 @@ def Retweet():
 
 		if nbrRtwt > len(QueueList):
 			nbrRtwt = len(QueueList)
-			print "resizing to list size"
+                	Fig = Figlet(font='thick')
+                	print Fig.renderText('resizing to list size"')
+
 			print
 		print "=="
 		print
@@ -324,19 +358,23 @@ def Retweet():
 				tmpcount = tmpcount + 1
 				try:
 		                	twitter.retweet(id = FinalItem)
-			        	print "Done !"
+		                        Fig = Figlet(font='thick')
+		                        print Fig.renderText('Done !"')
 					print "Tweets left to send %i / %i " % (tmpcount,nbrRtwt)
 					print "**"
 					print
 					print "*=*=*=*=*=*=*=*=*=*"
-					print "Saving Tweet id"
+		                        Fig = Figlet(font='thick')
+        		                print Fig.renderText('Saving Tweet ID')
 					print "*=*=*=*=*=*=*=*=*=*"
 					Saveid(FinalItem)
 					time.sleep(1)
 					apicall = apicall +1
 					updatecall = updatecall + 1
 				except TwythonError as e:
-							print "Twython Error:"
+				                        Fig = Figlet(font='sblood')
+                        				print Fig.renderText('Twython Error')
+
 							print e
 							if "Twitter API returned a 403 (Forbidden), User is over daily status update limit." in e:
 									print "Oups ..too many requests for today (From Retweet function)"
@@ -351,11 +389,15 @@ def Retweet():
 									apicall = apicall + 1
 def tweetlist(point,id):
 
+
+        Fig = Figlet(font='rev')
+        print Fig.renderText('Tweetlist()')
         ammo = str(point) + "-" + str(id)
         retweetlist.append(ammo)
 
 	print "=="
-	print "Loaded into Queue"
+        Fig = Figlet(font='smkeyboard')
+        print Fig.renderText('Loaded into Queue !')
 	print "=="
 	print
 
@@ -363,6 +405,9 @@ def tweetlist(point,id):
 
 
 def limits():
+        Fig = Figlet(font='rev')
+        print Fig.renderText('Limits()')
+
 
 	global apicall
 	global updatecall
@@ -392,27 +437,37 @@ def limits():
                 print "****************************************"
                 print "****************************************"
                 print
-                print "CURRENT SEARCH RATE LIMITS ALMOST REACHED "
+	        Fig = Figlet(font='pepper')
+	        print Fig.renderText('CURRENT LIMITS ALMOST REACHED')
                 print ""
-		print "Saving current Search Term"
+                Fig = Figlet(font='slscript')
+                print Fig.renderText('Saving current Search Terms')
+
 		lastmeal(Keywords[:rndwords])
-                print "Saving Total Calls to file"
+                Fig = Figlet(font='slscript')
+                print Fig.renderText('Saving Total Calls to file')
                 SaveTotalCall(apicall,updatecall)
-                print "Reseting current apicalls"
+                Fig = Figlet(font='slscript')
+                print Fig.renderText('Resetting current apicalls')
+
                 updatecall = 0
                 apicall = 0
                 searchlimit = 0
 		restabit = 0
-
-                print "Login out"
-                print "WAITING 900 seconds"
+                Fig = Figlet(font='pepper')
+                print Fig.renderText('Login Out')
+		print
+                Fig = Figlet(font='slscript')
+                print Fig.renderText('Waiting 15 minutes')
 
                 for i in xrange(900,0,-1):
                         time.sleep(1)
                         sys.stdout.write("Time Left : " + str(i) + " Seconds" + "\r")
                         sys.stdout.flush()
 
-                print "Waking up.."
+                Fig = Figlet(font='doh')
+                print Fig.renderText('Waking up ..')
+
                 print ""
                 twitter = Twython(app_key, app_secret, oauth_token, oauth_token_secret)
                 print
@@ -430,27 +485,33 @@ def limits():
                 print "****************************************"
                 print "****************************************"
                 print
-                print "Saving current Search Term"
-                lastmeal(Keywords[:rndwords])
-
-                print "CURRENT SEARCH RATE LIMITS ALMOST REACHED "
-                print ""
-                print "Saving Total Calls to file"
+                Fig = Figlet(font='pepper')
+                print Fig.renderText('SEARCH LIMITS ALMOST REACHED')
+                Fig = Figlet(font='slscript')
+                print Fig.renderText('Saving current Search Terms')
+		lastmeal(Keywords[:rndwords])
+                Fig = Figlet(font='slscript')
+                print Fig.renderText('Saving Total Calls to file')
                 SaveTotalCall(apicall,updatecall)
-                print "Reseting current apicalls"
+                Fig = Figlet(font='slscript')
+                print Fig.renderText('Resetting current apicalls')
                 updatecall = 0
                 apicall = 0
 		searchlimit = 0
 
-                print "Login out"
-                print "WAITING 900 seconds"
+                Fig = Figlet(font='pepper')
+                print Fig.renderText('Login Out')
+		print
+                Fig = Figlet(font='slscript')
+                print Fig.renderText('Waiting 15 minutes')
 
                 for i in xrange(900,0,-1):
                         time.sleep(1)
                         sys.stdout.write("Time Left : " + str(i) + " Seconds" + "\r")
                         sys.stdout.flush()
 
-                print "Waking up.."
+                Fig = Figlet(font='doh')
+                print Fig.renderText('Waking up ..')
                 print ""
                 twitter = Twython(app_key, app_secret, oauth_token, oauth_token_secret)
                 print
@@ -475,25 +536,33 @@ def limits():
 		print "****************************************"
 		print "****************************************"
 		print
-		print "CURRENT API RATE LIMITS ALMOST REACHED "
-		print ""
-                print "Saving current Search Term"
-                lastmeal(Keywords[:rndwords])
-                print "Saving Total Calls to file"
+                Fig = Figlet(font='pepper')
+                print Fig.renderText('CURRENT LIMITS ALMOST REACHED')
+                Fig = Figlet(font='slscript')
+                print Fig.renderText('Saving current Search Terms')
+		lastmeal(Keywords[:rndwords])
+                Fig = Figlet(font='slscript')
+                print Fig.renderText('Saving Total Calls to file')
                 SaveTotalCall(apicall,updatecall)
-                print "Reseting current apicalls"
+                Fig = Figlet(font='slscript')
+                print Fig.renderText('Resetting current apicalls')
 		updatecall = 0
                 apicall = 0
 
-		print "Login out"
-		print "WAITING 900 seconds"
+                Fig = Figlet(font='pepper')
+                print Fig.renderText('Login Out')
+		print
+                Fig = Figlet(font='slscript')
+                print Fig.renderText('Waiting 15 minutes')
+
 		
 		for i in xrange(900,0,-1):
     			time.sleep(1)
 			sys.stdout.write("Time Left : " + str(i) + " Seconds" + "\r")
 			sys.stdout.flush()
 
-		print "Waking up.."
+                Fig = Figlet(font='doh')
+                print Fig.renderText('Waking up ..')
 		print ""
 		twitter = Twython(app_key, app_secret, oauth_token, oauth_token_secret)
                 print
@@ -507,7 +576,7 @@ def limits():
                 print
 
 
-	if totalcall > 7777:
+	if totalcall > 6666:
                 print
                 print
                 print
@@ -515,21 +584,20 @@ def limits():
                 print
 
                 print "****************************************"
-                print
-                print "API RATE LIMIT ALMOST REACHED FOR TODAY (Total 6666)"
-		print
                 print "****************************************"
                 print
-                print
-                print "Saving current Search Term"
-                lastmeal(Keywords[:rndwords])
 
                 print
-                print
-                print
-
-                SaveTotalCall(apicall,updatecall)
+                Fig = Figlet(font='pepper')
+                print Fig.renderText('CURRENT LIMITS ALMOST REACHED (total)')
+                Fig = Figlet(font='slscript')
+                print Fig.renderText('Saving current Search Terms')
 		lastmeal(Keywords[:rndwords])
+                Fig = Figlet(font='slscript')
+                print Fig.renderText('Saving Total Calls to file')
+                SaveTotalCall(apicall,updatecall)
+                Fig = Figlet(font='slscript')
+                print Fig.renderText('Resetting current apicalls')
 		sys.exit()
 
 	if totalupdatecall > 2223:
@@ -540,26 +608,25 @@ def limits():
                 print
                 print
                 print "****************************************"
-                print
-                print "API RATE LIMIT ALMOST REACHED FOR TODAY (Update 2223)"
-                print
                 print "****************************************"
-                print
-                print
-                print
-                print "Saving current Search Term"
-                lastmeal(Keywords[:rndwords])
-
-                print
-                print
-                SaveTotalCall(apicall,updatecall)
+                Fig = Figlet(font='pepper')
+                print Fig.renderText('CURRENT LIMITS ALMOST REACHED (update)')
+                Fig = Figlet(font='slscript')
+                print Fig.renderText('Saving current Search Terms')
 		lastmeal(Keywords[:rndwords])
+                Fig = Figlet(font='slscript')
+                print Fig.renderText('Saving Total Calls to file')
+                SaveTotalCall(apicall,updatecall)
+                Fig = Figlet(font='slscript')
+                print Fig.renderText('Resetting current apicalls')
+ 
  		sys.exit()
 
-def Ban(tweet):
-	#working on it#	
-	global Banned
+def Ban(tweet,sender):
 
+	global Banned
+        Fig = Figlet(font='rev')
+        print Fig.renderText('Ban()')
 	print
 	print "*=*=*=*=*=*=*=*=*=*"
 	print "Checking if this Tweet contains any forbidden terms:"
@@ -568,24 +635,51 @@ def Ban(tweet):
 		if forbid.lower() in tweet.lower():
 
 			print
-			print "This tweet contains forbidden terms :"
+	                Fig = Figlet(font='weird')
+	                print Fig.renderText('This tweet contains banned words :')
 			print
 			print tweet
+			print
+			print "** %s **",forbid
 			print
 			print "Going to trash ..."
 			print "*=*=*=*=*=*=*=*=*=*"
 			print
 			Banned = 1
 			time.sleep(3)
+
+        for forbid in banppl:
+                if forbid in sender:
+
+                        print
+	                Fig = Figlet(font='weird')
+	                print Fig.renderText('This tweet is from a banned user :')
+                        print
+                        print tweet
+                        print
+			print "** %s **",forbid
+			print
+                        print "Going to trash ..."
+                        print "*=*=*=*=*=*=*=*=*=*"
+                        print
+                        Banned = 1
+                        time.sleep(3)
+
+
+
 	if Banned == 0:
 
-		print "Good to go"
+                Fig = Figlet(font='speed')
+                print Fig.renderText('Good To Go !!')
 	        print "*=*=*=*=*=*=*=*=*=*"
 		print
 
 
 def Saveid(id):
 
+                Fig = Figlet(font='rev')
+                print Fig.renderText('Saveid()')
+		print
                 try:
                         file = open(idsaved,"r")
                         file.close()
@@ -606,7 +700,8 @@ def Saveid(id):
 		print
 		print "*=*=*=*=*=*=*=*=*=*"
 		print "Id :",id
-		print "Saved"
+                Fig = Figlet(font='larry3d')
+                print Fig.renderText('Saved')
 		print "*=*=*=*=*=*=*=*=*=*"
 		print
 		print
@@ -615,6 +710,9 @@ def Saveid(id):
 def Idlist(id):
 
 		global alreadysend
+
+                Fig = Figlet(font='rev')
+                print Fig.renderText('Idlist()')
 
 		alreadysend = 0
 
@@ -630,6 +728,16 @@ def Idlist(id):
                         file.write("")
                         file.close()
 
+		clean_lines = []
+
+		with open(idsaved, "r") as f:
+		    lines = f.readlines()
+		    clean_lines = [l.strip() for l in lines if l.strip()]
+
+		with open(idsaved, "w") as f:
+		    f.writelines('\n'.join(clean_lines))
+
+
 		file = open(idsaved,"r+")
                 lines = file.read().splitlines()
 
@@ -640,7 +748,8 @@ def Idlist(id):
 
 					print
 					print "*=*=*=*=*=*=*=*=*=*"
-					print "Already sent .. "
+			                Fig = Figlet(font='epic')
+        			        print Fig.renderText('Already sent ..')
 					print "*=*=*=*=*=*=*=*=*=*"
 					print
 					print "Id from file :",saved
@@ -652,7 +761,9 @@ def Idlist(id):
 
 			print
 			print "*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*"
-			print "This id has not been saved before"
+                	Fig = Figlet(font='italic')
+                	print Fig.renderText('This id has not been saved before')
+
 			print "*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*"
 			print
 
@@ -673,6 +784,8 @@ def Scoring(tweet,search):
 	print
 	print
 	print
+      	Fig = Figlet(font='rev')
+        print Fig.renderText('Scoring()')
 	print
 	print
 	print
@@ -906,7 +1019,7 @@ def Scoring(tweet,search):
 
 		if alreadysend == 0:
 
-			Ban(tweet['text'])
+			Ban(tweet['text'],tweet['user']['screen_name'])
 
 			if Banned == 0:
 				if Score > 15 :
@@ -914,7 +1027,8 @@ def Scoring(tweet,search):
 					print
 					print
 					print "######################################"
-					print "Adding to Retweet List"
+                			Fig = Figlet(font='shadow')
+                			print Fig.renderText('Adding to Retweet List')
 					print
 					print "Nbr of tweets in queue :",len(retweetlist)
 					print "Tweet Score : ",Score
@@ -989,6 +1103,8 @@ def searchTst(word):
 	global updatecall
 	global twitter
 	global restabit
+        Fig = Figlet(font='rev')
+        print Fig.renderText('SearchTst()')
 
 	ratechk = 0
 
@@ -1026,20 +1142,23 @@ def searchTst(word):
 			print
 			print "##########################################"
 			print "**"
-		        print "Starting search function"
+                	Fig = Figlet(font='nancyj-underlined')
+                	print Fig.renderText('Starting search function')
 			print "**"
 	                print "##########################################"
 
 			print
 			print "=/\/\/\/\/\/\/\/\/\/\/\="
-			print "=Calling Limit function="
+                	Fig = Figlet(font='eftirobot')
+                	print Fig.renderText('Calling Limit function')
 			print "=/\/\/\/\/\/\/\/\/\/\/\="
 	
 			limits()
 			try:
 		        	searchresults = twitter.search(q=word, count = 200)
 				print "##########################################"
-				print "Results found "
+                		Fig = Figlet(font='colossal')
+                		print Fig.renderText('Results Found !')
 				print ""
 				apicall = apicall + 1
 		
@@ -1055,10 +1174,11 @@ def searchTst(word):
 			try:
 				print
 				print "=="
-				print "Chargement des tweets pour " + word
+				print "Loading tweets for " + word
 				twitter.send_direct_message(user_id="292453904", text="Chargement des tweets pour " + str(word))
 				print ""
-				print "Done"
+                		Fig = Figlet(font='colossal')
+                		print Fig.renderText('Status Sent !')
 				print "=="
 				print ""
 				time.sleep(1)
@@ -1079,7 +1199,8 @@ def searchTst(word):
 			print
 	                print "##########################################"
 			print "**"
-			print "Search function terminated"
+                	Fig = Figlet(font='nancyj-underlined')
+                	print Fig.renderText('Search function Terminated')
 			print "**"
 			print "##########################################"
 		
@@ -1097,7 +1218,10 @@ def searchTst(word):
 		
 					Scoring(item,search)
 			else:
+				print "****************************************"
 				print
+                		Fig = Figlet(font='caligraphy')
+                		print Fig.renderText('No Result')
 				print
 				print
 				print "????????????????????????????"
@@ -1108,7 +1232,8 @@ def searchTst(word):
 				print
 				print
 				print "****************************************"
-				print "Saving non wanted search to no.result"
+                		Fig = Figlet(font='thick')
+                		print Fig.renderText('Saving unwanted search to no.result')
 
 		                try:
         		                file = open(noresult,"r")
@@ -1136,11 +1261,13 @@ def searchTst(word):
 #Some Code
 
 print "=/\/\/\/\/\/\/\/\/\/\/\/\="
-print "=Calling Flush function="
+Fig = Figlet(font='banner3-D')
+print Fig.renderText('Calling Flush function')
 print "=/\/\/\/\/\/\/\/\/\/\/\/\="
 flushtmp()
 print "=/\/\/\/\/\/\/\/\/\/\/\/\="
-print "=Calling Search function="
+Fig = Figlet(font='coinstak')
+print Fig.renderText('Calling Search function')
 print "=/\/\/\/\/\/\/\/\/\/\/\/\="
 
 Minwords = len(Keywords)/10
@@ -1149,7 +1276,8 @@ rndwords = random.randint(Minwords,Maxwords)
 
 print
 print "**"
-print "Today's Menu :"
+Fig = Figlet(font='calgphy2')
+print Fig.renderText("Today's Menu :")
 print
 print Keywords[:rndwords]
 print
@@ -1163,7 +1291,8 @@ print
 print
 print
 print "=/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\="
-print "=Check Last Searched hashtags function started="
+Fig = Figlet(font='contessa')
+print Fig.renderText("Check Last Searched hashtags function started")
 print "=/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\="
 print
 print
@@ -1178,7 +1307,8 @@ if checkM == 1:
 	print "**"
 	print
 	print "=="
-	print "=New Menu for today !="
+	Fig = Figlet(font='cosmic')
+	print Fig.renderText("New Menu for today !")
 	print "=="
 	print
 	print
@@ -1199,7 +1329,13 @@ print
 print
 print
 print "=/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\="
-print "= All Done Now Calling Retweet function="
+Fig = Figlet(font='basic')
+print Fig.renderText("All Done !")
+print "=/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\="
+print
+print "=/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\="
+Fig = Figlet(font='barbwire')
+print Fig.renderText("Calling Retweet function")
 print "=/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\="
 print
 print
@@ -1223,11 +1359,13 @@ print
 print
 print
 print "=/\/\/\/\/\/\/\/\/\/\/\/\="
-print "=Retweet function stopped="
+Fig = Figlet(font='jazmine')
+print Fig.renderText("Retweet function stopped")
 print "=/\/\/\/\/\/\/\/\/\/\/\/\="
 print
 print "=/\/\/\/\/\/\/\/\/\="
-print "=Saving calls count="
+Fig = Figlet(font='linux')
+print Fig.renderText("Calling Saving call function")
 print "=/\/\/\/\/\/\/\/\/\="
 print
 SaveTotalCall(apicall,updatecall)
@@ -1240,7 +1378,8 @@ print
 print
 print
 print "=/\/\/\/\/\/\/\/\/\/="
-print "=Saving Today's menu="
+Fig = Figlet(font='moscow')
+print Fig.renderText("Calling Save Search Terms Function")
 print "=/\/\/\/\/\/\/\/\/\/="
 print 
 print
@@ -1249,5 +1388,14 @@ print
 
 lastmeal(Keywords[:rndwords])
 print
-print "#################################################TheEnd#############################################################"
+print "##############################################################################################################"
+print "##############################################################################################################"
+Fig = Figlet(font='doh')
+print Fig.renderText("The End")
+print "##############################################################################################################"
+print "##############################################################################################################"
+print 
+print
+print
+print
 #################################################TheEnd#############################################################
