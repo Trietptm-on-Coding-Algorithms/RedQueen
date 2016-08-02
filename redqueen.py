@@ -658,7 +658,7 @@ def Ban(tweet,sender):
 			print "*=*=*=*=*=*=*=*=*=*"
 			print
 			Banned = 1
-			time.sleep(1)
+			time.sleep(2)
 
         for forbid in banppl:
                 if forbid in sender:
@@ -675,7 +675,7 @@ def Ban(tweet,sender):
                         print "*=*=*=*=*=*=*=*=*=*"
                         print
                         Banned = 1
-                        time.sleep(1)
+                        time.sleep(2)
 
 
 
@@ -720,7 +720,7 @@ def Saveid(id):
 		print "*=*=*=*=*=*=*=*=*=*"
 		print
 		print
-		#time.sleep(1)
+		time.sleep(1)
 
 
 def Idlist(id):
@@ -773,7 +773,7 @@ def Idlist(id):
 					print "tweet id :",id
 				
 					alreadysend = 1
-					#time.sleep(1)
+					time.sleep(2)
 
 
 		if alreadysend == 0:
@@ -1084,7 +1084,7 @@ def Scoring(tweet,search):
 					print "================================================================================"
 					print ""
 		
-					#time.sleep(1)
+					time.sleep(2)
 			else:
 	                                print ""
                                         Fig = Figlet(font='epic')
@@ -1099,7 +1099,7 @@ def Scoring(tweet,search):
 	                                print ":( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :("
 	                                print "================================================================================"
 	                                print ""
-					time.sleep(1)
+					time.sleep(2)
 		else:
 			                print ""
                                 	Fig = Figlet(font='epic')
@@ -1111,7 +1111,7 @@ def Scoring(tweet,search):
                                         print "==================================="
                                         print ""
 					alreadysend = 0
-                                        time.sleep(1)
+                                        time.sleep(2)
 
 
 
@@ -1128,7 +1128,7 @@ def Scoring(tweet,search):
 				print ":( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :("
 				print "================================================================================"
                                 print ""
-				#time.sleep(1)
+				time.sleep(2)
 
 #        #time.sleep(1)
 
