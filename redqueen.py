@@ -106,6 +106,12 @@ def flushtmp():
        			if os.path.exists(TmpMeal):
         		    os.remove(TmpMeal)
 
+                        Fig = Figlet(font='cybermedium')
+                        print Fig.renderText('Done Flushing')
+			time.sleep(2)
+			file = open("Tmp/Flushed","a+")
+			file.write("function worked")
+			file.close
 		else:
 			lfts = 86400 - Laps.seconds
 
@@ -291,6 +297,7 @@ def Retweet():
  	global apicall
 	global updatecall
 	global totalupdatecall
+	global restabit
 
         Fig = Figlet(font='rev')
         print Fig.renderText('Retweet()')
@@ -346,7 +353,7 @@ def Retweet():
 				limits()
 
 				FinalItem = item.split("-")[1]
-				time.sleep(1)
+				#time.sleep(1)
 		                print "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
         		        print "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
        		        	Fig = Figlet(font='cybermedium')
@@ -391,11 +398,17 @@ def Retweet():
 									lastmeal(Keywords[:rndwords])
 									sys.exit()
 							if "Twitter API returned a 429 (Too Many Requests), Rate limit exceeded" in e:
-									apicall = 180
+									restabit = 1
 									limits()
 							if "Twitter API returned a 403 (Forbidden), You have already retweeted this tweet." in e:
 									print "Already Retweet trying next one"
 									apicall = apicall + 1
+							if "(110, 'ETIMEDOUT')" in e:
+									print " Mysterious Timeout ..."
+									twitter = Twython(app_key, app_secret, oauth_token, oauth_token_secret)
+									restabit = 1
+									limits()
+
 									#time.sleep(1)
 def tweetlist(point,id):
 
@@ -404,7 +417,7 @@ def tweetlist(point,id):
         print Fig.renderText('Tweetlist()')
         ammo = str(point) + "-" + str(id)
         retweetlist.append(ammo)
-	time.sleep(1)
+#	time.sleep(1)
 	print "=="
         Fig = Figlet(font='epic')
         print Fig.renderText('Loaded into Queue !')
@@ -419,7 +432,7 @@ def limits():
         Fig = Figlet(font='rev')
         print Fig.renderText('Limits()')
 
-	time.sleep(1)
+#	time.sleep(1)
 	global apicall
 	global updatecall
 	global totalupdatecall
@@ -430,11 +443,13 @@ def limits():
 
 	print
 	print "==================="
-	print "Current Apicall = ",apicall
-	print "Total call = ",totalcall
-	print "="
-	print "Current Update call =",updatecall
-        print "Total Update call = ",totalupdatecall
+#	print "Current Apicall = ",apicall
+#	print "Total call = ",totalcall
+#	print "="
+#	print "Current Update call =",updatecall
+#        print "Total Update call = ",totalupdatecall
+        Fig = Figlet(font='doh')
+        print Fig.renderText('Ok')
 	print "==================="
 	#time.sleep(1)
 	if restabit == 1:
@@ -658,7 +673,7 @@ def Ban(tweet,sender):
 			print "*=*=*=*=*=*=*=*=*=*"
 			print
 			Banned = 1
-			time.sleep(2)
+			#time.sleep(1)
 
         for forbid in banppl:
                 if forbid in sender:
@@ -675,7 +690,7 @@ def Ban(tweet,sender):
                         print "*=*=*=*=*=*=*=*=*=*"
                         print
                         Banned = 1
-                        time.sleep(2)
+                        #time.sleep(2)
 
 
 
@@ -765,15 +780,13 @@ def Idlist(id):
 
 					print
 					print "*=*=*=*=*=*=*=*=*=*"
-			                Fig = Figlet(font='epic')
-        			        print Fig.renderText('Already sent ..')
+                                        print "Id from file :",saved
+                                        print "tweet id :",id
 					print "*=*=*=*=*=*=*=*=*=*"
 					print
-					print "Id from file :",saved
-					print "tweet id :",id
 				
 					alreadysend = 1
-					time.sleep(2)
+					#time.sleep(2)
 
 
 		if alreadysend == 0:
@@ -1084,7 +1097,7 @@ def Scoring(tweet,search):
 					print "================================================================================"
 					print ""
 		
-					time.sleep(2)
+					time.sleep(1)
 			else:
 	                                print ""
                                         Fig = Figlet(font='epic')
@@ -1099,11 +1112,14 @@ def Scoring(tweet,search):
 	                                print ":( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :("
 	                                print "================================================================================"
 	                                print ""
-					time.sleep(2)
+					time.sleep(1)
 		else:
 			                print ""
                                 	Fig = Figlet(font='epic')
                                 	print Fig.renderText("But ..")
+                                        print "================================================================================"
+                                        Fig = Figlet(font='cybermedium')
+                                        print Fig.renderText("Already sent !")
                                         print "==================================="
                                         print ":( :( :( :( :( :( :( :( :( :( :( :("
                                         print "This tweet has been already sent .."
@@ -1111,7 +1127,7 @@ def Scoring(tweet,search):
                                         print "==================================="
                                         print ""
 					alreadysend = 0
-                                        time.sleep(2)
+                                        time.sleep(1)
 
 
 
@@ -1128,7 +1144,7 @@ def Scoring(tweet,search):
 				print ":( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :("
 				print "================================================================================"
                                 print ""
-				time.sleep(2)
+				time.sleep(1)
 
 #        #time.sleep(1)
 
@@ -1147,14 +1163,15 @@ def searchTst(word):
 	global restabit
         Fig = Figlet(font='rev')
         print Fig.renderText('SearchTst()')
-	time.sleep(1)
+	#time.sleep(1)
 	ratechk = 0
 
 	try :
+                twitter = Twython(app_key, app_secret, oauth_token, oauth_token_secret)
         	rate = twitter.get_application_rate_limit_status()
 	        search = rate['resources']['search']['/search/tweets']['remaining']
 
-		apicall = apicall + 2
+		apicall = apicall + 3
 		ratechk = 1
 
         except Exception as e:
@@ -1162,6 +1179,8 @@ def searchTst(word):
 		print "mysterious error"
 		print
 		print e
+                twitter = Twython(app_key, app_secret, oauth_token, oauth_token_secret)
+		apicall = apicall + 1
 		restabit = 1
 		limits()
 
