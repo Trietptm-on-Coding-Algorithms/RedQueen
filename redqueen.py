@@ -43,6 +43,8 @@ banlist = ['#fishing','#fish','fish','fishing','vandals','lmaoo','skimming the p
 
 banppl = ['YoungTiba','AusWyche','mmasekgoam','Polygon','SiriusNews_com','Diez_30et1Diez','Gunzblazing_MV','WWE','1dasviness','sciendus','mrk1_','kennyjnners','ShitJokes','BsbLifeStyle_','Talib944','MattBellassai','charlieputh','FreddyAmazin','FurBearers','RedFumz','Carbonite','rugbycomau','DaybreakHelp','FindPsychics','FrancisMastroMj','StartupProduct','MyCloudstar','tonni_olsen','aliciacrisp1','AdeosunA1','fxckmodel','crochet_rr','FaustianDemon','MalliardReport','AllyBenoliel','biiiiitchy_69','richchigga','sexualgifs_','neymarjr','sofarrsogud','thesecret','Swaaann_','DJ_Korsakoff','Poetryinsunsets','alexielsi','MonMecNePeutPas','cvrentin','RailMinIndia']
 
+bandouble = []
+
 apicall = 0
 
 updatecall = 0
@@ -487,7 +489,7 @@ def limits():
                 print Fig.renderText('Waiting 15 minutes')
 
                 for i in xrange(900,0,-1):
-                        #time.sleep(1)
+                        time.sleep(900)
                         sys.stdout.write("Time Left : " + str(i) + " Seconds" + "\r")
                         sys.stdout.flush()
 
@@ -532,7 +534,7 @@ def limits():
                 print Fig.renderText('Waiting 15 minutes')
 
                 for i in xrange(900,0,-1):
-                        #time.sleep(1)
+                        time.sleep(900)
                         sys.stdout.write("Time Left : " + str(i) + " Seconds" + "\r")
                         sys.stdout.flush()
 
@@ -583,7 +585,7 @@ def limits():
 
 		
 		for i in xrange(900,0,-1):
-    			#time.sleep(1)
+    			time.sleep(900)
 			sys.stdout.write("Time Left : " + str(i) + " Seconds" + "\r")
 			sys.stdout.flush()
 
@@ -692,6 +694,22 @@ def Ban(tweet,sender):
                         Banned = 1
                         #time.sleep(2)
 
+        for forbid in bandouble:
+                if forbid in tweet:
+
+                        print
+                        Fig = Figlet(font='cybermedium')
+                        print Fig.renderText('This tweet is Identical to a Previous tweet :')
+                        print
+                        print tweet
+                        print
+                        print
+                        print Fig.renderText('Going To Trash')
+                        print "*=*=*=*=*=*=*=*=*=*"
+                        print
+                        Banned = 1
+                        #time.sleep(2)
+
 
 
 	if Banned == 0:
@@ -708,7 +726,7 @@ def Saveid(id):
                 Fig = Figlet(font='rev')
                 print Fig.renderText('Saveid()')
 		print
-		time.sleep(1)
+#		time.sleep(1)
 
                 try:
                         file = open(idsaved,"r")
@@ -744,7 +762,7 @@ def Idlist(id):
 
                 Fig = Figlet(font='rev')
                 print Fig.renderText('Idlist()')
-		time.sleep(1)
+#		time.sleep(1)
 
 		alreadysend = 0
 
@@ -809,6 +827,7 @@ def Scoring(tweet,search):
 	global updatecall
 	global totalupdatecall
 	global Banned
+	global bandouble
 	global alreadysend
 
 	Score = 0
@@ -1082,6 +1101,7 @@ def Scoring(tweet,search):
 					print
 					print
 					time.sleep(1)
+					bandouble.append(tweet['text'])
 					tweetlist(Score,tweet['id'])
 				else:
 					print ""
@@ -1097,7 +1117,7 @@ def Scoring(tweet,search):
 					print "================================================================================"
 					print ""
 		
-					time.sleep(1)
+					#time.sleep(1)
 			else:
 	                                print ""
                                         Fig = Figlet(font='epic')
@@ -1112,7 +1132,7 @@ def Scoring(tweet,search):
 	                                print ":( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :("
 	                                print "================================================================================"
 	                                print ""
-					time.sleep(1)
+					#time.sleep(1)
 		else:
 			                print ""
                                 	Fig = Figlet(font='epic')
@@ -1127,7 +1147,7 @@ def Scoring(tweet,search):
                                         print "==================================="
                                         print ""
 					alreadysend = 0
-                                        time.sleep(1)
+                                        #time.sleep(1)
 
 
 
@@ -1144,7 +1164,7 @@ def Scoring(tweet,search):
 				print ":( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :("
 				print "================================================================================"
                                 print ""
-				time.sleep(1)
+				#time.sleep(1)
 
 #        #time.sleep(1)
 
