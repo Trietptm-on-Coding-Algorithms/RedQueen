@@ -300,6 +300,7 @@ def Retweet():
 	global updatecall
 	global totalupdatecall
 	global restabit
+	global twitter
 
         Fig = Figlet(font='rev')
         print Fig.renderText('Retweet()')
