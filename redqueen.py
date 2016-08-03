@@ -489,7 +489,7 @@ def limits():
                 print Fig.renderText('Waiting 15 minutes')
 
                 for i in xrange(900,0,-1):
-                        time.sleep(900)
+                        time.sleep(1)
                         sys.stdout.write("Time Left : " + str(i) + " Seconds" + "\r")
                         sys.stdout.flush()
 
@@ -534,7 +534,7 @@ def limits():
                 print Fig.renderText('Waiting 15 minutes')
 
                 for i in xrange(900,0,-1):
-                        time.sleep(900)
+                        time.sleep(1)
                         sys.stdout.write("Time Left : " + str(i) + " Seconds" + "\r")
                         sys.stdout.flush()
 
@@ -585,7 +585,7 @@ def limits():
 
 		
 		for i in xrange(900,0,-1):
-    			time.sleep(900)
+    			time.sleep(1)
 			sys.stdout.write("Time Left : " + str(i) + " Seconds" + "\r")
 			sys.stdout.flush()
 
