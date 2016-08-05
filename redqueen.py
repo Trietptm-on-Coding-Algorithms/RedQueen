@@ -83,12 +83,12 @@ def flushtmp():
 		file = open(Session,"r")
 		datefile = file.read()
 		date_object = datetime.datetime.strptime(str(datefile), '%Y-%m-%d %H:%M:%S.%f')
-		Laps = date_object - currentdate
+		Laps = (currentdate - date_object)
 
 		print Laps
 
 		try:
-			if Laps.days < 0:
+			if (currentdate - date_object).total_seconds() > 86400:
 				goflush = 1
 		except Exception as e:
 			print e 
@@ -441,13 +441,14 @@ def Retweet():
 										sys.exit()
 									else:
 										restabit = 1
-										limit()
+										limits()
 							if "Twitter API returned a 429 (Too Many Requests), Rate limit exceeded" in e:
 									restabit = 1
 									limits()
 							if "Twitter API returned a 403 (Forbidden), You have already retweeted this tweet." in e:
 									print "Already Retweet trying next one"
 									apicall = apicall + 1
+									Saveid(FinalItem)
 							if "(110, 'ETIMEDOUT')" in e:
 									print " Mysterious Timeout ..."
 									twitter = Twython(app_key, app_secret, oauth_token, oauth_token_secret)
@@ -1226,7 +1227,7 @@ def Scoring(tweet,search):
 					print "================================================================================"
 					print ""
 		
-					#time.sleep(1)
+					time.sleep(1)
 			else:
 	                                print ""
                                         Fig = Figlet(font='epic')
@@ -1241,7 +1242,7 @@ def Scoring(tweet,search):
 	                                print ":( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :("
 	                                print "================================================================================"
 	                                print ""
-					#time.sleep(1)
+					time.sleep(1)
 		else:
 			                print ""
                                 	Fig = Figlet(font='epic')
@@ -1256,7 +1257,7 @@ def Scoring(tweet,search):
                                         print "==================================="
                                         print ""
 					alreadysend = 0
-                                        #time.sleep(1)
+                                        time.sleep(1)
 
 
 
@@ -1273,7 +1274,7 @@ def Scoring(tweet,search):
 				print ":( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :("
 				print "================================================================================"
                                 print ""
-				#time.sleep(1)
+				time.sleep(1)
 
 #        #time.sleep(1)
 
@@ -1373,7 +1374,7 @@ def searchTst(word):
                 		print Fig.renderText('Status Sent !')
 				print "=="
 				print ""
-				#time.sleep(1)
+				time.sleep(1)
 				
 				apicall = apicall +1
 				updatecall = updatecall +1
