@@ -1876,7 +1876,7 @@ def Scoring(tweet,search):
                                         Fig = Figlet(font='epic')
                                         print Fig.renderText("But ..")
                                         print "================================================================================"
-                                        Fig = Figlet(font='cybermedium')
+                                        Fig = Figlet(font='puffy')
 					figy = "Score = %i/19" % Score
                                         print Fig.renderText(figy)
                                         print "================================================================================"
