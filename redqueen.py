@@ -1865,7 +1865,9 @@ def Scoring(tweet,search):
                                         print Fig.renderText("But ..")
                                         print "================================================================================"
                                         Fig = Figlet(font='cybermedium')
-                                        print Fig.renderText("Score :"+str(Score)+" !")
+                                        print Fig.renderText("Score")
+					print "=="
+					print Score
                                         print "================================================================================"
 					print tweet['text']
 					print "================================================================================"
