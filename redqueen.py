@@ -1834,7 +1834,7 @@ def Scoring(tweet,search):
 			Ban(tweet['text'],tweet['user']['screen_name'],tweet['id'])
 
 			if Banned != 1:
-				if Score >= 19 :
+				if Score >= 18 :
 					print
 					print
 					print
@@ -1865,7 +1865,7 @@ def Scoring(tweet,search):
                                         print Fig.renderText("But ..")
                                         print "================================================================================"
                                         Fig = Figlet(font='cybermedium')
-                                        print Fig.renderText("Score")
+                                        print Fig.renderText("Score :"+str(Score)+" !")
                                         print "================================================================================"
 					print tweet['text']
 					print "================================================================================"
@@ -2107,7 +2107,18 @@ def searchTst(word):
 
 #Some Code
 
+Fig = Figlet(font='poison')
+print Fig.renderText("-----")
+print
+Fig = Figlet(font='alligator')
+print Fig.renderText("-RED-")
+print Fig.renderText("QUEEN")
+print
+Fig = Figlet(font='poison')
+print Fig.renderText("-----")
+print
 
+time.sleep(5)
 
 print "=/\/\/\/\/\/\/\/\/\/\/\/\="
 Fig = Figlet(font='basic')
