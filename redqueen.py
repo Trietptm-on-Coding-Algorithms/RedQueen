@@ -93,7 +93,7 @@ def flushtmp():
         Fig = Figlet(font='rev')
         print Fig.renderText('flushtmp()')
 
-	time.sleep(1)
+	time.sleep(0.3)
 	if os.path.exists(Session):
 
 		file = open(Session,"r")
@@ -212,7 +212,7 @@ def checkmenu(wordlist):
         Fig = Figlet(font='rev')
         print Fig.renderText('CheckMenu()')
 	print
-	time.sleep(1)
+	time.sleep(0.3)
 	try:
 		global newkeywords
 		global checkM
@@ -227,16 +227,16 @@ def checkmenu(wordlist):
 			set(lines) & set(wordlist)
 			print
 			print
-			time.sleep(1)
+			time.sleep(0.3)
 			print "Removing from search list ..."
 			wordlist = list(set(wordlist) - set(lines))
 			print
-			time.sleep(1)
+			time.sleep(0.3)
 			print
 			print "New lenght of searchlist : " + str(len(wordlist)) + " (Was " + str(oldlen) + " )"
 			print "=="
 			print
-			time.sleep(1)
+			time.sleep(0.3)
 			lenmatch = len(set(lines) & set(wordlist))
 		file.close()
 		newkeywords = wordlist
@@ -246,20 +246,20 @@ def checkmenu(wordlist):
                 print Fig.renderText('Search terms already used removed successfully')
 		print "=="
 		checkM = 1
-		time.sleep(1)
+		time.sleep(0.3)
 	except:
 		print "=="
                 Fig = Figlet(font='basic')
                 print Fig.renderText('No previous searchs found for today')
 		print "=="
-		time.sleep(1)
+		time.sleep(0.3)
 
 
 def lastmeal(lastsearch):
 
                 Fig = Figlet(font='rev')
                 print Fig.renderText('LastSearch()')
-		time.sleep(1)
+		time.sleep(0.3)
                 try:
                         file = open(TmpMeal,"r")
                         file.close()
@@ -277,7 +277,7 @@ def lastmeal(lastsearch):
 			file.write(words + "\n")
 			print "Marking " + words + " as old . "
 		file.close()
-		time.sleep(1)
+		time.sleep(0.3)
 
 
 def SaveTotalCall(call,update):
@@ -289,7 +289,7 @@ def SaveTotalCall(call,update):
 		Fig = Figlet(font='rev')
                 print Fig.renderText('SaveTotalCall()')
 		print
-		time.sleep(1)
+		time.sleep(0.3)
 		global totalcall
 		global updatecall
 		global totalupdatecall
@@ -319,7 +319,7 @@ def SaveTotalCall(call,update):
 		print "=="
 		file.write(finalitem)
 		file.close()
-		time.sleep(1)
+		time.sleep(0.3)
                 try:
                         file2 = open(TmpDay2,"r")
                         file2.close()
@@ -348,7 +348,7 @@ def SaveTotalCall(call,update):
                 Fig = Figlet(font='basic')
                 print Fig.renderText('Done Saving Calls')
 
-                time.sleep(1)
+                time.sleep(0.3)
                 print
                 print
                 print
@@ -511,7 +511,7 @@ def Retweet():
 									restabit = 1
 									limits()
 
-									#time.sleep(1)
+									time.sleep(0.3)
 def tweetlist(point,id):
 
 
@@ -519,13 +519,13 @@ def tweetlist(point,id):
         print Fig.renderText('Tweetlist()')
         ammo = str(point) + "-" + str(id)
         retweetlist.append(ammo)
-#	time.sleep(1)
+#	time.sleep(0.3)
 	print "=="
         Fig = Figlet(font='epic')
         print Fig.renderText('Loaded into Queue !')
 	print "=="
 	print
-	#time.sleep(1)
+	time.sleep(0.3)
 
 
 
@@ -534,7 +534,7 @@ def limits():
         Fig = Figlet(font='rev')
         print Fig.renderText('Limits()')
 
-#	time.sleep(1)
+#	time.sleep(0.3)
 	global apicall
 	global updatecall
 	global totalupdatecall
@@ -582,13 +582,13 @@ def limits():
                 print Fig.renderText('Waiting 60 minutes')
 
                 for i in xrange(3600,0,-1):
-                        time.sleep(1)
+                        time.sleep(0.3)
                         sys.stdout.write("Time Left : " + str(i) + " Seconds" + "\r")
                         sys.stdout.flush()
 
                 Fig = Figlet(font='cybermedium')
                 print Fig.renderText('Waking up ..')
-                time.sleep(1)
+                time.sleep(0.3)
                 print ""
                 twitter = Twython(app_key, app_secret, oauth_token, oauth_token_secret)
                 print
@@ -630,13 +630,13 @@ def limits():
                 print Fig.renderText('Waiting 15 minutes')
 
                 for i in xrange(900,0,-1):
-                        time.sleep(1)
+                        time.sleep(0.3)
                         sys.stdout.write("Time Left : " + str(i) + " Seconds" + "\r")
                         sys.stdout.flush()
 
                 Fig = Figlet(font='cybermedium')
                 print Fig.renderText('Waking up ..')
-		time.sleep(1)
+		time.sleep(0.3)
                 print ""
                 twitter = Twython(app_key, app_secret, oauth_token, oauth_token_secret)
                 print
@@ -675,7 +675,7 @@ def limits():
                 print Fig.renderText('Waiting 15 minutes')
 
                 for i in xrange(900,0,-1):
-                        time.sleep(1)
+                        time.sleep(0.3)
                         sys.stdout.write("Time Left : " + str(i) + " Seconds" + "\r")
                         sys.stdout.flush()
 
@@ -728,7 +728,7 @@ def limits():
 		
 		
 			for i in xrange(900,0,-1):
-    				time.sleep(1)
+    				time.sleep(0.3)
 				sys.stdout.write("Time Left : " + str(i) + " Seconds" + "\r")
 				sys.stdout.flush()
 		else:
@@ -736,7 +736,7 @@ def limits():
 
                 
                         for i in xrange(1800,0,-1):
-                                time.sleep(1)
+                                time.sleep(0.3)
                                 sys.stdout.write("Time Left : " + str(i) + " Seconds" + "\r")
                                 sys.stdout.flush()
                 Fig = Figlet(font='doh')
@@ -810,7 +810,7 @@ def limits():
         Fig = Figlet(font='doh')
         print Fig.renderText('Ok')
         print "==================="
-        #time.sleep(1)
+        time.sleep(0.3)
 
 
 
@@ -892,7 +892,7 @@ def Ban(tweet,sender,id):
 			print "*=*=*=*=*=*=*=*=*=*"
 			print
 			Banned = 1
-			time.sleep(1)
+			time.sleep(0.3)
 
         for forbid in banppl:
 	    if Banned == 0:
@@ -910,7 +910,7 @@ def Ban(tweet,sender,id):
                         print "*=*=*=*=*=*=*=*=*=*"
                         print
                         Banned = 1
-                        time.sleep(1)
+                        time.sleep(0.3)
 
         for forbid in bandouble:
 	    if Banned == 0:
@@ -973,7 +973,7 @@ def Ban(tweet,sender,id):
                 print Fig.renderText('Good To Go !!')
 	        print "*=*=*=*=*=*=*=*=*=*"
 		print
-		#time.sleep(1)
+		time.sleep(0.3)
 
 
 def Saveid(id):
@@ -981,7 +981,7 @@ def Saveid(id):
                 Fig = Figlet(font='rev')
                 print Fig.renderText('Saveid()')
 		print
-#		time.sleep(1)
+#		time.sleep(0.3)
 
                 try:
                         file = open(idsaved,"r")
@@ -1008,7 +1008,7 @@ def Saveid(id):
 		print "*=*=*=*=*=*=*=*=*=*"
 		print
 		print
-		time.sleep(1)
+		time.sleep(0.3)
 
 
 def Idlist(id):
@@ -1017,7 +1017,7 @@ def Idlist(id):
 
                 Fig = Figlet(font='rev')
                 print Fig.renderText('Idlist()')
-#		time.sleep(1)
+#		time.sleep(0.3)
 
 		alreadysend = 0
 
@@ -1071,7 +1071,7 @@ def Idlist(id):
 
 			print "*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*"
 			print
-			#time.sleep(1)
+			time.sleep(0.3)
 
 
 
@@ -1098,7 +1098,7 @@ def Scoring(tweet,search):
       	Fig = Figlet(font='rev')
         print Fig.renderText('Scoring()')
 	print
-	#time.sleep(1)
+	time.sleep(0.3)
 
 	print
 	print
@@ -1830,7 +1830,7 @@ def Scoring(tweet,search):
 
 
 
-	time.sleep(1)
+	time.sleep(0.3)
 
 
 
@@ -1889,7 +1889,7 @@ def Scoring(tweet,search):
 					print "================================================================================"
 					print ""
 		
-					time.sleep(1)
+					time.sleep(0.3)
 			else:
 	                                print ""
                                         Fig = Figlet(font='epic')
@@ -1924,7 +1924,7 @@ def Scoring(tweet,search):
                                         print "==================================="
                                         print ""
 					alreadysend = 0
-                                        time.sleep(1)
+                                        time.sleep(0.3)
 
 
 
@@ -1935,7 +1935,7 @@ def Scoring(tweet,search):
                                 print "================================================================================"
 				Fig = Figlet(font='cybermedium')
 				print Fig.renderText("Language")
-                                print "================================================================================"
+                                print "==============================================================================="
                                 print tweet['text']
 
 				print "================================================================================"
@@ -1944,9 +1944,9 @@ def Scoring(tweet,search):
 				print ":( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :("
 				print "================================================================================"
                                 print ""
-				time.sleep(1)
+				time.sleep(0.3)
 
-#        #time.sleep(1)
+        time.sleep(0.3)
 
 
 	print
@@ -1964,7 +1964,7 @@ def searchTst(word):
 	global restabit
         Fig = Figlet(font='rev')
         print Fig.renderText('SearchTst()')
-	#time.sleep(1)
+	time.sleep(0.3)
 	ratechk = 0
 
 	try :
@@ -2023,7 +2023,7 @@ def searchTst(word):
                 		print Fig.renderText('Results Found !')
 				print ""
 				apicall = apicall + 1
-				#time.sleep(1)
+				time.sleep(0.3)
 		
 		        except :
 						apicall = apicall + 1
@@ -2038,10 +2038,10 @@ def searchTst(word):
 				print "=="
 				print "Loading tweets for " + word
 				print ""
-				#time.sleep(1)
+				time.sleep(0.3)
 				print "=="
 				print ""
-				time.sleep(1)
+				time.sleep(0.3)
 				print ""
 	
 			except:
@@ -2051,7 +2051,7 @@ def searchTst(word):
 	                                        print "Error Sorry trying next one"
 						print "!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 	                                        print
-						#time.sleep(1)
+						time.sleep(0.3)
 			print
 			print
 	                print "##########################################"
@@ -2248,7 +2248,7 @@ print
 print
 print
 print
-#time.sleep(1)
+time.sleep(0.3)
 print
 print
 print "=/\/\/\/\/\/\/\/\/\/\/\/\="
@@ -2256,7 +2256,7 @@ Fig = Figlet(font='basic')
 print Fig.renderText("Retweet function stopped")
 print "=/\/\/\/\/\/\/\/\/\/\/\/\="
 print
-#time.sleep(1)
+time.sleep(0.3)
 print 
 print
 print
@@ -2273,7 +2273,7 @@ print
 print
 print
 print
-#time.sleep(1)
+time.sleep(0.3)
 lastmeal(Keywords[:rndwords])
 print
 avgscore = sum(moyscore) / float(len(moyscore))
@@ -2294,7 +2294,7 @@ Fig = Figlet(font='basic')
 print Fig.renderText("Calling Saving call function")
 print "=/\/\/\/\/\/\/\/\/\="
 print
-#time.sleep(1)
+time.sleep(0.3)
 SaveTotalCall(apicall,updatecall)
 
 print "##############################################################################################################"
@@ -2308,4 +2308,4 @@ print
 print
 print
 #################################################TheEnd#############################################################
-#time.sleep(1)
+time.sleep(0.3)
