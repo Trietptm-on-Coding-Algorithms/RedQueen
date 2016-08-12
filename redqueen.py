@@ -20,6 +20,10 @@ waithour = 0
 
 waithalf = 0
 
+moyscore = []
+
+rtsave = ""
+
 currentdate = datetime.datetime.now()
 
 path = "./Tmp/"
@@ -361,6 +365,7 @@ def Retweet():
 	global fuck
 	global waithour
 	global waithalf
+	global rtsave
 
 	waithalf = 1
 
@@ -425,7 +430,7 @@ def Retweet():
 			print e
 		        print "fuck"
 			time.sleep(5)
-
+		rtsave = nbrRtwt
 		tmpcount = 0
 		for item in QueueList[:nbrRtwt]:
 
@@ -448,14 +453,15 @@ def Retweet():
 				try:
 
 		                	twitter.retweet(id = FinalItem)
-		                        Fig = Figlet(font='basic')
+		                        Fig = Figlet(font='puffy')
 					print
 					print
 
-		                        print Fig.renderText('Done !"')
+		                        print Fig.renderText('Done !')
 					print
 					print
-					print "Tweets left to send %i / %i " % (tmpcount,nbrRtwt)
+					figy = "Tweets left to send %i / %i " % (tmpcount,nbrRtwt)
+					print Fig.renderText(figy)
 					print "**"
 					print
 					print "*=*=*=*=*=*=*=*=*=*"
@@ -1079,6 +1085,7 @@ def Scoring(tweet,search):
 	global Banned
 	global bandouble
 	global alreadysend
+	global moyscore
 
 	Score = 0
 	Banned = 0
@@ -1825,6 +1832,10 @@ def Scoring(tweet,search):
 
 	time.sleep(1)
 
+
+
+	moyscore.append(Score)
+
 	if tweet['lang'] == "en" or tweet['lang'] == "fr" or tweet['lang'] == "en-gb":
 
 		Idlist(tweet['id'])
@@ -1865,9 +1876,10 @@ def Scoring(tweet,search):
                                         print Fig.renderText("But ..")
                                         print "================================================================================"
                                         Fig = Figlet(font='cybermedium')
-                                        print Fig.renderText("Score")
-					print "=="
-					print Score
+					figy = "Score = %i/19" % Score
+                                        print Fig.renderText(figy)
+                                        print "================================================================================"
+					print "Score = ",Score
                                         print "================================================================================"
 					print tweet['text']
 					print "================================================================================"
@@ -1894,7 +1906,7 @@ def Scoring(tweet,search):
 	                                print ":( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :("
 	                                print "================================================================================"
 	                                print ""
-					time.sleep(1)
+					
 		else:
 			                print ""
                                 	Fig = Figlet(font='epic')
@@ -2195,8 +2207,13 @@ if checkM == 1:
 	print "**"
 	print
 	time.sleep(5)
-
+tmpcnt= 0
 for key in Keywords[:rndwords]:
+	tmpcnt = tmpcnt + 1
+	figy = "Searching %i/%i" % (tmpcnt,rndwords) 
+	Fig = Figlet(font='puffy')
+	print Fig.renderText(figy)
+
 	searchTst(key)
 	
 
@@ -2259,8 +2276,9 @@ print
 #time.sleep(1)
 lastmeal(Keywords[:rndwords])
 print
+avgscore = sum(moyscore) / float(len(moyscore))
 try:
-                        twitter.send_direct_message(user_id="292453904", text="Redqueen.py stopped")
+                        twitter.send_direct_message(user_id="292453904", text="*Redqueen Debrief* -Searchs: "+ str(rndwords)+ +"-Twts:"+ str(len(moyscore)) + "-Avg Score:" +str(avgscore)+ "-Rtwts:" +str(rtsave)+ "-Tcall:"+str(totalcall)+"-Ucall:"+str(totalupdatecall))
                         apicall = apicall +1
                         updatecall = updatecall +1
                         print ""
