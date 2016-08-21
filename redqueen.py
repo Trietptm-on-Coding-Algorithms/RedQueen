@@ -1017,6 +1017,7 @@ def Ban(tweet,sender,id):
                 print Fig.renderText('Going To Trash')
                 print "*=*=*=*=*=*=*=*=*=*"
                 print
+		Banned = 1
 		time.sleep(3)
 
         if tweet.count("#") >= 3:
@@ -1028,6 +1029,7 @@ def Ban(tweet,sender,id):
                 print Fig.renderText('Going To Trash')
                 print "*=*=*=*=*=*=*=*=*=*"
                 print
+		Banned = 1
                 time.sleep(3)
 
 
