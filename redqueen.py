@@ -875,7 +875,7 @@ def Ban(tweet,sender,id):
 	    		if Banned == 0:
                 		pos = 0
                 		lng = len(mustbe)
-				if lng > 8:
+				if lng >= 8:
                 			half = lng / 2
 				else:
 					half = lng - 1
@@ -912,7 +912,7 @@ def Ban(tweet,sender,id):
                                 print
                                 print Fig.renderText('Did not found any Keyword in tweet.')
 				Banned = 1
-				time.sleep(3)
+				time.sleep(1)
 	print "*=*=*=*=*=*=*=*=*=*"
 	Fig = Figlet(font='cybermedium')
 #	print Fig.renderText('Checking if this Tweet contains any forbidden terms:')
@@ -1007,30 +1007,30 @@ def Ban(tweet,sender,id):
 			        sample = item[pos:next]
 			        maxpos = pos + len(sample)
 
-
-	if tweet.count("@") >= 3:
-
-
-                Fig = Figlet(font='basic')
-                print Fig.renderText('Follow Friday')
-		Fig = Figlet(font='cybermedium')
-                print Fig.renderText('Going To Trash')
-                print "*=*=*=*=*=*=*=*=*=*"
-                print
-		Banned = 1
-		time.sleep(3)
-
-        if tweet.count("#") >= 3:
+	if Banned == 0:
+		if tweet.count("@") >= 3:
 
 
-                Fig = Figlet(font='basic')
-                print Fig.renderText('HashTags Fever')
-                Fig = Figlet(font='cybermedium')
-                print Fig.renderText('Going To Trash')
-                print "*=*=*=*=*=*=*=*=*=*"
-                print
-		Banned = 1
-                time.sleep(3)
+	                Fig = Figlet(font='basic')
+	                print Fig.renderText('Follow Friday')
+			Fig = Figlet(font='cybermedium')
+	                print Fig.renderText('Going To Trash')
+	                print "*=*=*=*=*=*=*=*=*=*"
+	                print
+			Banned = 1
+			time.sleep(0.5)
+
+	        if tweet.count("#") >= 3:
+
+
+	                Fig = Figlet(font='basic')
+	                print Fig.renderText('HashTags Fever')
+	                Fig = Figlet(font='cybermedium')
+	                print Fig.renderText('Going To Trash')
+	                print "*=*=*=*=*=*=*=*=*=*"
+	                print
+			Banned = 1
+	                time.sleep(0.5)
 
 
 	if Banned == 0:
@@ -1434,8 +1434,6 @@ def Scoring(tweet,search):
                                         Banned = 1
                                         time.sleep(3)
 		else:
-			print "TimeFinal.month =",TimeFinal.month
-			print "currentdate.month =",currentdate.month
 			print
         except Exception as e:
                 print e
@@ -1452,8 +1450,6 @@ def Scoring(tweet,search):
                                         Banned = 1
                                         time.sleep(1)
 		else:
-			print "TimeFinal.year =",TimeFinal.year
-			print "currentdate.year =",currentdate.year
 			print 
 	except Exception as e:
 		print e
@@ -1468,6 +1464,44 @@ def Scoring(tweet,search):
 					time.sleep(0.5)
 	except:
 		placehold = "monkey want pullover , monkey get banana"
+
+	RtTime = tweet['retweeted_status']['created_at']
+        RtTime = RtTime.replace(" +0000 "," ")
+        RtTimed = datetime.datetime.strptime(RtTime,'%a %b %d %H:%M:%S %Y').strftime('%Y-%m-%d %H:%M:%S')
+	RtTimeFinal = datetime.datetime.strptime(RtTimed,'%Y-%m-%d %H:%M:%S')
+
+        try:
+
+            if currentdate.day != 01:
+                if RtTimeFinal.month != currentdate.month:
+                                        Fig = Figlet(font='basic')
+                                        print
+                                        print Fig.renderText('RT WAY TOO OLD !')
+                                        print
+                                        Banned = 1
+                                        time.sleep(3)
+                else:
+                        print
+        except Exception as e:
+                print e
+                time.sleep(3)
+
+        print
+
+        try:
+                if RtTimeFinal.year != currentdate.year:
+                                        Fig = Figlet(font='basic')
+                                        print
+                                        print Fig.renderText('RT FUCKING TOO OLD !')
+                                        print
+                                        Banned = 1
+                                        time.sleep(1)
+                else:
+                        print 
+        except Exception as e:
+                print e
+                time.sleep(3)
+
 
 	if Banned != 1:
 		if hourtweet.seconds < 3600:
@@ -1706,11 +1740,11 @@ def Scoring(tweet,search):
 					print "================================================================================"
 					print ""
 		
-					time.sleep(0.7)
+					time.sleep(0.5)
 			else:
 	                                print ""
                                         Fig = Figlet(font='epic')
-                                        print Fig.renderText("Verdict:")
+                                        print Fig.renderText("But ..")
 	                                print "================================================================================"
         	                        Fig = Figlet(font='cybermedium')
                 	                print Fig.renderText("Banned")
@@ -1723,7 +1757,7 @@ def Scoring(tweet,search):
 	                                print ":( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :("
 	                                print "================================================================================"
 	                                print ""
-					
+					time.sleep(0.5)
 		else:
 			                print ""
                                 	Fig = Figlet(font='epic')
@@ -1741,7 +1775,7 @@ def Scoring(tweet,search):
                                         print "==================================="
                                         print ""
 					alreadysend = 0
-                                        time.sleep(0.3)
+                                        time.sleep(0.5)
 
 
 
