@@ -1464,8 +1464,8 @@ def Scoring(tweet,search):
 					time.sleep(0.5)
 	except:
 		placehold = "monkey want pullover , monkey get banana"
-
-	if "created_at" in tweet['retweeted_status'] and len(tweet['retweeted_status']['created_at']) > 0:
+	if 'retweeted_status' in tweet :
+	   if 'created_at' in tweet['retweeted_status'] and len(tweet['retweeted_status']['created_at']) > 0:
 		RtTime = tweet['retweeted_status']['created_at']
 	        RtTime = RtTime.replace(" +0000 "," ")
 	        RtTimed = datetime.datetime.strptime(RtTime,'%a %b %d %H:%M:%S %Y').strftime('%Y-%m-%d %H:%M:%S')
@@ -1672,7 +1672,7 @@ def Scoring(tweet,search):
 	                print "Score = ",Score
 	                print
 
-	        if hourtweet.seconds > 90000:
+	        if hourtweet.seconds > 90000 and hourtweet.seconds <= 160000:
 	                print "Twenty 24 hours ago ."
 	                print "Score = - 14"
 	                print
@@ -1680,7 +1680,7 @@ def Scoring(tweet,search):
 	                print "Score = ",Score
 	                print
 	                time.sleep(3)
-                if hourtweet.total_seconds() >= 160000 or Rthourtweet.total_seconds()  >= 160000:
+                if hourtweet.total_seconds() >= 160000 or Rthourtweet.total_seconds()  >= 240000:
                         print "Too old more than Two Days."
                         print "Score = - 100000"
                         print
