@@ -1471,6 +1471,8 @@ def Scoring(tweet,search):
 	        RtTimed = datetime.datetime.strptime(RtTime,'%a %b %d %H:%M:%S %Y').strftime('%Y-%m-%d %H:%M:%S')
 		RtTimeFinal = datetime.datetime.strptime(RtTimed,'%Y-%m-%d %H:%M:%S')
 		Rthourtweet = now - RtTimeFinal
+		global Rthourtweet
+		print "Retweet created at :" ,RtTimeFinal
 	        try:
 	
 	            if currentdate.day != 01:
@@ -1503,7 +1505,6 @@ def Scoring(tweet,search):
 	                print e
 	                time.sleep(3)
 	
-
 	if Banned != 1:
 		if hourtweet.seconds < 3600:
 			Score = Score + 2 + 3
@@ -1680,15 +1681,15 @@ def Scoring(tweet,search):
 	                print "Score = ",Score
 	                print
 	                time.sleep(3)
-                if hourtweet.total_seconds() >= 160000 or Rthourtweet.total_seconds()  >= 240000:
-                        print "Too old more than Two Days."
-                        print "Score = - 100000"
-                        print
-                        Score = Score - 100000
-                        print "Score = ",Score
-                        print
-                        time.sleep(4)
-			Banned = 1
+#                if hourtweet.total_seconds() >= 160000 or Rthourtweet.total_seconds()  >= 240000:
+#                        print "Too old more than Two Days."
+#                        print "Score = - 100000"
+#                        print
+#                        Score = Score - 100000
+#                        print "Score = ",Score
+#                        print
+#                        time.sleep(4)
+#			Banned = 1
 
 	time.sleep(0.3)
 
@@ -1705,7 +1706,7 @@ def Scoring(tweet,search):
 			Ban(tweet['text'],tweet['user']['screen_name'],tweet['id'])
 
 			if Banned != 1:
-				if Score >= 16 :
+				if Score >= 17 :
 					print
 					print
 					print
