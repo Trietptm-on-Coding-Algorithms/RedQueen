@@ -5,3 +5,7 @@ depending on their contents , nbr of followers , retweets , favorites , language
 
 Then Sends me a dm when done retweeting all the good stuff in its timeline .
 
+
+pip install asciimatics
+pip install twython
+python 2.7
