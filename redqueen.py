@@ -216,7 +216,7 @@ def poptweet(screen):
     global newtlist
     cnt = 0
     newtlist = []
-    for item in bandouble:
+    for item in retweetlist:
         newtlist.append(filter(lambda x: x in printable, item))
     if len(newtlist) >= 2:
     	while cnt < len(newtlist):
@@ -504,10 +504,13 @@ def credits(screen):
 def SaveDouble(text):
 		print
 		print
+
                 Fig = Figlet(font='rev')
                 print Fig.renderText('SaveDouble()')
                 print
                 time.sleep(0.3)
+
+		text = text.replace("\n"," ")
 
                 try:
                         file = open(doublesaved,"r")
@@ -1500,12 +1503,13 @@ def Ban(tweet,sender,id):
 
 		while int(maxpos) < int(lng):
 		    try:
-			if str(sample) in str(tweet):
+			if str(sample) in str(tweet) and str(sample) != " ":
 				print
 	                        Fig = Figlet(font='cybermedium')
         	                print Fig.renderText('Some parts are Identicals to a Previous Tweet :')
-	                        print tweet
+	                        print "Tweet :",tweet
 	                        print
+				print "Found Matched :",sample
 	                        Saveid(id)
 	                        print
 	                        print Fig.renderText('Going To Trash')
