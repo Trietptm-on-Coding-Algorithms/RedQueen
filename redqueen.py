@@ -2324,7 +2324,7 @@ def Scoring(tweet,search):
 					print
 					time.sleep(1)
 					twtbyuser.append(tweet['user']['screen_name'])
-					bandouble.append(tweet['text'])
+					bandouble.append(tweet['text'].replace("\n"," ")
 					tweetlist(Score,tweet['id'])
 					SaveDouble(tweet['text'])
 				else:
