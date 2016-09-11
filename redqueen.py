@@ -1493,7 +1493,7 @@ def Ban(tweet,sender,id):
 
 	for item in bandouble:
 
-	    if Banned == 0:
+	    if Banned == 0 and len(item) > 10:
 		pos = 0
 		lng = len(item)
 		half = lng / 2
@@ -1737,7 +1737,7 @@ def Scoring(tweet,search):
 			print "##"
 			print "This tweet has been retweeted %i times " % tweet['retweet_count']
 			print "##"
-			if tweet['retweet_count'] < 1:
+			if tweet['retweet_count'] < 2:
 				Banned = 1
                                 print
                                 Fig = Figlet(font='cybermedium')
@@ -2324,7 +2324,7 @@ def Scoring(tweet,search):
 					print
 					time.sleep(1)
 					twtbyuser.append(tweet['user']['screen_name'])
-					bandouble.append(tweet['text'].replace("\n"," ")
+					bandouble.append(tweet['text'].replace("\n"," "))
 					tweetlist(Score,tweet['id'])
 					SaveDouble(tweet['text'])
 				else:
