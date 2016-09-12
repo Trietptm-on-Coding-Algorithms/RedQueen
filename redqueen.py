@@ -80,6 +80,8 @@ totalcall = 0
 
 totalupdatecall = 0
 
+tobsnd = []
+
 allok = 0
 
 Totalsent = 0
@@ -216,7 +218,7 @@ def poptweet(screen):
     global newtlist
     cnt = 0
     newtlist = []
-    for item in retweetlist:
+    for item in tobsnd:
         newtlist.append(filter(lambda x: x in printable, item))
     if len(newtlist) >= 2:
     	while cnt < len(newtlist):
@@ -598,7 +600,7 @@ def flushtmp():
         Fig = Figlet(font='rev')
         print Fig.renderText('flushtmp()')
 
-	time.sleep(0.3)
+	time.sleep(3)
 	if os.path.exists(Session):
 
 		file = open(Session,"r")
@@ -717,7 +719,7 @@ def checkmenu(wordlist):
         Fig = Figlet(font='rev')
         print Fig.renderText('CheckMenu()')
 	print
-	time.sleep(0.3)
+	time.sleep(3)
 	try:
 		global newkeywords
 		global checkM
@@ -805,7 +807,7 @@ def lastmeal(lastsearch):
 
                 Fig = Figlet(font='rev')
                 print Fig.renderText('LastSearch()')
-		time.sleep(0.3)
+		time.sleep(3)
                 try:
                         file = open(TmpMeal,"r")
                         file.close()
@@ -1365,7 +1367,8 @@ def limits():
 
 
 
-def Ban(tweet,sender,id):
+def Ban(tweet,sender,id,bio):
+
 
 	global Banned
 	global totalnokeyword
@@ -1452,6 +1455,25 @@ def Ban(tweet,sender,id):
 			Banned = 1
 			totalbannedwords = totalbannedwords + 1
 			time.sleep(0.3)
+        for forbid in banlist:
+            if Banned == 0:
+                if str(forbid.lower()) in str(bio.lower()):
+
+                        print
+                        Fig = Figlet(font='cybermedium')
+                        print Fig.renderText('This user profile contains banned words :')
+                        print
+                        print bio
+                        print
+                        print "** %s **" % str(forbid)
+                        print
+                        print Fig.renderText('Going To Trash ...')
+                        print "*=*=*=*=*=*=*=*=*=*"
+                        print
+                        Banned = 1
+                        totalbannedwords = totalbannedwords + 1
+                        time.sleep(0.3)
+
         for forbid in banppl:
 	    if Banned == 0:
                 if str(forbid.lower()) in str(sender.lower()):
@@ -1692,6 +1714,7 @@ def Idlist(id):
 
 
 
+
 def Scoring(tweet,search):
 
 	global apicall
@@ -1708,6 +1731,7 @@ def Scoring(tweet,search):
 	global totallanguage
 	global total2old
 	global twtbyuser
+	global tobsnd
 
 	Score = 0
 	Banned = 0
@@ -1720,7 +1744,7 @@ def Scoring(tweet,search):
       	Fig = Figlet(font='rev')
         print Fig.renderText('Scoring()')
 	print
-	time.sleep(0.3)
+	time.sleep(0.2)
 
 	print
 	print
@@ -1737,7 +1761,7 @@ def Scoring(tweet,search):
 			print "##"
 			print "This tweet has been retweeted %i times " % tweet['retweet_count']
 			print "##"
-			if tweet['retweet_count'] < 2:
+			if tweet['retweet_count'] <= 1:
 				Banned = 1
                                 print
                                 Fig = Figlet(font='cybermedium')
@@ -1746,7 +1770,7 @@ def Scoring(tweet,search):
                                 print
                                 print Fig.renderText('Going To Trash')
                                 print "*=*=*=*=*=*=*=*=*=*"
-				time.sleep(0.3)
+				time.sleep(0.2)
 
                                 print
 
@@ -1807,7 +1831,7 @@ def Scoring(tweet,search):
                                 print Fig.renderText('Going To Trash')
                                 print "*=*=*=*=*=*=*=*=*=*"
                                 Banned = 1
-				time.sleep(0.5)
+				time.sleep(0.2)
 
         else:
 
@@ -1827,7 +1851,7 @@ def Scoring(tweet,search):
                         print "This tweet contains an Emoticon and must die . "
                         print "##"
                         Banned = 1
-			time.sleep(1)
+			time.sleep(0.2)
 
 	   if Banned == 0:
 
@@ -2010,7 +2034,7 @@ def Scoring(tweet,search):
 	print
 	print "This tweet was send at : ",TwtTime
 	print
-	time.sleep(0.3)
+	time.sleep(0.2)
 	print
         try:
 	  if Banned != 1:
@@ -2022,12 +2046,12 @@ def Scoring(tweet,search):
                                         print
                                         Banned = 1
 					total2old = total2old + 1
-                                        time.sleep(3)
+                                        time.sleep(0.2)
 		else:
 			print
         except Exception as e:
                 print e
-                time.sleep(3)
+                time.sleep(0.2)
 
 	print
 
@@ -2040,12 +2064,12 @@ def Scoring(tweet,search):
                                         print
                                         Banned = 1
 					total2old = total2old + 1
-                                        time.sleep(5)
+                                        time.sleep(0.2)
 		else:
 			print 
 	except Exception as e:
 		print e
-		time.sleep(3)
+		time.sleep(0.2)
 	try:
              if Banned != 1:
 		if hourtweet.days == 1:
@@ -2059,7 +2083,7 @@ def Scoring(tweet,search):
 					print
 					Banned = 1
 					total2old = total2old +1
-					time.sleep(0.5)
+					time.sleep(0.2)
 	except:
 		pass
 
@@ -2082,12 +2106,12 @@ def Scoring(tweet,search):
 	                                        print
 	                                        Banned = 1
 						total2old = total2old + 1
-	                                        time.sleep(3)
+	                                        time.sleep(0.2)
 	                else:
 	                        print
 	        except Exception as e:
 	                print e
-	                time.sleep(3)
+	                time.sleep(0.2)
 	
 	        print
 	
@@ -2099,12 +2123,12 @@ def Scoring(tweet,search):
 	                                        print
 	                                        Banned = 1
 						total2old = total2old + 1
-	                                        time.sleep(1)
+	                                        time.sleep(0.2)
 	                else:
 	                        print 
 	        except Exception as e:
 	                print e
-	                time.sleep(3)
+	                time.sleep(0.2)
 	
 	if Banned != 1:
 		if hourtweet.seconds < 3600:
@@ -2275,16 +2299,6 @@ def Scoring(tweet,search):
 	                print "Score = ",Score
 	                print
 
-#                if hourtweet.total_seconds() >= 160000 or Rthourtweet.total_seconds()  >= 240000:
-#                        print "Too old more than Two Days."
-#                        print "Score = - 100000"
-#                        print
-#                        Score = Score - 100000
-#                        print "Score = ",Score
-#                        print
-#                        time.sleep(4)
-#			Banned = 1
-
 	time.sleep(0.3)
 
 
@@ -2297,7 +2311,7 @@ def Scoring(tweet,search):
 
 		if alreadysend == 0:
 
-			Ban(tweet['text'],tweet['user']['screen_name'],tweet['id'])
+			Ban(tweet['text'],tweet['user']['screen_name'],tweet['id'],tweet['user']['description'])
 
 			if Banned != 1:
 				if Score >= 19:
@@ -2324,6 +2338,7 @@ def Scoring(tweet,search):
 					print
 					time.sleep(1)
 					twtbyuser.append(tweet['user']['screen_name'])
+					tobsnd.append(tweet['text'])
 					bandouble.append(tweet['text'].replace("\n"," "))
 					tweetlist(Score,tweet['id'])
 					SaveDouble(tweet['text'])
@@ -2346,7 +2361,7 @@ def Scoring(tweet,search):
 					print "================================================================================"
 					print ""
 					totalscore = totalscore + 1
-					time.sleep(0.5)
+					time.sleep(0.2)
 			else:
 	                                print ""
                                         Fig = Figlet(font='epic')
@@ -2363,7 +2378,7 @@ def Scoring(tweet,search):
 	                                print ":( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :("
 	                                print "================================================================================"
 	                                print ""
-					time.sleep(0.5)
+					time.sleep(0.2)
 		else:
 			                print ""
                                 	Fig = Figlet(font='epic')
@@ -2382,7 +2397,7 @@ def Scoring(tweet,search):
                                         print ""
 					alreadysend = 0
 					totalalrdysnd = totalalrdysnd + 1
-                                        time.sleep(0.5)
+                                        time.sleep(0.2)
 
 
 
@@ -2402,7 +2417,7 @@ def Scoring(tweet,search):
 				print ":( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :( :("
 				print "================================================================================"
                                 print ""
-				time.sleep(0.3)
+				time.sleep(0.2)
 				totallanguage = totallanguage +1
         time.sleep(0.3)
 
