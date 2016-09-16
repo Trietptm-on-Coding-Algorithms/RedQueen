@@ -2015,7 +2015,7 @@ def Scoring(tweet,search):
 				print "##"
 	                        print "This tweet is from a known user : ",tweet['user']['screen_name']
 				print "##"
-        	                Score = Score + 23
+        	                Score = Score + 10
 
 			if coop in Friends:
 				print "##"
