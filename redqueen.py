@@ -2072,7 +2072,7 @@ def Scoring(tweet,search):
 	try:
              if Banned != 1:
 		if hourtweet.days == 1:
-			print "Score -15"
+			print "Score - 13"
 			print "More than a day Not so fresh ..."
 			Score = Score - 13
 		if hourtweet.days > 2:
