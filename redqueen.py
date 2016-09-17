@@ -1845,12 +1845,12 @@ def Scoring(tweet,search):
 	   if Banned == 0:
 		print
 
-             	if 'symbols' in tweet['entities'] and len(tweet['entities']['symbols']) > 1:
+             	if 'symbols' in tweet['entities'] and len(tweet['entities']['symbols']) > 0:
                         print "##"
                         print "This tweet contains an Emoticon and must die . "
                         print "##"
                         Banned = 1
-			time.sleep(5)
+			time.sleep(1)
 		print
 
 	   if Banned == 0:
