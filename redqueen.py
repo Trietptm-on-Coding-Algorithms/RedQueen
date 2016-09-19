@@ -503,6 +503,7 @@ def credits(screen):
 #Some Defs
 
 
+
 def SaveDouble(text):
 		print
 		print
@@ -1761,7 +1762,8 @@ def Scoring(tweet,search):
 			print "##"
 			print "This tweet has been retweeted %i times " % tweet['retweet_count']
 			print "##"
-			if tweet['retweet_count'] < 1:
+			luck = randint(0,1)
+			if tweet['retweet_count'] < 1 and luck == 0:
 				Banned = 1
                                 print
                                 Fig = Figlet(font='cybermedium')
@@ -1771,6 +1773,14 @@ def Scoring(tweet,search):
                                 print Fig.renderText('Going To Trash')
                                 print "*=*=*=*=*=*=*=*=*=*"
 				##time.sleep(0.2)
+			if tweet['retweet_count'] < 1 and luck == 1:
+                                print
+                                Fig = Figlet(font='cybermedium')
+                                print Fig.renderText('Not enough retweet')
+                                print
+                                print
+                                print Fig.renderText('But Ok why not..')
+                                print "*=*=*=*=*=*=*=*=*=*"
 
                                 print
 
@@ -2132,65 +2142,65 @@ def Scoring(tweet,search):
 	
 	if Banned != 1:
 		if hourtweet.seconds < 3600:
-			Score = Score + 2 + 3 + 2 + 3
+			Score = Score + 23
 			print "Less than an hour ago ."
-			print "Score = + 10"
+			print "Score = + 23"
 			print
 			print "Score = ",Score
 			print
 
 		if hourtweet.seconds > 3600 and hourtweet.seconds <= 7200:
-			Score = Score + 2 + 2 + 2 + 3
+			Score = Score + 2 + 2
 			print "An hour ago ."
-			print "Score = + 9"
+			print "Score = + 22"
 
         	if hourtweet.seconds > 7200 and hourtweet.seconds <= 10800:
-        	        Score = Score + 3 + 3 + 2
+        	        Score = Score + 21
         	        print "Two hours ago ."
-			print "Score = + 8"
+			print "Score = + 21"
 
         	if hourtweet.seconds > 10800 and hourtweet.seconds <= 14400:
-        	        Score = Score + 3 + 2 + 2
+        	        Score = Score + 20
         	        print "Three hours ago ."
-			print "Score = + 7"
+			print "Score = + 20"
 
         	if hourtweet.seconds > 14400 and hourtweet.seconds <= 18000:
-        	        Score = Score + 3 + 3
+        	        Score = Score + 19
         	        print "Four hours ago ."
-			print "Score = + 6"
+			print "Score = + 19"
 
         	if hourtweet.seconds > 18000 and hourtweet.seconds <= 21600:
-                	Score = Score + 3 + 2
+                	Score = Score + 18
                 	print "Five hours ago ."
-			print "Score = + 5"
+			print "Score = + 18"
 
       	 	if hourtweet.seconds > 21600 and hourtweet.seconds <= 25200:
-                	Score = Score + 2 + 2
+                	Score = Score + 17
                 	print "Six hours ago ."
-			print "Score = + 4"
+			print "Score = + 17"
 
         	if hourtweet.seconds > 25200 and hourtweet.seconds <= 28800:
-			Score = Score + 3
+			Score = Score + 16
                 	print "Seven hours ago ."
-			print "Score = + 3"
+			print "Score = + 16"
 
         	if hourtweet.seconds > 28800 and hourtweet.seconds <= 32400:
-                	Score = Score + 2
+                	Score = Score + 15
                 	print "Eight hours ago ."
-                	print "Score = + 2"
+                	print "Score = + 15"
 
         	if hourtweet.seconds > 32400 and hourtweet.seconds <= 36000:
-        	        Score = Score + 3 - 2
+        	        Score = Score + 14
         	        print "Nine hours ago ."
-        	        print "Score = + 1"
+        	        print "Score = + 14"
         	if hourtweet.seconds > 36000 and hourtweet.seconds <= 39600:
         	        print "Ten hours ago ."
-        	        print "Score = + 0"
-
+        	        print "Score = + 13"
+                        Score = Score + 13
         	if hourtweet.seconds > 39600 and hourtweet.seconds <= 43200:
-        	        Score = Score - 1
+        	        Score = Score + 12
         	        print "Eleven hours ago ."
-        	        print "Score =  -1"
+        	        print "Score =  + 12"
         	        print
         	        print "Score = ",Score
         	        print
@@ -2198,32 +2208,32 @@ def Scoring(tweet,search):
 
 		if hourtweet.seconds > 43200 and hourtweet.seconds <= 46800:
 			print "Twelve hours ago ."
-			Score = Score - 2
-        	        print "Score = - 2"
+			Score = Score + 11
+        	        print "Score = + 11"
         	        print
         	        print "Score = ",Score
         	        print
 
 
         	if hourtweet.seconds > 46800 and hourtweet.seconds <= 50400:
-        	        Score = Score - 3
+        	        Score = Score + 10
         	        print "Thirteen hours ago ."
-        	        print "Score = - 3"
+        	        print "Score = + 10"
         	        print
         	        print "Score = ",Score
         	        print
 	
 
         	if hourtweet.seconds > 50400 and hourtweet.seconds <= 54000:
-        	        Score = Score - 4
+        	        Score = Score + 9
         	        print "Fourteen hours ago ."
-        	        print "Score = - 4"
+        	        print "Score = + 9"
 
 
         	if hourtweet.seconds > 54000 and hourtweet.seconds <= 57600:
-        	        Score = Score - 5
+        	        Score = Score + 8
         	        print "Fiveteen hours ago ."
-        	        print "Score = - 5"
+        	        print "Score = + 8"
         	        print
         	        print "Score = ",Score
         	        print
@@ -2231,26 +2241,26 @@ def Scoring(tweet,search):
 
 
         	if hourtweet.seconds > 57600 and hourtweet.seconds <= 61200:
-        	        Score = Score - 6
+        	        Score = Score + 7
         	        print "Sixteen hours ago ."
-        	        print "Score = - 6"
+        	        print "Score = + 7"
         	        print
         	        print "Score = ",Score
         	        print
 
 
         	if hourtweet.seconds > 61200 and hourtweet.seconds <= 64800:
-        	        Score = Score - 7
+        	        Score = Score + 6
         	        print "Seventeen hours ago ."
-        	        print "Score = - 7"
+        	        print "Score = + 6"
         	        print
         	        print "Score = ",Score
         	        print
 
                 if hourtweet.seconds > 64800 and hourtweet.seconds <= 68400:
-                        Score = Score - 8
+                        Score = Score + 5
                         print "Eighteen hours ago ."
-                        print "Score = - 8"
+                        print "Score = + 5"
                         print
                         print "Score = ",Score
                         print
@@ -2258,43 +2268,43 @@ def Scoring(tweet,search):
 
 
         	if hourtweet.seconds > 68400 and hourtweet.seconds <= 72000:
-        	        Score = Score - 8
+        	        Score = Score + 4
         	        print "Nineteen hours ago ."
-        	        print "Score = - 8"
+        	        print "Score = + 4"
         	        print
         	        print "Score = ",Score
         	        print
 
 
         	if hourtweet.seconds > 72000 and hourtweet.seconds <= 75600:
-        	        Score = Score - 9
+        	        Score = Score + 3
         	        print "twenty hours ago ."
-        	        print "Score = - 9"
+        	        print "Score = + 3"
         	        print
         	        print "Score = ",Score
         	        print
 
 
         	if hourtweet.seconds > 75600 and hourtweet.seconds <= 79200:
-                	Score = Score - 10
+                	Score = Score + 2
                 	print "Twenty one hours ago ."
-                	print "Score = - 10"
+                	print "Score = + 2"
                 	print
                 	print "Score = ",Score
                 	print
 
         	if hourtweet.seconds > 79200 and hourtweet.seconds <= 82800:
-                	Score = Score - 11
+                	Score = Score + 1
                 	print "Twenty two hours ago ."
-                	print "Score = - 11"
+                	print "Score = + 1"
                 	print
                 	print "Score = ",Score
                 	print
 
 	        if hourtweet.seconds > 82800 and hourtweet.seconds < 86400:
 	                print "Twenty three hours ago ."
-			Score = Score - 12
-	                print "Score = - 12"
+			Score = Score + 0
+	                print "Score = + 0"
 	                print
 	                print "Score = ",Score
 	                print
@@ -2314,7 +2324,7 @@ def Scoring(tweet,search):
 			Ban(tweet['text'],tweet['user']['screen_name'],tweet['id'],tweet['user']['description'])
 
 			if Banned != 1:
-				if Score >= 15:
+				if Score >= 18:
 					print
 					print
 					print
