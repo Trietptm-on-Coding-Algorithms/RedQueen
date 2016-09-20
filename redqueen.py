@@ -1403,9 +1403,16 @@ def Ban(tweet,sender,id,bio):
                 		maxpos = pos + int(len(sample))
 
 		                while maxpos < int(lng):
-				    if len(sample) <= 3:
-					continue
+				    
+					
 		   		    try:
+                                        if len(sample) <= 3:
+                                                pos = pos + 1
+                                                next = int(half) + pos
+                                                sample = mustbe[pos:int(next)]
+                                                maxpos = pos + int(len(sample))
+
+
 		                        if str(sample.lower()) in str(tweet.lower()):
 		                                print
 		                                Fig = Figlet(font='cybermedium')
