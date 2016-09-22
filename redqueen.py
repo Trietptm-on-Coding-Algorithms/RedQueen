@@ -18,7 +18,7 @@ sys.setdefaultencoding("utf-8")
 import os
 import string
 import datetime
-
+import emoji
 
 #Some Vars
 
