@@ -24,6 +24,8 @@ do not retweet if older than 2 days (Roll a dice if 1 give it a chance),Saves it
 
 do not retweet if the user is not followed by at least 400 ppl,
 
+Such quote Th3j3st3r , MAny Replace his name by Th3Bouf0n , Very Hack, Much Wow ,  
+
 saves items searched which returned no result and removes them from the search list,
 
 provide some statistics about the current session during api resting time,
