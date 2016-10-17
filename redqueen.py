@@ -2391,7 +2391,7 @@ def Scoring(tweet,search):
 			                        print
 			                        print tweet['text']
 			                        print
-						Saveid(id)
+						Saveid(tweet['id'])
 			                        print
 			                        print Fig.renderText('Going To Trash')
 			                        print "*=*=*=*=*=*=*=*=*=*"
