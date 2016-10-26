@@ -610,8 +610,10 @@ def Request():
 
 			for item in words:
 				banlist.append(item)
-
-			 
+			print
+			print "lenght of banppl :",len(banppl)
+			print "lenght of banlist :",len(banlist)
+			print 
         		Fig = Figlet(font='cybermedium')
         		print Fig.renderText('Added new items to Ban lists')
 			print
