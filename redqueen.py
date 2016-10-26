@@ -570,7 +570,7 @@ def Request():
         print Fig.renderText('Request()')
         print
         time.sleep(0.3)
-	limit()
+	limits()
 	dmlist = twitter.get_direct_messages(count=200)
 	apicall = apicall + 1
 	if len(dmlist) > 0:
