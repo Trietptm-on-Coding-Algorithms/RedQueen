@@ -11,6 +11,7 @@ from random import randint, choice, shuffle
 from twython import Twython
 from TwitterApiKeys import app_key, app_secret, oauth_token, oauth_token_secret
 from pyfiglet import Figlet
+import re
 import time
 import sys
 reload(sys)
@@ -563,14 +564,15 @@ def Request():
 
 	global banlist
 	global banppl
+	global apicall
 
         Fig = Figlet(font='rev')
         print Fig.renderText('Request()')
         print
         time.sleep(0.3)
-
+	limit()
 	dmlist = twitter.get_direct_messages(count=200)
-
+	apicall = apicall + 1
 	if len(dmlist) > 0:
 
 	        for dm in dmlist:
@@ -590,7 +592,7 @@ def Request():
 	                for sample in items:
 	                        if not "https://t.co" in sample:
 	                                if "@" in sample:
-	                                        users.append(sample)
+	                                        users.append(sample.replace("@",""))
 	                                if not "@" in sample:
 	                                        words.append(sample)
 	                print 
