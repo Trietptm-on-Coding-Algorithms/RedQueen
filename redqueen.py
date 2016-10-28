@@ -212,7 +212,7 @@ def loadvars():
                 print Fig.renderText('Keywords Loaded')
                 print "*=*=*=*=*=*=*=*=*=*"
                 print
-		time.sleep(5)
+		time.sleep(2)
 
 		Keywordsave = Keywords
 		shuffle(Keywords)
@@ -258,7 +258,7 @@ def loadvars():
                 print Fig.renderText('Following Loaded')
                 print "*=*=*=*=*=*=*=*=*=*"
                 print
-		time.sleep(5)
+		time.sleep(2)
 
 		print
 		print
@@ -301,7 +301,7 @@ def loadvars():
                 print Fig.renderText('Friends Loaded')
                 print "*=*=*=*=*=*=*=*=*=*"
                 print
-		time.sleep(5)
+		time.sleep(2)
 
 
 		print
@@ -345,7 +345,7 @@ def loadvars():
                 print Fig.renderText('Banned Words Loaded')
                 print "*=*=*=*=*=*=*=*=*=*"
                 print
-		time.sleep(5)
+		time.sleep(2)
 
 
 		print
@@ -389,7 +389,7 @@ def loadvars():
                 print Fig.renderText('Banned Users Loaded')
                 print "*=*=*=*=*=*=*=*=*=*"
                 print
-		time.sleep(5)
+		time.sleep(2)
 
 def title(screen):
 
@@ -902,7 +902,7 @@ def Request():
         		    print Fig.renderText('Added new items to files')
 			    print
 	
-	                    time.sleep(5)
+	                    time.sleep(2)
 	                else:
 	                	print "%s You re not the boss of me now !"% dm['sender']['screen_name']
 
@@ -1020,7 +1020,7 @@ def CheckDouble():
                 print Fig.renderText('BanDouble Updated')
                 print "*=*=*=*=*=*=*=*=*=*"
                 print
-		time.sleep(5)
+		time.sleep(2)
 
 
 
@@ -1114,9 +1114,7 @@ def flushtmp():
                         Fig = Figlet(font='cybermedium')
                         print Fig.renderText('Done Flushing')
 			time.sleep(2)
-			file = open("Tmp/Flushed","a+")
-			file.write("function worked")
-			file.close
+			
 		else:
 			lfts = 86400 - Laps.seconds
 
