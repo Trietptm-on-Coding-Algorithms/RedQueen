@@ -833,13 +833,16 @@ def Request():
 	            	    print
 	            	    print
 	            	    print "On %s ."% dm['created_at']
+			    a = "On %s ."% dm['created_at']
 	            	    print "You send this commande :"
-	            	    print dm['text']            
+			    b = "You send this commande :"
+	            	    print dm['text']
+			    c = dm['text']
 	            	    items = dm['text'].replace("banuser,","").replace("Banuser,","").replace("banuser ,","").replace("Banuser ,","").split(',')
 	            	    print
-			
+			    
 	            	    for sample in items:
-	                        if not "https" in sample:
+	                        if not "http" in sample and len(sample) > 0:
 	                                if "@" in sample:
 	                                        users.append(sample.replace("@","").replace(" ",""))
 	                                else:
@@ -850,14 +853,42 @@ def Request():
 	                    if "Banuser" in dm['text']:
 	                        print
 	                        print "You also asked to Ban the user from that quote:"
+				d = "You also asked to Ban the user from that quote:"
 	                        print dm['entities']['urls'][-1]['expanded_url']
-	                        name = re.split('http://twitter.com/| ,|/status/| ',dm['entities']['urls'][-1]['expanded_url'])
+				e = dm['entities']['urls'][-1]['expanded_url']
+				if "http:" in e:
+	                        	name = re.split('http://twitter.com/|,|/status/| ',dm['entities']['urls'][-1]['expanded_url'])
+				if "https:" in e:
+					name = re.split('https://twitter.com/|,|/status/| ',dm['entities']['urls'][-1]['expanded_url'])
 	                        print name[1]
+
+				f = name[1]
 	                     	users.append(name[1])
-			        print "%i Banned topic and %i Banned Users Detected" % (len(words),len(users)+1)
+			        print "%i Banned topic and %i Banned Users Detected" % (len(words),len(users))
+				g = "%i Banned topic and %i Banned Users Detected" % (len(words),len(users))
 			    else:
 					print "%i Banned topic and %i Banned Users Detected" % (len(words),len(users))
 					print
+					d = ""
+					e = ""
+					f = ""
+					g = "%i Banned topic and %i Banned Users Detected" % (len(words),len(users))
+			    
+			    try:
+                                        file = open("./Data/Request.log","r")
+                                        file.close()
+                            except:
+                                        print "=="
+                                        print "File does not exist (Request.log)"
+                                        print "Creating file"
+                                        print "=="
+                                        file = open("./Data/Request.log","w")
+                                        file.write("")
+                                        file.close()
+			    
+			    file = open("./Data/Request.log","a")
+			    file.write("\n"+"#####"+"\n"+str(a)+"\n"+str(b)+"\n"+str(c)+"\n"+str(d)+"\n"+str(e)+"\n"+str(f)+"\n"+str(g)+"\n"+"Users: "+str(users)+"\n"+"Topic: "+str(words)+"\n"+"#####"+"\n")
+			    file.close
 		            try:
 		                        file = open(Tmpword,"r")
 		                        file.close()
