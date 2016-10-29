@@ -34,7 +34,20 @@ it does respect the limit of twitter api by saving the total nbr of calls and th
 
 behave depending on how many call are left to be send (reset calls every 24 hours), etc ...
 
+
 Then Sends a dm when done retweeting all the good stuff in its timeline .
+
+
+Banned words/users/ can be update by sending cmd seperated by comma via dm to Redqueen .
+
+ex: Banuser,bouffon,@thejester,dark web rocks!,@bfm,https://t.co/nFj083Iybr
+
+Banuser will add the user from the quote https://t.co/nFj083Iybr to Banned Users list (./Data/Rq.Bannedpeople)
+
+Then Will add @thejester and @bfm to Banned Users list too.
+
+"bouffon" and "dark web rocks!" will be add to Banned words list (./Data/Rq.Bannedword)
+
 
 ## Installation
 
@@ -42,3 +55,7 @@ pip install asciimatics
 pip install emoji
 pip install twython
 python 2.7
+
+
+Edit TwitterApiKeys.py and Rq.Bannedpeople ,Rq.Bannedword ,Rq.Following ,Rq.Friends ,Rq.Keywords in ./Data to fit your needs .
+Then Run the beast .
