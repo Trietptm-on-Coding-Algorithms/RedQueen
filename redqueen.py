@@ -492,6 +492,22 @@ def poptweet(screen):
 			time.sleep(0.3)
 	        	screen.refresh()
     Screen.wrapper(firework)
+def win(screen):
+    scenes = []
+    effects = [
+        Print(screen, ColourImageFile(screen, "./Data/win.jpg",
+                                           screen.height-2), 0,
+                        stop_frame=100),
+        Print(screen,
+                        Rainbow(screen, FigletText("Got One !", font="basic")),
+                        y=screen.height // 9 - 2),
+
+                ]
+    scenes.append(Scene(effects))
+    try:
+        screen.play(scenes,repeat=False, stop_on_resize=True)
+    except Exception as e:
+                print e
 def wow(screen):
     randodge = ['Cool ','Gorgeous ','Soft ','Enjoy ','Totally ','Awesome ','Fun ','Easy ','Free ','Wow ','Much ','Many ','Too ','So ','Such ','Very ','Amaze ']
     randcoin = ['Big Drama !','Wow !','Such Deception !','Very Sad !','Many Sucks !','So Mean !','Much Cry !','Full Failure !']
@@ -805,7 +821,7 @@ def signal_handler(signal, frame):
 
 def Request():
 
-
+	global Keywords
 	global banlist
 	global banppl
 	global apicall
@@ -815,21 +831,23 @@ def Request():
         print Fig.renderText('Request()')
         print
         time.sleep(0.3)
-	
+
 	dmlist = twitter.get_direct_messages(count=200)
 	apicall = apicall + 1
+
 	if len(dmlist) > 0:
 	
 	        for dm in dmlist:
 		    Banned = 0
-		    Idlist(dm['id'])
+		    #Idlist(dm['id'])
 		    if Banned == 0:
 	            	if "On4r4p" in str(dm['sender']['screen_name']):
 	            	    words = []
 	            	    users = []
+			    addkey = []
 			    Saveid(dm['id'])
 	            	    print
-	            	    print dm['id']
+	            	    print "New msg from allowed user:", dm['id']
 	            	    print
 	            	    print
 	            	    print "On %s ."% dm['created_at']
@@ -838,11 +856,12 @@ def Request():
 			    b = "You send this commande :"
 	            	    print dm['text']
 			    c = dm['text']
-	            	    items = dm['text'].replace("banuser,","").replace("Banuser,","").replace("banuser ,","").replace("Banuser ,","").split(',')
+	            	    items = dm['text'].replace("","").replace("banuser,","").replace("Banuser,","").replace("banuser ,","").replace("Banuser ,","").split(',')
+
 	            	    print
 			    
 	            	    for sample in items:
-	                        if not "http" in sample and len(sample) > 0:
+	                        if not "http" in sample and not "https" in sample and not "add:" in sample and not "add :" in sample and not "Add :" in sample and not "Add:" in sample and sample is not " " and len(sample) > 1:
 	                                if "@" in sample:
 	                                        users.append(sample.replace("@","").replace(" ",""))
 	                                else:
@@ -850,22 +869,30 @@ def Request():
 	                    print 
 	                    
 
-	                    if "Banuser" in dm['text']:
+	                    if "Banuser" in dm['text'] or "banuser" in dm['text']:
 	                        print
-	                        print "You also asked to Ban the user from that quote:"
-				d = "You also asked to Ban the user from that quote:"
-	                        print dm['entities']['urls'][-1]['expanded_url']
-				e = dm['entities']['urls'][-1]['expanded_url']
-				if "http:" in e:
-	                        	name = re.split('http://twitter.com/|,|/status/| ',dm['entities']['urls'][-1]['expanded_url'])
-				if "https:" in e:
-					name = re.split('https://twitter.com/|,|/status/| ',dm['entities']['urls'][-1]['expanded_url'])
-	                        print name[1]
+	                        print "You asked to Ban the user from that quote:"
+				d = "You asked to Ban the user from that quote:"
+				try:
+	                                d = "You asked to Ban the user from that quote:"
+	                        	print dm['entities']['urls'][-1]['expanded_url']
+					e = dm['entities']['urls'][-1]['expanded_url']
+					if "http:" in e:
+	                        		name = re.split('http://twitter.com/|,|/status/| ',dm['entities']['urls'][-1]['expanded_url'])
+					if "https:" in e:
+						name = re.split('https://twitter.com/|,|/status/| ',dm['entities']['urls'][-1]['expanded_url'])
+	                        	print name[1]
 
-				f = name[1]
-	                     	users.append(name[1])
-			        print "%i Banned topic and %i Banned Users Detected" % (len(words),len(users))
-				g = "%i Banned topic and %i Banned Users Detected" % (len(words),len(users))
+					f = name[1]
+		                     	users.append(name[1])
+				        print "%i Banned topic and %i Banned Users Detected" % (len(words),len(users))
+					g = "%i Banned topic and %i Banned Users Detected" % (len(words),len(users))
+				except:
+					print "But no quote was found ..."
+                                        d = ""
+                                        e = ""
+                                        f = ""
+                                        g = "%i Banned topic and %i Banned Users Detected" % (len(words),len(users))
 			    else:
 					print "%i Banned topic and %i Banned Users Detected" % (len(words),len(users))
 					print
@@ -873,7 +900,24 @@ def Request():
 					e = ""
 					f = ""
 					g = "%i Banned topic and %i Banned Users Detected" % (len(words),len(users))
-			    
+
+
+
+                            if "add:" in dm['text'] or "Add:" in dm['text'] or "add :" in dm['text'] or "Add :" in dm['text']:
+                                print
+                                print "You asked to add a keywords :"
+				items = dm['text'].split(",")
+                            	for sample in items:
+	                                if "add:" in sample or "add :" in sample or "Add :" in sample or "Add:" in sample and len(sample) > 0:
+        	                                addkey.append(sample.split(":",1)[1])
+						print addkey
+				h = "You asked to add a Keyword :",addkey
+			    else:
+					h = ""
+                            print 
+
+				
+
 			    try:
                                         file = open("./Data/Request.log","r")
                                         file.close()
@@ -887,17 +931,18 @@ def Request():
                                         file.close()
 			    
 			    file = open("./Data/Request.log","a")
-			    file.write("\n"+"#####"+"\n"+str(a)+"\n"+str(b)+"\n"+str(c)+"\n"+str(d)+"\n"+str(e)+"\n"+str(f)+"\n"+str(g)+"\n"+"Users: "+str(users)+"\n"+"Topic: "+str(words)+"\n"+"#####"+"\n")
+			    file.write("\n"+"#####"+"\n"+str(a)+"\n"+str(b)+"\n"+str(c)+"\n"+str(d)+"\n"+str(e)+"\n"+str(f)+"\n"+str(g)+"\n"+str(h)+"\n"+"Users: "+str(users)+"\n"+"Topic: "+str(words)+"\n"+"#####"+"\n")
 			    file.close
+
 		            try:
-		                        file = open(Tmpword,"r")
+		                        file = open(Tmpbppl,"r")
 		                        file.close()
 		            except:
 		                        print "=="
-		                        print "File does not exist (Tmpword)"
+		                        print "File does not exist (Tmpbppl)"
 		                        print "Creating file"
 		                        print "=="
-		                        file = open(Tmpword,"w")
+		                        file = open(Tmpbppl,"w")
 		                        file.write("")
 		                        file.close()
 
@@ -912,6 +957,20 @@ def Request():
 		                        file = open(Tmpword,"w")
 		                        file.write("")
 		                        file.close()
+
+
+                            try:
+                                        file = open(Tmpkey,"r")
+                                        file.close()
+                            except:
+                                        print "=="
+                                        print "File does not exist (Tmpkey)"
+                                        print "Creating file"
+                                        print "=="
+                                        file = open(Tmpkey,"w")
+                                        file.write("")
+                                        file.close()
+
 
 
 			    file = open(Tmpbppl,"a")
@@ -927,6 +986,14 @@ def Request():
 			    for item in words:
 				file.write("\n"+str(item))
 			    file.close()
+
+                            file = open(Tmpkey,"a")
+
+                            for item in addkey:
+                                file.write("\n"+str(item))
+                            file.close()
+
+
 			    print
 			    print 
         		    Fig = Figlet(font='cybermedium')
@@ -934,6 +1001,9 @@ def Request():
 			    print
 	
 	                    time.sleep(2)
+
+			    Idlist(dm['id'])
+
 	                else:
 	                	print "%s You re not the boss of me now !"% dm['sender']['screen_name']
 
@@ -3218,7 +3288,8 @@ def Scoring(tweet,search):
 			Ban(tweet['text'],tweet['user']['screen_name'],tweet['id'],tweet['user']['description'])
 
 			if Banned != 1:
-				if Score >= 23:
+				if Score >= 19:
+					Screen.wrapper(win)
 					print
 					print
 					print
@@ -3240,7 +3311,7 @@ def Scoring(tweet,search):
 					print
 					print
 					print
-					time.sleep(0.5)
+					time.sleep(1)
 					twtbyuser.append(tweet['user']['screen_name'])
 					tobsnd.append(tweet['text'])
 					bandouble.append(tweet['text'].replace("\n"," "))
