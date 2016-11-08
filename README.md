@@ -40,7 +40,7 @@ Then Sends a dm when done retweeting all the good stuff in its timeline .
 
 Banned words/users/ can be update by sending cmd seperated by comma via dm to Redqueen .
 
-ex: Banuser,bouffon,@thejester,dark web rocks!,@bfm,https://t.co/nFj083Iybr
+ex: Banuser,bouffon,@thejester,Add:ZeroDay,dark web rocks!,@bfm,https://t.co/nFj083Iybr
 
 Banuser will add the user from the quote https://t.co/nFj083Iybr to Banned Users list (./Data/Rq.Bannedpeople)
 
@@ -48,6 +48,7 @@ Then Will add @thejester and @bfm to Banned Users list too.
 
 "bouffon" and "dark web rocks!" will be add to Banned words list (./Data/Rq.Bannedword)
 
+And Add:ZeroDay will add ZeroDay to the keywords list .(./Data/Rq.Keywords)
 
 ## Installation
 
