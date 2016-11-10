@@ -839,12 +839,13 @@ def Request():
 	
 	        for dm in dmlist:
 		    Banned = 0
-		    #Idlist(dm['id'])
+		    Idlist(dm['id'])
 		    if Banned == 0:
 	            	if "On4r4p" in str(dm['sender']['screen_name']):
 	            	    words = []
 	            	    users = []
 			    addkey = []
+			    localchk = 0
 			    Saveid(dm['id'])
 	            	    print
 	            	    print "New msg from allowed user:", dm['id']
@@ -866,9 +867,26 @@ def Request():
 	                                        users.append(sample.replace("@","").replace(" ",""))
 	                                else:
 	                                        words.append(sample)
-	                    print 
-	                    
+				if "http" in sample and not "add:" in sample and not "add :" in sample and not "Add :" in sample and not "Add:" in sample and sample is not " " and len(sample) > 1:
+					endcmd = sample.split("http")
+			                if "@" in endcmd:
+						
+	                                        users.append(endcmd[0].replace("@","").replace(" ",""))
 
+	                                if "add:" in endcmd or "add :" in endcmd or "Add :" in endcmd or "Add:" in endcmd and len(sample) > 0:
+        	                                addkey.append(endcmd[0].split(":",1)[1])
+						localchk = 1
+						h = "You asked to add a Keyword :",addkey
+
+	                                else:
+	                                        words.append(endcmd[0])
+
+							
+
+
+	                    print 	
+	                    
+			    
 	                    if "Banuser" in dm['text'] or "banuser" in dm['text']:
 	                        print
 	                        print "You asked to Ban the user from that quote:"
@@ -902,18 +920,18 @@ def Request():
 					g = "%i Banned topic and %i Banned Users Detected" % (len(words),len(users))
 
 
-
-                            if "add:" in dm['text'] or "Add:" in dm['text'] or "add :" in dm['text'] or "Add :" in dm['text']:
-                                print
-                                print "You asked to add a keywords :"
-				items = dm['text'].split(",")
-                            	for sample in items:
-	                                if "add:" in sample or "add :" in sample or "Add :" in sample or "Add:" in sample and len(sample) > 0:
-        	                                addkey.append(sample.split(":",1)[1])
-						print addkey
-				h = "You asked to add a Keyword :",addkey
-			    else:
-					h = ""
+			    if localchk == 0:
+	                            if "add:" in dm['text'] or "Add:" in dm['text'] or "add :" in dm['text'] or "Add :" in dm['text']:
+	                                print
+	                                print "You asked to add a keywords :"
+					items = dm['text'].split(",")
+	                            	for sample in items:
+		                                if "add:" in sample or "add :" in sample or "Add :" in sample or "Add:" in sample and len(sample) > 0:
+	        	                                addkey.append(sample.split(":",1)[1])
+							print addkey
+					h = "You asked to add a Keyword :",addkey
+				    else:
+						h = ""
                             print 
 
 				
