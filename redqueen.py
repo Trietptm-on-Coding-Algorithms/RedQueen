@@ -845,7 +845,7 @@ def Request():
 	            	    words = []
 	            	    users = []
 			    addkey = []
-			    localchk = 0
+			    
 			    Saveid(dm['id'])
 	            	    print
 	            	    print "New msg from allowed user:", dm['id']
@@ -941,7 +941,7 @@ def Request():
 						h = "You asked to add Keywords :",addkey
 						print "You asked to add Keywords :",addkey
 
-	                                if not "banuser"in endcmd and not "Banuser" in endcmd and not "add:" in endcmd and not "Add:" in encmd and not "add :" in endcmd and not "Add :" in endcmd ::
+	                                if not "banuser"in endcmd and not "Banuser" in endcmd and not "add:" in endcmd and not "Add:" in endcmd and not "add :" in endcmd and not "Add :" in endcmd :
 	                                        words.append(endcmd[0])
 
 			
