@@ -857,81 +857,100 @@ def Request():
 			    b = "You send this commande :"
 	            	    print dm['text']
 			    c = dm['text']
-	            	    items = dm['text'].replace("","").replace("banuser,","").replace("Banuser,","").replace("banuser ,","").replace("Banuser ,","").split(',')
+	            	    items = dm['text'].split(',')
+			    d = ""
+			    e = ""
+			    f = ""
+			    g = ""
+			    h = ""
 
 	            	    print
 			    
 	            	    for sample in items:
-	                        if not "http" in sample and not "https" in sample and not "add:" in sample and not "add :" in sample and not "Add :" in sample and not "Add:" in sample and sample is not " " and len(sample) > 1:
-	                                if "@" in sample:
+	                        if not "http" in sample and not "https" in sample and sample is not " " and len(sample) > 1:
+	                                if "@" in sample and not "add:" in sample and not "Add:" in sample and not "add :" in sample and not "Add :" in sample :
+						print "You asked to Ban this user :",sample
 	                                        users.append(sample.replace("@","").replace(" ",""))
-	                                else:
-	                                        words.append(sample)
-				if "http" in sample and not "add:" in sample and not "add :" in sample and not "Add :" in sample and not "Add:" in sample and sample is not " " and len(sample) > 1:
-					endcmd = sample.split("http")
-			                if "@" in endcmd:
+
+
+	                    		if "Banuser" in sample or "banuser" in sample:
+			                        print
+			                        print "You asked to Ban the user from that quote:"
+						d = "You asked to Ban the user from that quote:"
+
+						try:
+			                                d = "You asked to Ban the user from that quote:"
+			                        	print dm['entities']['urls'][-1]['expanded_url']
+							e = dm['entities']['urls'][-1]['expanded_url']
+							if "http:" in e:
+			                        		name = re.split('http://twitter.com/|,|/status/| ',dm['entities']['urls'][-1]['expanded_url'])
+							if "https:" in e:
+								name = re.split('https://twitter.com/|,|/status/| ',dm['entities']['urls'][-1]['expanded_url'])
+			                        	print name[1]
+		
+							f = name[1]
+				                     	users.append(name[1])
+						except:
+							print "But no quote was found ..."
+
+		                        if "add:" in sample or "Add:" in sample or "add :" in sample or "Add :" in sample:
+		                                print
+		                                print "You asked to add keywords :"
 						
+		       
+		        	                addkey.append(sample.split(":",1)[1])
+								
+						h = "You asked to add Keywords :",addkey
+						print
+						print addkey
+
+	                                if not "banuser"in sample and not "Banuser" in sample and not "add:" in sample and not "Add:" in sample and not "add :" in sample and not "Add :" in sample :
+	                                        words.append(sample)
+
+
+				if "http" in sample and sample is not " " and len(sample) > 1:
+					endcmd = sample.split("http")
+			                if "@" in endcmd and not "add:"in endcmd and not "Add:" in endcmd and not "add :" in endcmd and not "Add :" in endcmd:
+						print "You asked to Ban this user :",endcmd[0]
 	                                        users.append(endcmd[0].replace("@","").replace(" ",""))
+
+
+	                    		if "Banuser" in endcmd or "banuser" in endcmd:
+			                        print
+			                        print "You asked to Ban the user from that quote:"
+						d = "You asked to Ban the user from that quote:"
+
+						try:
+			                                d = "You asked to Ban the user from that quote:"
+			                        	print dm['entities']['urls'][-1]['expanded_url']
+							e = dm['entities']['urls'][-1]['expanded_url']
+							if "http:" in e:
+			                        		name = re.split('http://twitter.com/|,|/status/| ',dm['entities']['urls'][-1]['expanded_url'])
+							if "https:" in e:
+								name = re.split('https://twitter.com/|,|/status/| ',dm['entities']['urls'][-1]['expanded_url'])
+			                        	print name[1]
+		
+							f = name[1]
+				                     	users.append(name[1])
+						except:
+							print "But no quote was found ..."
 
 	                                if "add:" in endcmd or "add :" in endcmd or "Add :" in endcmd or "Add:" in endcmd and len(sample) > 0:
         	                                addkey.append(endcmd[0].split(":",1)[1])
-						localchk = 1
-						h = "You asked to add a Keyword :",addkey
+						print "You asked to add keywords :"
+						h = "You asked to add Keywords :",addkey
+						print "You asked to add Keywords :",addkey
 
-	                                else:
+	                                if not "banuser"in endcmd and not "Banuser" in endcmd and not "add:" in endcmd and not "Add:" in encmd and not "add :" in endcmd and not "Add :" in endcmd ::
 	                                        words.append(endcmd[0])
 
-							
+			
+			    g = "%i Banned topic , %i Banned Users Detected and %i Keywords Detected" % (len(words),len(users),len(addkey))
+			    print "%i Banned topic , %i Banned Users Detected and %i Keywords Detected" % (len(words),len(users),len(addkey))			
 
 
 	                    print 	
 	                    
-			    
-	                    if "Banuser" in dm['text'] or "banuser" in dm['text']:
-	                        print
-	                        print "You asked to Ban the user from that quote:"
-				d = "You asked to Ban the user from that quote:"
-				try:
-	                                d = "You asked to Ban the user from that quote:"
-	                        	print dm['entities']['urls'][-1]['expanded_url']
-					e = dm['entities']['urls'][-1]['expanded_url']
-					if "http:" in e:
-	                        		name = re.split('http://twitter.com/|,|/status/| ',dm['entities']['urls'][-1]['expanded_url'])
-					if "https:" in e:
-						name = re.split('https://twitter.com/|,|/status/| ',dm['entities']['urls'][-1]['expanded_url'])
-	                        	print name[1]
-
-					f = name[1]
-		                     	users.append(name[1])
-				        print "%i Banned topic and %i Banned Users Detected" % (len(words),len(users))
-					g = "%i Banned topic and %i Banned Users Detected" % (len(words),len(users))
-				except:
-					print "But no quote was found ..."
-                                        d = ""
-                                        e = ""
-                                        f = ""
-                                        g = "%i Banned topic and %i Banned Users Detected" % (len(words),len(users))
-			    else:
-					print "%i Banned topic and %i Banned Users Detected" % (len(words),len(users))
-					print
-					d = ""
-					e = ""
-					f = ""
-					g = "%i Banned topic and %i Banned Users Detected" % (len(words),len(users))
-
-
-			    if localchk == 0:
-	                            if "add:" in dm['text'] or "Add:" in dm['text'] or "add :" in dm['text'] or "Add :" in dm['text']:
-	                                print
-	                                print "You asked to add a keywords :"
-					items = dm['text'].split(",")
-	                            	for sample in items:
-		                                if "add:" in sample or "add :" in sample or "Add :" in sample or "Add:" in sample and len(sample) > 0:
-	        	                                addkey.append(sample.split(":",1)[1])
-							print addkey
-					h = "You asked to add a Keyword :",addkey
-				    else:
-						h = ""
                             print 
 
 				
@@ -3306,7 +3325,7 @@ def Scoring(tweet,search):
 			Ban(tweet['text'],tweet['user']['screen_name'],tweet['id'],tweet['user']['description'])
 
 			if Banned != 1:
-				if Score >= 19:
+				if Score >= 16:
 					Screen.wrapper(win)
 					print
 					print
